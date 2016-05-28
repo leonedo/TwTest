@@ -59,6 +59,12 @@
       <HintPath>..\packages\TweetMoaSharp.3.0.0.15\lib\4.5\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Svt.Caspar">
+      <HintPath>..\packages\Otros\Svt.Caspar.dll</HintPath>
+    </Reference>
+    <Reference Include="Svt.Network">
+      <HintPath>..\packages\Otros\Svt.Network.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />

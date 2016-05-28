@@ -22,7 +22,8 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.components = New System.ComponentModel.Container()
+        Me.Button_Load = New System.Windows.Forms.Button()
         Me.dgvtwitter = New System.Windows.Forms.DataGridView()
         Me.Column3 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -33,18 +34,19 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button1
+        'Button_Load
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(542, 564)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Load"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button_Load.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button_Load.Location = New System.Drawing.Point(542, 564)
+        Me.Button_Load.Name = "Button_Load"
+        Me.Button_Load.Size = New System.Drawing.Size(75, 23)
+        Me.Button_Load.TabIndex = 0
+        Me.Button_Load.Text = "Load"
+        Me.Button_Load.UseVisualStyleBackColor = True
         '
         'dgvtwitter
         '
@@ -142,6 +144,10 @@ Partial Class Form1
         Me.Button4.Text = "Kill"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 10000
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -152,7 +158,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.TextBoxTw)
         Me.Controls.Add(Me.dgvtwitter)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button_Load)
         Me.Name = "Form1"
         Me.Text = "TvTwitterScroll by Leon Hurtado"
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).EndInit()
@@ -161,7 +167,7 @@ Partial Class Form1
 
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Button_Load As Button
     Friend WithEvents dgvtwitter As DataGridView
     Friend WithEvents TextBoxTw As TextBox
     Friend WithEvents Button2 As Button
@@ -172,4 +178,5 @@ Partial Class Form1
     Friend WithEvents Column3 As DataGridViewCheckBoxColumn
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents Timer1 As Timer
 End Class
