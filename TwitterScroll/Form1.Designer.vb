@@ -41,7 +41,7 @@ Partial Class Form1
         'Button_Load
         '
         Me.Button_Load.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_Load.Location = New System.Drawing.Point(542, 564)
+        Me.Button_Load.Location = New System.Drawing.Point(283, 230)
         Me.Button_Load.Name = "Button_Load"
         Me.Button_Load.Size = New System.Drawing.Size(75, 23)
         Me.Button_Load.TabIndex = 0
@@ -62,7 +62,7 @@ Partial Class Form1
         Me.dgvtwitter.Name = "dgvtwitter"
         Me.dgvtwitter.RowHeadersVisible = False
         Me.dgvtwitter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvtwitter.Size = New System.Drawing.Size(799, 542)
+        Me.dgvtwitter.Size = New System.Drawing.Size(540, 208)
         Me.dgvtwitter.TabIndex = 1
         '
         'Column3
@@ -108,16 +108,16 @@ Partial Class Form1
         'TextBoxTw
         '
         Me.TextBoxTw.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.TextBoxTw.Location = New System.Drawing.Point(12, 566)
+        Me.TextBoxTw.Location = New System.Drawing.Point(12, 232)
         Me.TextBoxTw.Name = "TextBoxTw"
         Me.TextBoxTw.Size = New System.Drawing.Size(138, 20)
         Me.TextBoxTw.TabIndex = 2
-        Me.TextBoxTw.Text = "#hashtag"
+        Me.TextBoxTw.Text = "#BSNprtv"
         '
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(156, 564)
+        Me.Button2.Location = New System.Drawing.Point(156, 230)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 3
@@ -127,7 +127,7 @@ Partial Class Form1
         'Button3
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.Location = New System.Drawing.Point(704, 564)
+        Me.Button3.Location = New System.Drawing.Point(445, 230)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(107, 23)
         Me.Button3.TabIndex = 4
@@ -137,7 +137,7 @@ Partial Class Form1
         'Button4
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.Location = New System.Drawing.Point(623, 564)
+        Me.Button4.Location = New System.Drawing.Point(364, 230)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 5
@@ -152,13 +152,14 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(823, 595)
+        Me.ClientSize = New System.Drawing.Size(564, 261)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.TextBoxTw)
         Me.Controls.Add(Me.dgvtwitter)
         Me.Controls.Add(Me.Button_Load)
+        Me.MinimumSize = New System.Drawing.Size(580, 300)
         Me.Name = "Form1"
         Me.Text = "TvTwitterScroll by Leon Hurtado"
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).EndInit()
@@ -171,12 +172,12 @@ Partial Class Form1
     Friend WithEvents dgvtwitter As DataGridView
     Friend WithEvents TextBoxTw As TextBox
     Friend WithEvents Button2 As Button
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewCheckBoxColumn
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Column3 As DataGridViewCheckBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
 End Class

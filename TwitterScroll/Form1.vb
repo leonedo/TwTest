@@ -8,25 +8,25 @@ Public Class Form1
         Try
             Dim service As New TwitterService(ConfigurationManager.AppSettings("twitterConsumerKey"), ConfigurationManager.AppSettings("twitterConsumerSecret"))
             service.AuthenticateWith(ConfigurationManager.AppSettings("twitterOAuthToken"), ConfigurationManager.AppSettings("twitterAccessToken"))
-            Dim SearchOptions As TweetSharp.SearchOptions = New TweetSharp.SearchOptions() With {.Q = TextBoxTw.Text & " exclude:retweets", .Count = "50", .IncludeEntities = False}
+            Dim SearchOptions As TweetSharp.SearchOptions = New TweetSharp.SearchOptions() With {.Q = TextBoxTw.Text & " exclude:retweets", .Count = ConfigurationManager.AppSettings("count"), .IncludeEntities = False}
             Dim Tweets As New TweetSharp.TwitterSearchResult
             Tweets = service.Search(SearchOptions)
 
             Dim itwitter As Integer = 0
             dgvtwitter.Rows.Clear()
-            dgvtwitter.Columns(1).DefaultCellStyle.WrapMode = DataGridViewTriState.True
+
             For Each tweet As TweetSharp.TwitterStatus In Tweets.Statuses
 
                 dgvtwitter.Rows.Add()
                 dgvtwitter.Rows(itwitter).Cells(1).Value = tweet.User.ScreenName
                 dgvtwitter.Rows(itwitter).Cells(2).Value = tweet.User.Name
-                dgvtwitter.Rows(itwitter).Cells(3).Value = tweet.Text
+                dgvtwitter.Rows(itwitter).Cells(3).Value = tweet.Text.Replace(vbCr, "").Replace(vbLf, "")
                 dgvtwitter.Rows(itwitter).Cells(4).Value = tweet.CreatedDate.ToLocalTime
 
                 itwitter = itwitter + 1
             Next
         Catch ex As Exception
-            MsgBox("BotonCargarTW: " & ex.Message)
+            MsgBox("Check the Internet Connection: " & ex.Message)
         End Try
     End Sub
 
@@ -37,21 +37,27 @@ Public Class Form1
 
         Dim texto As String = ""
         For Each row As DataGridViewRow In dgvtwitter.Rows
-            texto = texto & " @" & row.Cells(1).Value & " - " & row.Cells(2).Value & ": " & row.Cells(3).Value & " ● "
+            If row.Cells(0).Value = True Then
+                texto = texto & " @" & row.Cells(1).Value & " - " & row.Cells(2).Value & ": " & row.Cells(3).Value & "  ● "
+            End If
+
         Next
         ticker(TextBoxTw.Text, texto)
     End Sub
 
     Public Sub ticker(hashtag As String, text As String)
         Try
-            Dim CGData As New Svt.Caspar.CasparCGDataCollection
-            CGData.SetData("hash", hashtag)
-            CGData.SetData("scrolldata", text)
+            If CasparDevice.IsConnected = True Then
+                Dim CGData As New Svt.Caspar.CasparCGDataCollection
+                CGData.SetData("hash", hashtag)
+                CGData.SetData("scrolldata", text)
 
-            CasparDevice.Channels(CInt(ConfigurationManager.AppSettings("cH"))).CG.Add(CInt(ConfigurationManager.AppSettings("vL")),
-                                                                                       CInt(ConfigurationManager.AppSettings("fL")),
-                                                                                       "SCROLL", True, CGData.ToAMCPEscapedXml)
-            CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL").ToString & " OPACITY 1 25 easeinsine")
+                CasparDevice.Channels(CInt(ConfigurationManager.AppSettings("cH"))).CG.Add(CInt(ConfigurationManager.AppSettings("vL")),
+                                                                                           CInt(ConfigurationManager.AppSettings("fL")),
+                                                                                           "SCROLL", True, CGData.ToAMCPEscapedXml)
+                CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL").ToString & " OPACITY 1 25 easeinsine")
+
+            End If
         Catch ex As Exception
             MsgBox("Scroll Issue" & ex.Message)
         End Try
@@ -75,4 +81,40 @@ Public Class Form1
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         CasparDevice.Disconnect()
     End Sub
+
+    Sub my_evento() Handles CasparDevice.ConnectionStatusChanged
+
+        On Error Resume Next
+
+        If CasparDevice.IsConnected = False Then
+
+            Timer1.Start()
+
+        End If
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        If CasparDevice.IsConnected = True Then
+            CasparDevice.SendString("PLAY 1-" & ConfigurationManager.AppSettings("vL") & " EMPTY MIX 10")
+            CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL") & " OPACITY 1 25 easeinsine")
+        End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        oculto = Not oculto
+        Ocultar(oculto)
+    End Sub
+
+    Public Sub Ocultar(Esconder As Boolean)
+        If CasparDevice.IsConnected = True Then
+            If Esconder Then
+                CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL") & " OPACITY 0 25 easeinsine")
+            Else
+                CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL") & " OPACITY 1 25 easeinsine")
+            End If
+        End If
+    End Sub
+
+
 End Class
