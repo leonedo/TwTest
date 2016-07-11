@@ -2,29 +2,50 @@
 Imports TweetSharp
 
 Public Class Form1
+    Dim service As New TwitterService(ConfigurationManager.AppSettings("twitterConsumerKey"), ConfigurationManager.AppSettings("twitterConsumerSecret"))
     Dim oculto As Boolean = False
     Public WithEvents CasparDevice As New Svt.Caspar.CasparDevice
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
-            Dim service As New TwitterService(ConfigurationManager.AppSettings("twitterConsumerKey"), ConfigurationManager.AppSettings("twitterConsumerSecret"))
-            service.AuthenticateWith(ConfigurationManager.AppSettings("twitterOAuthToken"), ConfigurationManager.AppSettings("twitterAccessToken"))
-            Dim SearchOptions As TweetSharp.SearchOptions = New TweetSharp.SearchOptions() With {.Q = TextBoxTw.Text & " exclude:retweets", .Count = ConfigurationManager.AppSettings("count"), .IncludeEntities = False}
-            Dim Tweets As New TweetSharp.TwitterSearchResult
-            Tweets = service.Search(SearchOptions)
-
             Dim itwitter As Integer = 0
             dgvtwitter.Rows.Clear()
 
-            For Each tweet As TweetSharp.TwitterStatus In Tweets.Statuses
+            If RadioButton3.Checked Then
+                Dim Tweets As New TweetSharp.TwitterSearchResult
+                Dim SearchOptions As TweetSharp.SearchOptions = New TweetSharp.SearchOptions() With {.Q = TextBoxUsername.Text & " exclude:retweets", .Count = ConfigurationManager.AppSettings("count"), .IncludeEntities = False}
+                Tweets = New TweetSharp.TwitterSearchResult
+                Tweets = service.Search(SearchOptions)
 
-                dgvtwitter.Rows.Add()
-                dgvtwitter.Rows(itwitter).Cells(1).Value = tweet.User.ScreenName
-                dgvtwitter.Rows(itwitter).Cells(2).Value = tweet.User.Name
-                dgvtwitter.Rows(itwitter).Cells(3).Value = tweet.Text.Replace(vbCr, "").Replace(vbLf, "")
-                dgvtwitter.Rows(itwitter).Cells(4).Value = tweet.CreatedDate.ToLocalTime
+                For Each tweet As TweetSharp.TwitterStatus In Tweets.Statuses
+                    dgvtwitter.Rows.Add()
+                    dgvtwitter.Rows(itwitter).Cells(1).Value = tweet.User.ScreenName
+                    dgvtwitter.Rows(itwitter).Cells(2).Value = tweet.User.Name
+                    dgvtwitter.Rows(itwitter).Cells(3).Value = tweet.Text.Replace(vbCr, "").Replace(vbLf, "")
+                    dgvtwitter.Rows(itwitter).Cells(4).Value = tweet.CreatedDate.ToLocalTime
+                    itwitter = itwitter + 1
+                Next
 
-                itwitter = itwitter + 1
-            Next
+            Else
+
+                Dim Tweets
+                If RadioButton1.Checked Then
+                    Dim options = New TweetSharp.ListFavoriteTweetsOptions() With {.ScreenName = TextBoxUsername.Text, .Count = 100}
+                    Tweets = service.ListFavoriteTweets(options)
+                Else
+                    Dim options = New TweetSharp.ListTweetsOnUserTimelineOptions() With {.ScreenName = TextBoxUsername.Text, .Count = 100}
+                    Tweets = service.ListTweetsOnUserTimeline(options)
+                End If
+
+
+                For Each tweet As TweetSharp.TwitterStatus In Tweets
+                        dgvtwitter.Rows.Add()
+                        dgvtwitter.Rows(itwitter).Cells(1).Value = tweet.User.ScreenName
+                        dgvtwitter.Rows(itwitter).Cells(2).Value = tweet.User.Name
+                        dgvtwitter.Rows(itwitter).Cells(3).Value = tweet.Text.Replace(vbCr, "").Replace(vbLf, "")
+                        dgvtwitter.Rows(itwitter).Cells(4).Value = tweet.CreatedDate.ToLocalTime
+                        itwitter = itwitter + 1
+                    Next
+                End If
         Catch ex As Exception
             MsgBox("Check the Internet Connection: " & ex.Message)
         End Try
@@ -42,7 +63,7 @@ Public Class Form1
             End If
 
         Next
-        ticker(TextBoxTw.Text, texto)
+        ticker(TextboxHashtag.Text, texto)
     End Sub
 
     Public Sub ticker(hashtag As String, text As String)
@@ -65,6 +86,7 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        service.AuthenticateWith(ConfigurationManager.AppSettings("twitterOAuthToken"), ConfigurationManager.AppSettings("twitterAccessToken"))
         CasparDevice.Settings.Hostname = ConfigurationManager.AppSettings("IP")
         CasparDevice.Settings.Port = CInt(ConfigurationManager.AppSettings("Port"))
         Timer1.Start()
