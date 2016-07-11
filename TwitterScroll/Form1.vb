@@ -34,6 +34,7 @@ Public Class Form1
                 Else
                     Dim options = New TweetSharp.ListTweetsOnUserTimelineOptions() With {.ScreenName = TextBoxUsername.Text, .Count = 100}
                     Tweets = service.ListTweetsOnUserTimeline(options)
+
                 End If
 
 
@@ -86,6 +87,8 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TextboxHashtag.Text = My.Settings.hash
+        TextBoxUsername.Text = My.Settings.user
         service.AuthenticateWith(ConfigurationManager.AppSettings("twitterOAuthToken"), ConfigurationManager.AppSettings("twitterAccessToken"))
         CasparDevice.Settings.Hostname = ConfigurationManager.AppSettings("IP")
         CasparDevice.Settings.Port = CInt(ConfigurationManager.AppSettings("Port"))
@@ -101,6 +104,9 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        My.Settings.user = TextBoxUsername.Text
+        My.Settings.hash = TextboxHashtag.Text
+        My.Settings.Save()
         CasparDevice.Disconnect()
     End Sub
 
