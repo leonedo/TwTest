@@ -46,6 +46,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon_new.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Hammock.ClientProfile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
       <HintPath>..\packages\TweetMoaSharp.3.0.0.19\lib\4.5\Hammock.ClientProfile.dll</HintPath>
@@ -145,6 +148,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\estrending_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon_new.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
