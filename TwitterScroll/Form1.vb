@@ -12,21 +12,34 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'pupular listview desde XML
-        servers.Add("Localhost", {"Localhost", "5250"})
+        servers.Add("Localhost", {"Localhost", "5250", "Servidor Local"})
         ListBoxServers.SelectedIndex = My.Settings.Server
 
 
         TextboxHashtag.Text = My.Settings.hash
         TextBoxUsername.Text = My.Settings.user
+        Try
+            ListBoxServers.SelectedIndex = My.Settings.Server
+        Catch ex As Exception
+            ListBoxServers.SelectedIndex = 0
+        End Try
+
+
         service.AuthenticateWith(ConfigurationManager.AppSettings("twitterOT"), ConfigurationManager.AppSettings("twitterAT"))
-        CasparDevice.Settings.Hostname = servers.Item(ListBoxServers.SelectedItem)(0)
-        CasparDevice.Settings.Port = servers.Item(ListBoxServers.SelectedItem)(1)
-        TimerCasparConnect.Start()
+        Try
+            CasparDevice.Settings.Hostname = servers.Item(ListBoxServers.SelectedItem)(0)
+            CasparDevice.Settings.Port = servers.Item(ListBoxServers.SelectedItem)(1)
+            TimerCasparConnect.Start()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         '   Guardar XML
         My.Settings.user = TextBoxUsername.Text
         My.Settings.hash = TextboxHashtag.Text
+        My.Settings.Server = ListBoxServers.SelectedIndex
         My.Settings.Save()
         CasparDevice.Disconnect()
     End Sub
@@ -162,5 +175,56 @@ Public Class Form1
             MsgBox("Scroll Issue" & ex.Message)
         End Try
     End Sub
+
+    Private Sub ListBoxServers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxServers.SelectedIndexChanged
+        TextBoxTitulo.Text = ListBoxServers.SelectedItem
+        TextBoxIP.Text = servers.Item(ListBoxServers.SelectedItem)(0)
+        TextBoxPuerto.Text = servers.Item(ListBoxServers.SelectedItem)(1)
+        RichTextBoxComent.Text = servers.Item(ListBoxServers.SelectedItem)(2)
+        TextBoxTitulo.Enabled = False
+        TextBoxIP.Enabled = False
+        TextBoxPuerto.Enabled = False
+        RichTextBoxComent.Enabled = False
+        ButtonSaveServer.Visible = False
+    End Sub
+
+    Private Sub ButtonNewServer_Click(sender As Object, e As EventArgs) Handles ButtonNewServer.Click
+        TextBoxTitulo.Text = ""
+        TextBoxIP.Text = ""
+        TextBoxPuerto.Text = "5052"
+        RichTextBoxComent.Text = ""
+        TextBoxTitulo.Enabled = True
+        TextBoxIP.Enabled = True
+        TextBoxPuerto.Enabled = True
+        RichTextBoxComent.Enabled = True
+        ButtonSaveServer.Visible = True
+    End Sub
+
+    Private Sub ButtonSaveServer_Click(sender As Object, e As EventArgs) Handles ButtonSaveServer.Click
+        If Not servers.ContainsKey(TextBoxTitulo.Text) Then
+            servers.Add(TextBoxTitulo.Text, {TextBoxIP.Text, TextBoxPuerto.Text, RichTextBoxComent.Text})
+            ListBoxServers.Items.Add(TextBoxTitulo.Text)
+            ListBoxServers.SelectedItem = TextBoxTitulo.Text
+            TextBoxTitulo.Enabled = False
+            TextBoxIP.Enabled = False
+            TextBoxPuerto.Enabled = False
+            RichTextBoxComent.Enabled = False
+            ButtonSaveServer.Visible = False
+
+        Else
+            MsgBox("Nombre de servidor ya existe")
+        End If
+    End Sub
+
+    Private Sub ButtonRemoveServer_Click(sender As Object, e As EventArgs) Handles ButtonRemoveServer.Click
+        If ListBoxServers.SelectedIndex > 0 Then
+            servers.Remove(ListBoxServers.SelectedItem)
+            ListBoxServers.Items.Remove(ListBoxServers.SelectedItem)
+        Else
+            MsgBox("Debe existir al menos un servidor")
+        End If
+    End Sub
+
+
 #End Region
 End Class

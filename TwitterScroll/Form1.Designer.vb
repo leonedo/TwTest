@@ -54,18 +54,17 @@ Partial Class Form1
         Me.ButtonWeatherQuery = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.ButtonSaveServer = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.RichTextBoxComent = New System.Windows.Forms.RichTextBox()
+        Me.TextBoxPuerto = New System.Windows.Forms.TextBox()
+        Me.TextBoxIP = New System.Windows.Forms.TextBox()
+        Me.TextBoxTitulo = New System.Windows.Forms.TextBox()
+        Me.ButtonRemoveServer = New System.Windows.Forms.Button()
+        Me.ButtonNewServer = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ListBoxServers = New System.Windows.Forms.ListBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
@@ -339,7 +338,7 @@ Partial Class Form1
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(614, 238)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Weather Forecast"
+        Me.TabPage2.Text = "5 Days Forecast"
         '
         'ButtonWeatherQuery
         '
@@ -364,18 +363,17 @@ Partial Class Form1
         'TabPage4
         '
         Me.TabPage4.BackColor = System.Drawing.SystemColors.Control
-        Me.TabPage4.Controls.Add(Me.Button4)
+        Me.TabPage4.Controls.Add(Me.ButtonSaveServer)
         Me.TabPage4.Controls.Add(Me.Label5)
         Me.TabPage4.Controls.Add(Me.Label4)
         Me.TabPage4.Controls.Add(Me.Label3)
         Me.TabPage4.Controls.Add(Me.Label2)
-        Me.TabPage4.Controls.Add(Me.RichTextBox1)
-        Me.TabPage4.Controls.Add(Me.TextBox3)
-        Me.TabPage4.Controls.Add(Me.TextBox2)
-        Me.TabPage4.Controls.Add(Me.TextBox1)
-        Me.TabPage4.Controls.Add(Me.Button3)
-        Me.TabPage4.Controls.Add(Me.Button2)
-        Me.TabPage4.Controls.Add(Me.Button1)
+        Me.TabPage4.Controls.Add(Me.RichTextBoxComent)
+        Me.TabPage4.Controls.Add(Me.TextBoxPuerto)
+        Me.TabPage4.Controls.Add(Me.TextBoxIP)
+        Me.TabPage4.Controls.Add(Me.TextBoxTitulo)
+        Me.TabPage4.Controls.Add(Me.ButtonRemoveServer)
+        Me.TabPage4.Controls.Add(Me.ButtonNewServer)
         Me.TabPage4.Controls.Add(Me.Label1)
         Me.TabPage4.Controls.Add(Me.ListBoxServers)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
@@ -385,15 +383,15 @@ Partial Class Form1
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Configuracion"
         '
-        'Button4
+        'ButtonSaveServer
         '
-        Me.Button4.Location = New System.Drawing.Point(323, 200)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(94, 23)
-        Me.Button4.TabIndex = 111
-        Me.Button4.Text = "Guardar"
-        Me.Button4.UseVisualStyleBackColor = True
-        Me.Button4.Visible = False
+        Me.ButtonSaveServer.Location = New System.Drawing.Point(323, 200)
+        Me.ButtonSaveServer.Name = "ButtonSaveServer"
+        Me.ButtonSaveServer.Size = New System.Drawing.Size(94, 23)
+        Me.ButtonSaveServer.TabIndex = 111
+        Me.ButtonSaveServer.Text = "Guardar"
+        Me.ButtonSaveServer.UseVisualStyleBackColor = True
+        Me.ButtonSaveServer.Visible = False
         '
         'Label5
         '
@@ -431,65 +429,56 @@ Partial Class Form1
         Me.Label2.TabIndex = 107
         Me.Label2.Text = "Titulo"
         '
-        'RichTextBox1
+        'RichTextBoxComent
         '
-        Me.RichTextBox1.Enabled = False
-        Me.RichTextBox1.Location = New System.Drawing.Point(190, 155)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(227, 39)
-        Me.RichTextBox1.TabIndex = 106
-        Me.RichTextBox1.Text = ""
+        Me.RichTextBoxComent.Enabled = False
+        Me.RichTextBoxComent.Location = New System.Drawing.Point(190, 155)
+        Me.RichTextBoxComent.Name = "RichTextBoxComent"
+        Me.RichTextBoxComent.Size = New System.Drawing.Size(227, 39)
+        Me.RichTextBoxComent.TabIndex = 106
+        Me.RichTextBoxComent.Text = ""
         '
-        'TextBox3
+        'TextBoxPuerto
         '
-        Me.TextBox3.Enabled = False
-        Me.TextBox3.Location = New System.Drawing.Point(190, 112)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(227, 20)
-        Me.TextBox3.TabIndex = 105
+        Me.TextBoxPuerto.Enabled = False
+        Me.TextBoxPuerto.Location = New System.Drawing.Point(190, 112)
+        Me.TextBoxPuerto.Name = "TextBoxPuerto"
+        Me.TextBoxPuerto.Size = New System.Drawing.Size(227, 20)
+        Me.TextBoxPuerto.TabIndex = 105
         '
-        'TextBox2
+        'TextBoxIP
         '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(190, 73)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(227, 20)
-        Me.TextBox2.TabIndex = 104
+        Me.TextBoxIP.Enabled = False
+        Me.TextBoxIP.Location = New System.Drawing.Point(190, 73)
+        Me.TextBoxIP.Name = "TextBoxIP"
+        Me.TextBoxIP.Size = New System.Drawing.Size(227, 20)
+        Me.TextBoxIP.TabIndex = 104
         '
-        'TextBox1
+        'TextBoxTitulo
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(190, 35)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(227, 20)
-        Me.TextBox1.TabIndex = 103
+        Me.TextBoxTitulo.Enabled = False
+        Me.TextBoxTitulo.Location = New System.Drawing.Point(190, 35)
+        Me.TextBoxTitulo.Name = "TextBoxTitulo"
+        Me.TextBoxTitulo.Size = New System.Drawing.Size(227, 20)
+        Me.TextBoxTitulo.TabIndex = 103
         '
-        'Button3
+        'ButtonRemoveServer
         '
-        Me.Button3.Location = New System.Drawing.Point(122, 200)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(43, 23)
-        Me.Button3.TabIndex = 102
-        Me.Button3.Text = "Del"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.ButtonRemoveServer.Location = New System.Drawing.Point(103, 200)
+        Me.ButtonRemoveServer.Name = "ButtonRemoveServer"
+        Me.ButtonRemoveServer.Size = New System.Drawing.Size(62, 23)
+        Me.ButtonRemoveServer.TabIndex = 102
+        Me.ButtonRemoveServer.Text = "Remove"
+        Me.ButtonRemoveServer.UseVisualStyleBackColor = True
         '
-        'Button2
+        'ButtonNewServer
         '
-        Me.Button2.Location = New System.Drawing.Point(73, 200)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(43, 23)
-        Me.Button2.TabIndex = 101
-        Me.Button2.Text = "Edit"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(24, 200)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(43, 23)
-        Me.Button1.TabIndex = 100
-        Me.Button1.Text = "New"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ButtonNewServer.Location = New System.Drawing.Point(24, 200)
+        Me.ButtonNewServer.Name = "ButtonNewServer"
+        Me.ButtonNewServer.Size = New System.Drawing.Size(62, 23)
+        Me.ButtonNewServer.TabIndex = 100
+        Me.ButtonNewServer.Text = "New"
+        Me.ButtonNewServer.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -699,18 +688,17 @@ Partial Class Form1
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents ListBoxServers As ListBox
-    Friend WithEvents Button4 As Button
+    Friend WithEvents ButtonSaveServer As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents RichTextBoxComent As RichTextBox
+    Friend WithEvents TextBoxPuerto As TextBox
+    Friend WithEvents TextBoxIP As TextBox
+    Friend WithEvents TextBoxTitulo As TextBox
+    Friend WithEvents ButtonRemoveServer As Button
+    Friend WithEvents ButtonNewServer As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents ToolStripLabelIp As ToolStripStatusLabel
