@@ -5,6 +5,8 @@ Public Class Form1
     Dim service As New TwitterService(ConfigurationManager.AppSettings("twitterCK"), ConfigurationManager.AppSettings("twitterCS"))
     Dim oculto As Boolean = False
     Public WithEvents CasparDevice As New Svt.Caspar.CasparDevice
+    Dim WithEvents clima As New OWMweatherClass
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
             Dim itwitter As Integer = 0
@@ -144,5 +146,7 @@ Public Class Form1
         End If
     End Sub
 
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ButtonWeatherQuery.Click
+        clima.parseAsyncQueryForcast("miami,fl", "es", OWMweatherClass.units.metric)
+    End Sub
 End Class
