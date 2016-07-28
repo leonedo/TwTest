@@ -8,5 +8,8 @@
     <Setting Name="hash" Type="System.String" Scope="User">
       <Value Profile="(Default)">#hashtag</Value>
     </Setting>
+    <Setting Name="Server" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

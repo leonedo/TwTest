@@ -37,10 +37,10 @@ Partial Class Form1
         Me.ButtonSearch = New System.Windows.Forms.Button()
         Me.ButtonShowhideTw = New System.Windows.Forms.Button()
         Me.ButtonStopTw = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.TimerCasparConnect = New System.Windows.Forms.Timer(Me.components)
+        Me.RadioButtonFav = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonTL = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonQ = New System.Windows.Forms.RadioButton()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.TextBoxUsername = New System.Windows.Forms.ToolStripTextBox()
@@ -51,22 +51,44 @@ Partial Class Form1
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.ButtonWeatherQuery = New System.Windows.Forms.Button()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ListBoxServers = New System.Windows.Forms.ListBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabelServerstatus = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabelStatus = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripLabelNombre = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripLabelIp = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripLabelPuerto = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel5 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripLabelStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.ButtonWeatherQuery = New System.Windows.Forms.Button()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,7 +98,7 @@ Partial Class Form1
         'Button_LoadTW
         '
         Me.Button_LoadTW.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_LoadTW.Location = New System.Drawing.Point(314, 209)
+        Me.Button_LoadTW.Location = New System.Drawing.Point(314, 204)
         Me.Button_LoadTW.Name = "Button_LoadTW"
         Me.Button_LoadTW.Size = New System.Drawing.Size(95, 23)
         Me.Button_LoadTW.TabIndex = 0
@@ -115,7 +137,7 @@ Partial Class Form1
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvtwitter.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvtwitter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvtwitter.Size = New System.Drawing.Size(592, 162)
+        Me.dgvtwitter.Size = New System.Drawing.Size(592, 157)
         Me.dgvtwitter.TabIndex = 1
         '
         'Column3
@@ -164,7 +186,7 @@ Partial Class Form1
         'ButtonSearch
         '
         Me.ButtonSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ButtonSearch.Location = New System.Drawing.Point(238, 209)
+        Me.ButtonSearch.Location = New System.Drawing.Point(238, 204)
         Me.ButtonSearch.Name = "ButtonSearch"
         Me.ButtonSearch.Size = New System.Drawing.Size(75, 23)
         Me.ButtonSearch.TabIndex = 3
@@ -174,7 +196,7 @@ Partial Class Form1
         'ButtonShowhideTw
         '
         Me.ButtonShowhideTw.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonShowhideTw.Location = New System.Drawing.Point(496, 209)
+        Me.ButtonShowhideTw.Location = New System.Drawing.Point(496, 204)
         Me.ButtonShowhideTw.Name = "ButtonShowhideTw"
         Me.ButtonShowhideTw.Size = New System.Drawing.Size(107, 23)
         Me.ButtonShowhideTw.TabIndex = 4
@@ -184,51 +206,51 @@ Partial Class Form1
         'ButtonStopTw
         '
         Me.ButtonStopTw.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonStopTw.Location = New System.Drawing.Point(415, 209)
+        Me.ButtonStopTw.Location = New System.Drawing.Point(415, 204)
         Me.ButtonStopTw.Name = "ButtonStopTw"
         Me.ButtonStopTw.Size = New System.Drawing.Size(75, 23)
         Me.ButtonStopTw.TabIndex = 5
         Me.ButtonStopTw.Text = "Stop"
         Me.ButtonStopTw.UseVisualStyleBackColor = True
         '
-        'Timer1
+        'TimerCasparConnect
         '
-        Me.Timer1.Interval = 10000
+        Me.TimerCasparConnect.Interval = 5000
         '
-        'RadioButton1
+        'RadioButtonFav
         '
-        Me.RadioButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Checked = True
-        Me.RadioButton1.Location = New System.Drawing.Point(11, 212)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(68, 17)
-        Me.RadioButton1.TabIndex = 6
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Favoritos"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.RadioButtonFav.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.RadioButtonFav.AutoSize = True
+        Me.RadioButtonFav.Checked = True
+        Me.RadioButtonFav.Location = New System.Drawing.Point(11, 207)
+        Me.RadioButtonFav.Name = "RadioButtonFav"
+        Me.RadioButtonFav.Size = New System.Drawing.Size(68, 17)
+        Me.RadioButtonFav.TabIndex = 6
+        Me.RadioButtonFav.TabStop = True
+        Me.RadioButtonFav.Text = "Favoritos"
+        Me.RadioButtonFav.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'RadioButtonTL
         '
-        Me.RadioButton2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(85, 212)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(63, 17)
-        Me.RadioButton2.TabIndex = 7
-        Me.RadioButton2.Text = "User TL"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.RadioButtonTL.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.RadioButtonTL.AutoSize = True
+        Me.RadioButtonTL.Location = New System.Drawing.Point(85, 207)
+        Me.RadioButtonTL.Name = "RadioButtonTL"
+        Me.RadioButtonTL.Size = New System.Drawing.Size(63, 17)
+        Me.RadioButtonTL.TabIndex = 7
+        Me.RadioButtonTL.Text = "User TL"
+        Me.RadioButtonTL.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'RadioButtonQ
         '
-        Me.RadioButton3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(159, 212)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(73, 17)
-        Me.RadioButton3.TabIndex = 8
-        Me.RadioButton3.Text = "Busqueda"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.RadioButtonQ.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.RadioButtonQ.AutoSize = True
+        Me.RadioButtonQ.Location = New System.Drawing.Point(159, 207)
+        Me.RadioButtonQ.Name = "RadioButtonQ"
+        Me.RadioButtonQ.Size = New System.Drawing.Size(73, 17)
+        Me.RadioButtonQ.TabIndex = 8
+        Me.RadioButtonQ.Text = "Busqueda"
+        Me.RadioButtonQ.UseVisualStyleBackColor = True
         '
         'ToolStrip1
         '
@@ -281,11 +303,12 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Location = New System.Drawing.Point(8, 90)
         Me.TabControl1.Multiline = True
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(622, 269)
+        Me.TabControl1.Size = New System.Drawing.Size(622, 264)
         Me.TabControl1.TabIndex = 10
         '
         'TabPage1
@@ -293,17 +316,17 @@ Partial Class Form1
         Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage1.Controls.Add(Me.ToolStrip1)
         Me.TabPage1.Controls.Add(Me.Button_LoadTW)
-        Me.TabPage1.Controls.Add(Me.RadioButton3)
+        Me.TabPage1.Controls.Add(Me.RadioButtonQ)
         Me.TabPage1.Controls.Add(Me.dgvtwitter)
-        Me.TabPage1.Controls.Add(Me.RadioButton2)
+        Me.TabPage1.Controls.Add(Me.RadioButtonTL)
         Me.TabPage1.Controls.Add(Me.ButtonSearch)
-        Me.TabPage1.Controls.Add(Me.RadioButton1)
+        Me.TabPage1.Controls.Add(Me.RadioButtonFav)
         Me.TabPage1.Controls.Add(Me.ButtonShowhideTw)
         Me.TabPage1.Controls.Add(Me.ButtonStopTw)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(614, 243)
+        Me.TabPage1.Size = New System.Drawing.Size(614, 238)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Twitter Feed"
         '
@@ -314,14 +337,183 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(614, 243)
+        Me.TabPage2.Size = New System.Drawing.Size(614, 238)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Weather Forecast"
         '
+        'ButtonWeatherQuery
+        '
+        Me.ButtonWeatherQuery.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ButtonWeatherQuery.Location = New System.Drawing.Point(6, 207)
+        Me.ButtonWeatherQuery.Name = "ButtonWeatherQuery"
+        Me.ButtonWeatherQuery.Size = New System.Drawing.Size(95, 25)
+        Me.ButtonWeatherQuery.TabIndex = 0
+        Me.ButtonWeatherQuery.Text = "Update"
+        Me.ButtonWeatherQuery.UseVisualStyleBackColor = True
+        '
+        'TabPage3
+        '
+        Me.TabPage3.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(614, 238)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Reloj"
+        '
+        'TabPage4
+        '
+        Me.TabPage4.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage4.Controls.Add(Me.Button4)
+        Me.TabPage4.Controls.Add(Me.Label5)
+        Me.TabPage4.Controls.Add(Me.Label4)
+        Me.TabPage4.Controls.Add(Me.Label3)
+        Me.TabPage4.Controls.Add(Me.Label2)
+        Me.TabPage4.Controls.Add(Me.RichTextBox1)
+        Me.TabPage4.Controls.Add(Me.TextBox3)
+        Me.TabPage4.Controls.Add(Me.TextBox2)
+        Me.TabPage4.Controls.Add(Me.TextBox1)
+        Me.TabPage4.Controls.Add(Me.Button3)
+        Me.TabPage4.Controls.Add(Me.Button2)
+        Me.TabPage4.Controls.Add(Me.Button1)
+        Me.TabPage4.Controls.Add(Me.Label1)
+        Me.TabPage4.Controls.Add(Me.ListBoxServers)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(614, 238)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Configuracion"
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(323, 200)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(94, 23)
+        Me.Button4.TabIndex = 111
+        Me.Button4.Text = "Guardar"
+        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(193, 139)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(65, 13)
+        Me.Label5.TabIndex = 110
+        Me.Label5.Text = "Comentarios"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(193, 96)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(38, 13)
+        Me.Label4.TabIndex = 109
+        Me.Label4.Text = "Puerto"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(193, 58)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(66, 13)
+        Me.Label3.TabIndex = 108
+        Me.Label3.Text = "IP / Address"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(193, 19)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(33, 13)
+        Me.Label2.TabIndex = 107
+        Me.Label2.Text = "Titulo"
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Enabled = False
+        Me.RichTextBox1.Location = New System.Drawing.Point(190, 155)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(227, 39)
+        Me.RichTextBox1.TabIndex = 106
+        Me.RichTextBox1.Text = ""
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Enabled = False
+        Me.TextBox3.Location = New System.Drawing.Point(190, 112)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(227, 20)
+        Me.TextBox3.TabIndex = 105
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(190, 73)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(227, 20)
+        Me.TextBox2.TabIndex = 104
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(190, 35)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(227, 20)
+        Me.TextBox1.TabIndex = 103
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(122, 200)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(43, 23)
+        Me.Button3.TabIndex = 102
+        Me.Button3.Text = "Del"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(73, 200)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(43, 23)
+        Me.Button2.TabIndex = 101
+        Me.Button2.Text = "Edit"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(24, 200)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(43, 23)
+        Me.Button1.TabIndex = 100
+        Me.Button1.Text = "New"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(27, 15)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(59, 16)
+        Me.Label1.TabIndex = 99
+        Me.Label1.Text = "Servidor"
+        '
+        'ListBoxServers
+        '
+        Me.ListBoxServers.FormattingEnabled = True
+        Me.ListBoxServers.Items.AddRange(New Object() {"Server 1", "Server 2", "Localhost"})
+        Me.ListBoxServers.Location = New System.Drawing.Point(24, 34)
+        Me.ListBoxServers.Name = "ListBoxServers"
+        Me.ListBoxServers.Size = New System.Drawing.Size(141, 160)
+        Me.ListBoxServers.TabIndex = 0
+        '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabelServerstatus, Me.ToolStripStatusLabelStatus})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 362)
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabelServerstatus, Me.ToolStripLabelNombre, Me.ToolStripStatusLabel1, Me.ToolStripLabelIp, Me.ToolStripStatusLabel3, Me.ToolStripLabelPuerto, Me.ToolStripStatusLabel5, Me.ToolStripLabelStatus})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 357)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(634, 22)
         Me.StatusStrip1.TabIndex = 10
@@ -330,19 +522,56 @@ Partial Class Form1
         'ToolStripStatusLabelServerstatus
         '
         Me.ToolStripStatusLabelServerstatus.Name = "ToolStripStatusLabelServerstatus"
-        Me.ToolStripStatusLabelServerstatus.Size = New System.Drawing.Size(74, 17)
-        Me.ToolStripStatusLabelServerstatus.Text = "Server Status"
+        Me.ToolStripStatusLabelServerstatus.Size = New System.Drawing.Size(42, 17)
+        Me.ToolStripStatusLabelServerstatus.Text = "Server:"
         '
-        'ToolStripStatusLabelStatus
+        'ToolStripLabelNombre
         '
-        Me.ToolStripStatusLabelStatus.Name = "ToolStripStatusLabelStatus"
-        Me.ToolStripStatusLabelStatus.Size = New System.Drawing.Size(82, 17)
-        Me.ToolStripStatusLabelStatus.Text = "General Status"
+        Me.ToolStripLabelNombre.Name = "ToolStripLabelNombre"
+        Me.ToolStripLabelNombre.Size = New System.Drawing.Size(19, 17)
+        Me.ToolStripLabelNombre.Text = "    "
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(55, 17)
+        Me.ToolStripStatusLabel1.Text = " Address:"
+        '
+        'ToolStripLabelIp
+        '
+        Me.ToolStripLabelIp.Name = "ToolStripLabelIp"
+        Me.ToolStripLabelIp.Size = New System.Drawing.Size(22, 17)
+        Me.ToolStripLabelIp.Text = "     "
+        '
+        'ToolStripStatusLabel3
+        '
+        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(35, 17)
+        Me.ToolStripStatusLabel3.Text = " Port:"
+        '
+        'ToolStripLabelPuerto
+        '
+        Me.ToolStripLabelPuerto.Name = "ToolStripLabelPuerto"
+        Me.ToolStripLabelPuerto.Size = New System.Drawing.Size(19, 17)
+        Me.ToolStripLabelPuerto.Text = "    "
+        '
+        'ToolStripStatusLabel5
+        '
+        Me.ToolStripStatusLabel5.Name = "ToolStripStatusLabel5"
+        Me.ToolStripStatusLabel5.Size = New System.Drawing.Size(45, 17)
+        Me.ToolStripStatusLabel5.Text = " Status:"
+        '
+        'ToolStripLabelStatus
+        '
+        Me.ToolStripLabelStatus.Image = Global.TwitterScroll.My.Resources.Resources.red
+        Me.ToolStripLabelStatus.Name = "ToolStripLabelStatus"
+        Me.ToolStripLabelStatus.Size = New System.Drawing.Size(16, 17)
         '
         'Panel1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.Label41)
         Me.Panel1.Controls.Add(Me.Label38)
         Me.Panel1.Controls.Add(Me.Label44)
@@ -352,54 +581,6 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(618, 76)
         Me.Panel1.TabIndex = 10
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.TwitterScroll.My.Resources.Resources.estrending_new
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(149, 73)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'TabPage3
-        '
-        Me.TabPage3.BackColor = System.Drawing.SystemColors.Control
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(614, 243)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Reloj"
-        '
-        'ButtonWeatherQuery
-        '
-        Me.ButtonWeatherQuery.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ButtonWeatherQuery.Location = New System.Drawing.Point(6, 212)
-        Me.ButtonWeatherQuery.Name = "ButtonWeatherQuery"
-        Me.ButtonWeatherQuery.Size = New System.Drawing.Size(95, 25)
-        Me.ButtonWeatherQuery.TabIndex = 0
-        Me.ButtonWeatherQuery.Text = "Update"
-        Me.ButtonWeatherQuery.UseVisualStyleBackColor = True
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(227, 8)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(165, 20)
-        Me.Label44.TabIndex = 96
-        Me.Label44.Text = "Caracas                  "
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Location = New System.Drawing.Point(164, 8)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(57, 60)
-        Me.PictureBox4.TabIndex = 95
-        Me.PictureBox4.TabStop = False
         '
         'Label41
         '
@@ -421,11 +602,39 @@ Partial Class Form1
         Me.Label38.TabIndex = 97
         Me.Label38.Text = "Label                    "
         '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Location = New System.Drawing.Point(227, 8)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(165, 20)
+        Me.Label44.TabIndex = 96
+        Me.Label44.Text = "Caracas                  "
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.TwitterScroll.My.Resources.Resources.estrending_new
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(149, 73)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Location = New System.Drawing.Point(164, 8)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(57, 60)
+        Me.PictureBox4.TabIndex = 95
+        Me.PictureBox4.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(634, 384)
+        Me.ClientSize = New System.Drawing.Size(634, 379)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TabControl1)
@@ -440,6 +649,8 @@ Partial Class Form1
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage4.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -456,10 +667,10 @@ Partial Class Form1
     Friend WithEvents ButtonSearch As Button
     Friend WithEvents ButtonShowhideTw As Button
     Friend WithEvents ButtonStopTw As Button
-    Friend WithEvents Timer1 As Timer
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents TimerCasparConnect As Timer
+    Friend WithEvents RadioButtonFav As RadioButton
+    Friend WithEvents RadioButtonTL As RadioButton
+    Friend WithEvents RadioButtonQ As RadioButton
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents TextBoxUsername As ToolStripTextBox
@@ -477,7 +688,7 @@ Partial Class Form1
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabelServerstatus As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabelStatus As ToolStripStatusLabel
+    Friend WithEvents ToolStripLabelNombre As ToolStripStatusLabel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TabPage3 As TabPage
@@ -486,4 +697,25 @@ Partial Class Form1
     Friend WithEvents Label38 As Label
     Friend WithEvents Label44 As Label
     Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents ListBoxServers As ListBox
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents ToolStripLabelIp As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
+    Friend WithEvents ToolStripLabelPuerto As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel5 As ToolStripStatusLabel
+    Friend WithEvents ToolStripLabelStatus As ToolStripStatusLabel
 End Class

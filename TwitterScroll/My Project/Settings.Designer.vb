@@ -22,7 +22,7 @@ Namespace My
         
         Private Shared defaultInstance As MySettings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New MySettings()),MySettings)
         
-#Region "My.Settings Auto-Save Functionality"
+#Region "Funcionalidad para autoguardar de My.Settings"
 #If _MyType = "WindowsForms" Then
     Private Shared addedHandler As Boolean
 
@@ -75,6 +75,18 @@ Namespace My
             End Get
             Set
                 Me("hash") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Server() As Integer
+            Get
+                Return CType(Me("Server"),Integer)
+            End Get
+            Set
+                Me("Server") = value
             End Set
         End Property
     End Class
