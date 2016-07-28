@@ -504,7 +504,7 @@ Partial Class Form1
         'ListBoxServers
         '
         Me.ListBoxServers.FormattingEnabled = True
-        Me.ListBoxServers.Items.AddRange(New Object() {"Server 1", "Server 2", "Localhost"})
+        Me.ListBoxServers.Items.AddRange(New Object() {"Localhost"})
         Me.ListBoxServers.Location = New System.Drawing.Point(24, 34)
         Me.ListBoxServers.Name = "ListBoxServers"
         Me.ListBoxServers.Size = New System.Drawing.Size(141, 160)

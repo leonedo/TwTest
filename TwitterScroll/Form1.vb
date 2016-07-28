@@ -12,7 +12,7 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'pupular listview desde XML
-        servers.Add("Server 1", {"Localhost", "5250"})
+        servers.Add("Localhost", {"Localhost", "5250"})
         ListBoxServers.SelectedIndex = My.Settings.Server
 
 
