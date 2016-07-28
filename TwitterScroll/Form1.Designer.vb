@@ -27,16 +27,16 @@ Partial Class Form1
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.Button_Load = New System.Windows.Forms.Button()
+        Me.Button_LoadTW = New System.Windows.Forms.Button()
         Me.dgvtwitter = New System.Windows.Forms.DataGridView()
         Me.Column3 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.ButtonSearch = New System.Windows.Forms.Button()
+        Me.ButtonShowhideTw = New System.Windows.Forms.Button()
+        Me.ButtonStopTw = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -73,15 +73,15 @@ Partial Class Form1
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button_Load
+        'Button_LoadTW
         '
-        Me.Button_Load.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_Load.Location = New System.Drawing.Point(314, 126)
-        Me.Button_Load.Name = "Button_Load"
-        Me.Button_Load.Size = New System.Drawing.Size(95, 23)
-        Me.Button_Load.TabIndex = 0
-        Me.Button_Load.Text = "Load Template"
-        Me.Button_Load.UseVisualStyleBackColor = True
+        Me.Button_LoadTW.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button_LoadTW.Location = New System.Drawing.Point(314, 209)
+        Me.Button_LoadTW.Name = "Button_LoadTW"
+        Me.Button_LoadTW.Size = New System.Drawing.Size(95, 23)
+        Me.Button_LoadTW.TabIndex = 0
+        Me.Button_LoadTW.Text = "Load Template"
+        Me.Button_LoadTW.UseVisualStyleBackColor = True
         '
         'dgvtwitter
         '
@@ -115,7 +115,7 @@ Partial Class Form1
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvtwitter.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvtwitter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvtwitter.Size = New System.Drawing.Size(592, 79)
+        Me.dgvtwitter.Size = New System.Drawing.Size(592, 162)
         Me.dgvtwitter.TabIndex = 1
         '
         'Column3
@@ -161,35 +161,35 @@ Partial Class Form1
         Me.Column5.Visible = False
         Me.Column5.Width = 150
         '
-        'Button2
+        'ButtonSearch
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(238, 126)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Search"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ButtonSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ButtonSearch.Location = New System.Drawing.Point(238, 209)
+        Me.ButtonSearch.Name = "ButtonSearch"
+        Me.ButtonSearch.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonSearch.TabIndex = 3
+        Me.ButtonSearch.Text = "Search"
+        Me.ButtonSearch.UseVisualStyleBackColor = True
         '
-        'Button3
+        'ButtonShowhideTw
         '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.Location = New System.Drawing.Point(496, 126)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(107, 23)
-        Me.Button3.TabIndex = 4
-        Me.Button3.Text = "Show/Hide"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.ButtonShowhideTw.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonShowhideTw.Location = New System.Drawing.Point(496, 209)
+        Me.ButtonShowhideTw.Name = "ButtonShowhideTw"
+        Me.ButtonShowhideTw.Size = New System.Drawing.Size(107, 23)
+        Me.ButtonShowhideTw.TabIndex = 4
+        Me.ButtonShowhideTw.Text = "Show/Hide"
+        Me.ButtonShowhideTw.UseVisualStyleBackColor = True
         '
-        'Button4
+        'ButtonStopTw
         '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.Location = New System.Drawing.Point(415, 126)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 5
-        Me.Button4.Text = "Stop"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.ButtonStopTw.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonStopTw.Location = New System.Drawing.Point(415, 209)
+        Me.ButtonStopTw.Name = "ButtonStopTw"
+        Me.ButtonStopTw.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonStopTw.TabIndex = 5
+        Me.ButtonStopTw.Text = "Stop"
+        Me.ButtonStopTw.UseVisualStyleBackColor = True
         '
         'Timer1
         '
@@ -200,7 +200,7 @@ Partial Class Form1
         Me.RadioButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Checked = True
-        Me.RadioButton1.Location = New System.Drawing.Point(11, 129)
+        Me.RadioButton1.Location = New System.Drawing.Point(11, 212)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(68, 17)
         Me.RadioButton1.TabIndex = 6
@@ -212,7 +212,7 @@ Partial Class Form1
         '
         Me.RadioButton2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(85, 129)
+        Me.RadioButton2.Location = New System.Drawing.Point(85, 212)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(63, 17)
         Me.RadioButton2.TabIndex = 7
@@ -223,7 +223,7 @@ Partial Class Form1
         '
         Me.RadioButton3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(159, 129)
+        Me.RadioButton3.Location = New System.Drawing.Point(159, 212)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(73, 17)
         Me.RadioButton3.TabIndex = 8
@@ -292,18 +292,18 @@ Partial Class Form1
         '
         Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage1.Controls.Add(Me.ToolStrip1)
-        Me.TabPage1.Controls.Add(Me.Button_Load)
+        Me.TabPage1.Controls.Add(Me.Button_LoadTW)
         Me.TabPage1.Controls.Add(Me.RadioButton3)
         Me.TabPage1.Controls.Add(Me.dgvtwitter)
         Me.TabPage1.Controls.Add(Me.RadioButton2)
-        Me.TabPage1.Controls.Add(Me.Button2)
+        Me.TabPage1.Controls.Add(Me.ButtonSearch)
         Me.TabPage1.Controls.Add(Me.RadioButton1)
-        Me.TabPage1.Controls.Add(Me.Button3)
-        Me.TabPage1.Controls.Add(Me.Button4)
+        Me.TabPage1.Controls.Add(Me.ButtonShowhideTw)
+        Me.TabPage1.Controls.Add(Me.ButtonStopTw)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(614, 160)
+        Me.TabPage1.Size = New System.Drawing.Size(614, 243)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Twitter Feed"
         '
@@ -369,7 +369,7 @@ Partial Class Form1
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(614, 160)
+        Me.TabPage3.Size = New System.Drawing.Size(614, 243)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Reloj"
         '
@@ -451,11 +451,11 @@ Partial Class Form1
 
     End Sub
 
-    Friend WithEvents Button_Load As Button
+    Friend WithEvents Button_LoadTW As Button
     Friend WithEvents dgvtwitter As DataGridView
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents ButtonSearch As Button
+    Friend WithEvents ButtonShowhideTw As Button
+    Friend WithEvents ButtonStopTw As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton

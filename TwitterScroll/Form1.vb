@@ -7,7 +7,7 @@ Public Class Form1
     Public WithEvents CasparDevice As New Svt.Caspar.CasparDevice
     Dim WithEvents clima As New OWMweatherClass
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles ButtonSearch.Click
         Try
             Dim itwitter As Integer = 0
             dgvtwitter.Rows.Clear()
@@ -41,20 +41,20 @@ Public Class Form1
 
 
                 For Each tweet As TweetSharp.TwitterStatus In Tweets
-                        dgvtwitter.Rows.Add()
-                        dgvtwitter.Rows(itwitter).Cells(1).Value = tweet.User.ScreenName
-                        dgvtwitter.Rows(itwitter).Cells(2).Value = tweet.User.Name
-                        dgvtwitter.Rows(itwitter).Cells(3).Value = tweet.Text.Replace(vbCr, "").Replace(vbLf, "")
-                        dgvtwitter.Rows(itwitter).Cells(4).Value = tweet.CreatedDate.ToLocalTime
-                        itwitter = itwitter + 1
-                    Next
-                End If
+                    dgvtwitter.Rows.Add()
+                    dgvtwitter.Rows(itwitter).Cells(1).Value = tweet.User.ScreenName
+                    dgvtwitter.Rows(itwitter).Cells(2).Value = tweet.User.Name
+                    dgvtwitter.Rows(itwitter).Cells(3).Value = tweet.Text.Replace(vbCr, "").Replace(vbLf, "")
+                    dgvtwitter.Rows(itwitter).Cells(4).Value = tweet.CreatedDate.ToLocalTime
+                    itwitter = itwitter + 1
+                Next
+            End If
         Catch ex As Exception
             MsgBox("Check the Internet Connection: " & ex.Message)
         End Try
     End Sub
 
-    Private Sub Button_Load_Click(sender As Object, e As EventArgs) Handles Button_Load.Click
+    Private Sub Button_Load_Click(sender As Object, e As EventArgs) Handles Button_LoadTW.Click
         On Error Resume Next
         oculto = False
 
@@ -113,25 +113,20 @@ Public Class Form1
     End Sub
 
     Sub my_evento() Handles CasparDevice.ConnectionStatusChanged
-
         On Error Resume Next
-
         If CasparDevice.IsConnected = False Then
-
             Timer1.Start()
-
         End If
-
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles ButtonStopTw.Click
         If CasparDevice.IsConnected = True Then
             CasparDevice.SendString("PLAY 1-" & ConfigurationManager.AppSettings("vL") & " EMPTY MIX 10")
             CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL") & " OPACITY 1 25 easeinsine")
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles ButtonShowhideTw.Click
         oculto = Not oculto
         Ocultar(oculto)
     End Sub
