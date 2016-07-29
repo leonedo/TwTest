@@ -12,28 +12,19 @@ Public Class Form1
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'pupular listview desde XML
         loadServers()
-
-
-        TextboxHashtag.Text = My.Settings.hash
-        TextBoxUsername.Text = My.Settings.user
         Try
             ListBoxServers.SelectedIndex = My.Settings.Server
         Catch ex As Exception
             ListBoxServers.SelectedIndex = 0
         End Try
+        CasparConfig()
 
-
+        TextboxHashtag.Text = My.Settings.hash
+        TextBoxUsername.Text = My.Settings.user
         service.AuthenticateWith(ConfigurationManager.AppSettings("twitterOT"), ConfigurationManager.AppSettings("twitterAT"))
-        Try
-            CasparDevice.Settings.Hostname = servers.Item(ListBoxServers.SelectedItem)(0)
-            CasparDevice.Settings.Port = servers.Item(ListBoxServers.SelectedItem)(1)
-            TimerCasparConnect.Start()
-        Catch ex As Exception
-
-        End Try
-
+        Timer_Clima.Start()
+        Timer_Clima_Tick(Nothing, Nothing)
     End Sub
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         '   Guardar XML
@@ -111,7 +102,70 @@ Public Class Form1
 
     End Sub
 
+    Private Sub CasparConfig()
+        Try
+            CasparDevice.Settings.Hostname = servers.Item(ListBoxServers.SelectedItem)(0)
+            CasparDevice.Settings.Port = servers.Item(ListBoxServers.SelectedItem)(1)
+            TimerCasparConnect.Start()
+        Catch ex As Exception
 
+        End Try
+    End Sub
+
+    Private Sub DisconnetToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DisconnetToolStripMenuItem.Click
+        CasparDevice.Disconnect()
+        CasparConfig()
+    End Sub
+
+    Private Sub ListBoxServers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxServers.SelectedIndexChanged
+        TextBoxTitulo.Text = ListBoxServers.SelectedItem
+        TextBoxIP.Text = servers.Item(ListBoxServers.SelectedItem)(0)
+        TextBoxPuerto.Text = servers.Item(ListBoxServers.SelectedItem)(1)
+        RichTextBoxComent.Text = servers.Item(ListBoxServers.SelectedItem)(2)
+        TextBoxTitulo.Enabled = False
+        TextBoxIP.Enabled = False
+        TextBoxPuerto.Enabled = False
+        RichTextBoxComent.Enabled = False
+        ButtonSaveServer.Visible = False
+    End Sub
+
+    Private Sub ButtonNewServer_Click(sender As Object, e As EventArgs) Handles ButtonNewServer.Click
+        TextBoxTitulo.Text = ""
+        TextBoxIP.Text = ""
+        TextBoxPuerto.Text = "5052"
+        RichTextBoxComent.Text = ""
+        TextBoxTitulo.Enabled = True
+        TextBoxIP.Enabled = True
+        TextBoxPuerto.Enabled = True
+        RichTextBoxComent.Enabled = True
+        ButtonSaveServer.Visible = True
+    End Sub
+
+    Private Sub ButtonSaveServer_Click(sender As Object, e As EventArgs) Handles ButtonSaveServer.Click
+        If Not servers.ContainsKey(TextBoxTitulo.Text) Then
+            servers.Add(TextBoxTitulo.Text, {TextBoxIP.Text, TextBoxPuerto.Text, RichTextBoxComent.Text})
+            ListBoxServers.Items.Add(TextBoxTitulo.Text)
+            ListBoxServers.SelectedItem = TextBoxTitulo.Text
+            TextBoxTitulo.Enabled = False
+            TextBoxIP.Enabled = False
+            TextBoxPuerto.Enabled = False
+            RichTextBoxComent.Enabled = False
+            ButtonSaveServer.Visible = False
+            saveServers()
+
+        Else
+            MsgBox("Nombre de servidor ya existe")
+        End If
+    End Sub
+
+    Private Sub ButtonRemoveServer_Click(sender As Object, e As EventArgs) Handles ButtonRemoveServer.Click
+        If ListBoxServers.SelectedIndex > 0 Then
+            servers.Remove(ListBoxServers.SelectedItem)
+            ListBoxServers.Items.Remove(ListBoxServers.SelectedItem)
+        Else
+            MsgBox("Debe existir al menos un servidor")
+        End If
+    End Sub
 
 #End Region
 
@@ -157,9 +211,7 @@ Public Class Form1
     End Sub
 #End Region
 
-    Private Sub ButtonWeatherQuery_click(sender As Object, e As EventArgs) Handles ButtonWeatherQuery.Click
-        clima.parseAsyncQueryForcast("miami,fl", "es", OWMweatherClass.units.metric)
-    End Sub
+
 
 
 
@@ -218,7 +270,7 @@ Public Class Form1
                 CGData.SetData("scrolldata", text)
                 CasparDevice.Channels(CInt(ConfigurationManager.AppSettings("cH"))).CG.Add(CInt(ConfigurationManager.AppSettings("vL")),
                                                                                            CInt(ConfigurationManager.AppSettings("fL")),
-                                                                                           "SCROLL", True, CGData.ToAMCPEscapedXml)
+                                                                                          "SCROLL", True, CGData.ToAMCPEscapedXml)
                 CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL").ToString & " OPACITY 1 25 easeinsine")
             End If
         Catch ex As Exception
@@ -226,56 +278,24 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub ListBoxServers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxServers.SelectedIndexChanged
-        TextBoxTitulo.Text = ListBoxServers.SelectedItem
-        TextBoxIP.Text = servers.Item(ListBoxServers.SelectedItem)(0)
-        TextBoxPuerto.Text = servers.Item(ListBoxServers.SelectedItem)(1)
-        RichTextBoxComent.Text = servers.Item(ListBoxServers.SelectedItem)(2)
-        TextBoxTitulo.Enabled = False
-        TextBoxIP.Enabled = False
-        TextBoxPuerto.Enabled = False
-        RichTextBoxComent.Enabled = False
-        ButtonSaveServer.Visible = False
+
+#End Region
+
+#Region "Clima"
+
+    Private Sub Timer_Clima_Tick(sender As Object, e As EventArgs) Handles Timer_Clima.Tick
+        clima.parseAsyncQueryToday("miami,fl", "ES", OWMweatherClass.units.metric)
+        clima.parseAsyncQueryForcast("miami,fl", "ES", OWMweatherClass.units.metric)
     End Sub
 
-    Private Sub ButtonNewServer_Click(sender As Object, e As EventArgs) Handles ButtonNewServer.Click
-        TextBoxTitulo.Text = ""
-        TextBoxIP.Text = ""
-        TextBoxPuerto.Text = "5052"
-        RichTextBoxComent.Text = ""
-        TextBoxTitulo.Enabled = True
-        TextBoxIP.Enabled = True
-        TextBoxPuerto.Enabled = True
-        RichTextBoxComent.Enabled = True
-        ButtonSaveServer.Visible = True
-    End Sub
+    Private Sub exitoQtoday(sender As Object, e As EventArgs) Handles clima.exito
+        If clima.tipo = OWMweatherClass.type.today Then
+            LabelCiudad.Text = clima.weather.name
+            LabelTemperatura.Text = clima.weather.main.temp & " C"
+            LabelHumedad.Text = clima.weather.main.humidity & "%"
+        ElseIf clima.tipo = OWMweatherClass.type.forcast Then
 
-    Private Sub ButtonSaveServer_Click(sender As Object, e As EventArgs) Handles ButtonSaveServer.Click
-        If Not servers.ContainsKey(TextBoxTitulo.Text) Then
-            servers.Add(TextBoxTitulo.Text, {TextBoxIP.Text, TextBoxPuerto.Text, RichTextBoxComent.Text})
-            ListBoxServers.Items.Add(TextBoxTitulo.Text)
-            ListBoxServers.SelectedItem = TextBoxTitulo.Text
-            TextBoxTitulo.Enabled = False
-            TextBoxIP.Enabled = False
-            TextBoxPuerto.Enabled = False
-            RichTextBoxComent.Enabled = False
-            ButtonSaveServer.Visible = False
-            saveServers()
-
-        Else
-            MsgBox("Nombre de servidor ya existe")
         End If
     End Sub
-
-    Private Sub ButtonRemoveServer_Click(sender As Object, e As EventArgs) Handles ButtonRemoveServer.Click
-        If ListBoxServers.SelectedIndex > 0 Then
-            servers.Remove(ListBoxServers.SelectedItem)
-            ListBoxServers.Items.Remove(ListBoxServers.SelectedItem)
-        Else
-            MsgBox("Debe existir al menos un servidor")
-        End If
-    End Sub
-
-
 #End Region
 End Class

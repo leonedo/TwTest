@@ -51,7 +51,21 @@ Partial Class Form1
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.ButtonWeatherQuery = New System.Windows.Forms.Button()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.ButtonSaveServer = New System.Windows.Forms.Button()
@@ -75,18 +89,27 @@ Partial Class Form1
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripLabelPuerto = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel5 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripLabelStatus = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripLabelStatus = New System.Windows.Forms.ToolStripSplitButton()
+        Me.DisconnetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.LabelHumedad = New System.Windows.Forms.Label()
+        Me.LabelTemperatura = New System.Windows.Forms.Label()
+        Me.LabelCiudad = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.Timer_Clima = New System.Windows.Forms.Timer(Me.components)
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -97,7 +120,7 @@ Partial Class Form1
         'Button_LoadTW
         '
         Me.Button_LoadTW.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_LoadTW.Location = New System.Drawing.Point(314, 204)
+        Me.Button_LoadTW.Location = New System.Drawing.Point(326, 155)
         Me.Button_LoadTW.Name = "Button_LoadTW"
         Me.Button_LoadTW.Size = New System.Drawing.Size(95, 23)
         Me.Button_LoadTW.TabIndex = 0
@@ -136,7 +159,7 @@ Partial Class Form1
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvtwitter.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvtwitter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvtwitter.Size = New System.Drawing.Size(592, 157)
+        Me.dgvtwitter.Size = New System.Drawing.Size(604, 112)
         Me.dgvtwitter.TabIndex = 1
         '
         'Column3
@@ -185,7 +208,7 @@ Partial Class Form1
         'ButtonSearch
         '
         Me.ButtonSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ButtonSearch.Location = New System.Drawing.Point(238, 204)
+        Me.ButtonSearch.Location = New System.Drawing.Point(238, 155)
         Me.ButtonSearch.Name = "ButtonSearch"
         Me.ButtonSearch.Size = New System.Drawing.Size(75, 23)
         Me.ButtonSearch.TabIndex = 3
@@ -195,7 +218,7 @@ Partial Class Form1
         'ButtonShowhideTw
         '
         Me.ButtonShowhideTw.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonShowhideTw.Location = New System.Drawing.Point(496, 204)
+        Me.ButtonShowhideTw.Location = New System.Drawing.Point(508, 155)
         Me.ButtonShowhideTw.Name = "ButtonShowhideTw"
         Me.ButtonShowhideTw.Size = New System.Drawing.Size(107, 23)
         Me.ButtonShowhideTw.TabIndex = 4
@@ -205,7 +228,7 @@ Partial Class Form1
         'ButtonStopTw
         '
         Me.ButtonStopTw.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonStopTw.Location = New System.Drawing.Point(415, 204)
+        Me.ButtonStopTw.Location = New System.Drawing.Point(427, 155)
         Me.ButtonStopTw.Name = "ButtonStopTw"
         Me.ButtonStopTw.Size = New System.Drawing.Size(75, 23)
         Me.ButtonStopTw.TabIndex = 5
@@ -221,7 +244,7 @@ Partial Class Form1
         Me.RadioButtonFav.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButtonFav.AutoSize = True
         Me.RadioButtonFav.Checked = True
-        Me.RadioButtonFav.Location = New System.Drawing.Point(11, 207)
+        Me.RadioButtonFav.Location = New System.Drawing.Point(11, 155)
         Me.RadioButtonFav.Name = "RadioButtonFav"
         Me.RadioButtonFav.Size = New System.Drawing.Size(68, 17)
         Me.RadioButtonFav.TabIndex = 6
@@ -233,7 +256,7 @@ Partial Class Form1
         '
         Me.RadioButtonTL.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButtonTL.AutoSize = True
-        Me.RadioButtonTL.Location = New System.Drawing.Point(85, 207)
+        Me.RadioButtonTL.Location = New System.Drawing.Point(85, 155)
         Me.RadioButtonTL.Name = "RadioButtonTL"
         Me.RadioButtonTL.Size = New System.Drawing.Size(63, 17)
         Me.RadioButtonTL.TabIndex = 7
@@ -244,7 +267,7 @@ Partial Class Form1
         '
         Me.RadioButtonQ.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButtonQ.AutoSize = True
-        Me.RadioButtonQ.Location = New System.Drawing.Point(159, 207)
+        Me.RadioButtonQ.Location = New System.Drawing.Point(159, 155)
         Me.RadioButtonQ.Name = "RadioButtonQ"
         Me.RadioButtonQ.Size = New System.Drawing.Size(73, 17)
         Me.RadioButtonQ.TabIndex = 8
@@ -256,7 +279,7 @@ Partial Class Form1
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.TextBoxUsername, Me.ToolStripSeparator1, Me.ToolStripLabel2, Me.TextboxHashtag, Me.ToolStripSeparator2})
         Me.ToolStrip1.Location = New System.Drawing.Point(3, 3)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(608, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(620, 25)
         Me.ToolStrip1.TabIndex = 9
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -303,11 +326,11 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Location = New System.Drawing.Point(8, 90)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 90)
         Me.TabControl1.Multiline = True
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(622, 264)
+        Me.TabControl1.Size = New System.Drawing.Size(634, 211)
         Me.TabControl1.TabIndex = 10
         '
         'TabPage1
@@ -325,30 +348,179 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(614, 238)
+        Me.TabPage1.Size = New System.Drawing.Size(626, 185)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Twitter Feed"
         '
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
-        Me.TabPage2.Controls.Add(Me.ButtonWeatherQuery)
+        Me.TabPage2.Controls.Add(Me.Label16)
+        Me.TabPage2.Controls.Add(Me.Label17)
+        Me.TabPage2.Controls.Add(Me.PictureBox7)
+        Me.TabPage2.Controls.Add(Me.Label14)
+        Me.TabPage2.Controls.Add(Me.Label15)
+        Me.TabPage2.Controls.Add(Me.PictureBox6)
+        Me.TabPage2.Controls.Add(Me.Label12)
+        Me.TabPage2.Controls.Add(Me.Label13)
+        Me.TabPage2.Controls.Add(Me.PictureBox5)
+        Me.TabPage2.Controls.Add(Me.Label10)
+        Me.TabPage2.Controls.Add(Me.Label11)
+        Me.TabPage2.Controls.Add(Me.PictureBox3)
+        Me.TabPage2.Controls.Add(Me.Label9)
+        Me.TabPage2.Controls.Add(Me.Label8)
+        Me.TabPage2.Controls.Add(Me.PictureBox2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(614, 238)
+        Me.TabPage2.Size = New System.Drawing.Size(626, 185)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "5 Days Forecast"
         '
-        'ButtonWeatherQuery
+        'Label16
         '
-        Me.ButtonWeatherQuery.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ButtonWeatherQuery.Location = New System.Drawing.Point(6, 207)
-        Me.ButtonWeatherQuery.Name = "ButtonWeatherQuery"
-        Me.ButtonWeatherQuery.Size = New System.Drawing.Size(95, 25)
-        Me.ButtonWeatherQuery.TabIndex = 0
-        Me.ButtonWeatherQuery.Text = "Update"
-        Me.ButtonWeatherQuery.UseVisualStyleBackColor = True
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(508, 15)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(44, 16)
+        Me.Label16.TabIndex = 113
+        Me.Label16.Text = "Lunes"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label17
+        '
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(504, 109)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(74, 37)
+        Me.Label17.TabIndex = 112
+        Me.Label17.Text = "Min: 28 C Max 33 C"
+        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Location = New System.Drawing.Point(504, 34)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(74, 68)
+        Me.PictureBox7.TabIndex = 111
+        Me.PictureBox7.TabStop = False
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(395, 15)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(44, 16)
+        Me.Label14.TabIndex = 110
+        Me.Label14.Text = "Lunes"
+        Me.Label14.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label15
+        '
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(391, 109)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(74, 37)
+        Me.Label15.TabIndex = 109
+        Me.Label15.Text = "Min: 28 C Max 33 C"
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Location = New System.Drawing.Point(391, 34)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(74, 68)
+        Me.PictureBox6.TabIndex = 108
+        Me.PictureBox6.TabStop = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(285, 15)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(44, 16)
+        Me.Label12.TabIndex = 107
+        Me.Label12.Text = "Lunes"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label13
+        '
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(281, 109)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(74, 37)
+        Me.Label13.TabIndex = 106
+        Me.Label13.Text = "Min: 28 C Max 33 C"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Location = New System.Drawing.Point(281, 34)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(74, 68)
+        Me.PictureBox5.TabIndex = 105
+        Me.PictureBox5.TabStop = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(173, 15)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(49, 16)
+        Me.Label10.TabIndex = 104
+        Me.Label10.Text = "Martes"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label11
+        '
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(169, 109)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(74, 37)
+        Me.Label11.TabIndex = 103
+        Me.Label11.Text = "Min: 28 C Max 33 C"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Location = New System.Drawing.Point(169, 34)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(74, 68)
+        Me.PictureBox3.TabIndex = 102
+        Me.PictureBox3.TabStop = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(64, 15)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(44, 16)
+        Me.Label9.TabIndex = 101
+        Me.Label9.Text = "Lunes"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label8
+        '
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(60, 109)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(74, 37)
+        Me.Label8.TabIndex = 101
+        Me.Label8.Text = "Min: 28 C Max 33 C"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Location = New System.Drawing.Point(60, 34)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(74, 68)
+        Me.PictureBox2.TabIndex = 96
+        Me.PictureBox2.TabStop = False
         '
         'TabPage3
         '
@@ -356,7 +528,7 @@ Partial Class Form1
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(614, 238)
+        Me.TabPage3.Size = New System.Drawing.Size(626, 185)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Reloj"
         '
@@ -379,13 +551,14 @@ Partial Class Form1
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(614, 238)
+        Me.TabPage4.Size = New System.Drawing.Size(626, 185)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Configuracion"
         '
         'ButtonSaveServer
         '
-        Me.ButtonSaveServer.Location = New System.Drawing.Point(323, 200)
+        Me.ButtonSaveServer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonSaveServer.Location = New System.Drawing.Point(487, 147)
         Me.ButtonSaveServer.Name = "ButtonSaveServer"
         Me.ButtonSaveServer.Size = New System.Drawing.Size(94, 23)
         Me.ButtonSaveServer.TabIndex = 111
@@ -396,7 +569,7 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(193, 139)
+        Me.Label5.Location = New System.Drawing.Point(408, 17)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(65, 13)
         Me.Label5.TabIndex = 110
@@ -431,10 +604,13 @@ Partial Class Form1
         '
         'RichTextBoxComent
         '
+        Me.RichTextBoxComent.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RichTextBoxComent.Enabled = False
-        Me.RichTextBoxComent.Location = New System.Drawing.Point(190, 155)
+        Me.RichTextBoxComent.Location = New System.Drawing.Point(411, 34)
         Me.RichTextBoxComent.Name = "RichTextBoxComent"
-        Me.RichTextBoxComent.Size = New System.Drawing.Size(227, 39)
+        Me.RichTextBoxComent.Size = New System.Drawing.Size(170, 107)
         Me.RichTextBoxComent.TabIndex = 106
         Me.RichTextBoxComent.Text = ""
         '
@@ -443,7 +619,7 @@ Partial Class Form1
         Me.TextBoxPuerto.Enabled = False
         Me.TextBoxPuerto.Location = New System.Drawing.Point(190, 112)
         Me.TextBoxPuerto.Name = "TextBoxPuerto"
-        Me.TextBoxPuerto.Size = New System.Drawing.Size(227, 20)
+        Me.TextBoxPuerto.Size = New System.Drawing.Size(175, 20)
         Me.TextBoxPuerto.TabIndex = 105
         '
         'TextBoxIP
@@ -451,7 +627,7 @@ Partial Class Form1
         Me.TextBoxIP.Enabled = False
         Me.TextBoxIP.Location = New System.Drawing.Point(190, 73)
         Me.TextBoxIP.Name = "TextBoxIP"
-        Me.TextBoxIP.Size = New System.Drawing.Size(227, 20)
+        Me.TextBoxIP.Size = New System.Drawing.Size(175, 20)
         Me.TextBoxIP.TabIndex = 104
         '
         'TextBoxTitulo
@@ -459,12 +635,13 @@ Partial Class Form1
         Me.TextBoxTitulo.Enabled = False
         Me.TextBoxTitulo.Location = New System.Drawing.Point(190, 35)
         Me.TextBoxTitulo.Name = "TextBoxTitulo"
-        Me.TextBoxTitulo.Size = New System.Drawing.Size(227, 20)
+        Me.TextBoxTitulo.Size = New System.Drawing.Size(175, 20)
         Me.TextBoxTitulo.TabIndex = 103
         '
         'ButtonRemoveServer
         '
-        Me.ButtonRemoveServer.Location = New System.Drawing.Point(103, 200)
+        Me.ButtonRemoveServer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ButtonRemoveServer.Location = New System.Drawing.Point(103, 147)
         Me.ButtonRemoveServer.Name = "ButtonRemoveServer"
         Me.ButtonRemoveServer.Size = New System.Drawing.Size(62, 23)
         Me.ButtonRemoveServer.TabIndex = 102
@@ -473,7 +650,8 @@ Partial Class Form1
         '
         'ButtonNewServer
         '
-        Me.ButtonNewServer.Location = New System.Drawing.Point(24, 200)
+        Me.ButtonNewServer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ButtonNewServer.Location = New System.Drawing.Point(24, 147)
         Me.ButtonNewServer.Name = "ButtonNewServer"
         Me.ButtonNewServer.Size = New System.Drawing.Size(62, 23)
         Me.ButtonNewServer.TabIndex = 100
@@ -492,16 +670,18 @@ Partial Class Form1
         '
         'ListBoxServers
         '
+        Me.ListBoxServers.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.ListBoxServers.FormattingEnabled = True
         Me.ListBoxServers.Location = New System.Drawing.Point(24, 34)
         Me.ListBoxServers.Name = "ListBoxServers"
-        Me.ListBoxServers.Size = New System.Drawing.Size(141, 160)
+        Me.ListBoxServers.Size = New System.Drawing.Size(141, 95)
         Me.ListBoxServers.TabIndex = 0
         '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabelServerstatus, Me.ToolStripLabelNombre, Me.ToolStripStatusLabel1, Me.ToolStripLabelIp, Me.ToolStripStatusLabel3, Me.ToolStripLabelPuerto, Me.ToolStripStatusLabel5, Me.ToolStripLabelStatus})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 357)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 304)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(634, 22)
         Me.StatusStrip1.TabIndex = 10
@@ -551,18 +731,27 @@ Partial Class Form1
         '
         'ToolStripLabelStatus
         '
+        Me.ToolStripLabelStatus.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DisconnetToolStripMenuItem})
         Me.ToolStripLabelStatus.Image = Global.TwitterScroll.My.Resources.Resources.red
         Me.ToolStripLabelStatus.Name = "ToolStripLabelStatus"
-        Me.ToolStripLabelStatus.Size = New System.Drawing.Size(16, 17)
+        Me.ToolStripLabelStatus.Size = New System.Drawing.Size(32, 20)
+        '
+        'DisconnetToolStripMenuItem
+        '
+        Me.DisconnetToolStripMenuItem.Name = "DisconnetToolStripMenuItem"
+        Me.DisconnetToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
+        Me.DisconnetToolStripMenuItem.Text = "Reconectar"
         '
         'Panel1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Label41)
-        Me.Panel1.Controls.Add(Me.Label38)
-        Me.Panel1.Controls.Add(Me.Label44)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.LabelHumedad)
+        Me.Panel1.Controls.Add(Me.LabelTemperatura)
+        Me.Panel1.Controls.Add(Me.LabelCiudad)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.PictureBox4)
         Me.Panel1.Location = New System.Drawing.Point(8, 8)
@@ -570,35 +759,55 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(618, 76)
         Me.Panel1.TabIndex = 10
         '
-        'Label41
+        'Label6
         '
-        Me.Label41.AutoSize = True
-        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.Location = New System.Drawing.Point(228, 49)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(102, 16)
-        Me.Label41.TabIndex = 98
-        Me.Label41.Text = "Label                    "
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(228, 48)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(71, 16)
+        Me.Label6.TabIndex = 100
+        Me.Label6.Text = "Humedad:"
         '
-        'Label38
+        'Label7
         '
-        Me.Label38.AutoSize = True
-        Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label38.Location = New System.Drawing.Point(228, 29)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(102, 16)
-        Me.Label38.TabIndex = 97
-        Me.Label38.Text = "Label                    "
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(228, 28)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(92, 16)
+        Me.Label7.TabIndex = 99
+        Me.Label7.Text = "Temperatura: "
         '
-        'Label44
+        'LabelHumedad
         '
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(227, 8)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(165, 20)
-        Me.Label44.TabIndex = 96
-        Me.Label44.Text = "Caracas                  "
+        Me.LabelHumedad.AutoSize = True
+        Me.LabelHumedad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelHumedad.Location = New System.Drawing.Point(296, 48)
+        Me.LabelHumedad.Name = "LabelHumedad"
+        Me.LabelHumedad.Size = New System.Drawing.Size(102, 16)
+        Me.LabelHumedad.TabIndex = 98
+        Me.LabelHumedad.Text = "Label                    "
+        '
+        'LabelTemperatura
+        '
+        Me.LabelTemperatura.AutoSize = True
+        Me.LabelTemperatura.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTemperatura.Location = New System.Drawing.Point(317, 28)
+        Me.LabelTemperatura.Name = "LabelTemperatura"
+        Me.LabelTemperatura.Size = New System.Drawing.Size(102, 16)
+        Me.LabelTemperatura.TabIndex = 97
+        Me.LabelTemperatura.Text = "Label                    "
+        '
+        'LabelCiudad
+        '
+        Me.LabelCiudad.AutoSize = True
+        Me.LabelCiudad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCiudad.Location = New System.Drawing.Point(227, 8)
+        Me.LabelCiudad.Name = "LabelCiudad"
+        Me.LabelCiudad.Size = New System.Drawing.Size(165, 20)
+        Me.LabelCiudad.TabIndex = 96
+        Me.LabelCiudad.Text = "Caracas                  "
         '
         'PictureBox1
         '
@@ -618,11 +827,15 @@ Partial Class Form1
         Me.PictureBox4.TabIndex = 95
         Me.PictureBox4.TabStop = False
         '
+        'Timer_Clima
+        '
+        Me.Timer_Clima.Interval = 100000
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(634, 379)
+        Me.ClientSize = New System.Drawing.Size(634, 326)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TabControl1)
@@ -637,6 +850,12 @@ Partial Class Form1
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
@@ -680,10 +899,9 @@ Partial Class Form1
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents ButtonWeatherQuery As Button
-    Friend WithEvents Label41 As Label
-    Friend WithEvents Label38 As Label
-    Friend WithEvents Label44 As Label
+    Friend WithEvents LabelHumedad As Label
+    Friend WithEvents LabelTemperatura As Label
+    Friend WithEvents LabelCiudad As Label
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents ListBoxServers As ListBox
@@ -704,5 +922,24 @@ Partial Class Form1
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
     Friend WithEvents ToolStripLabelPuerto As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel5 As ToolStripStatusLabel
-    Friend WithEvents ToolStripLabelStatus As ToolStripStatusLabel
+    Friend WithEvents ToolStripLabelStatus As ToolStripSplitButton
+    Friend WithEvents DisconnetToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Timer_Clima As Timer
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
