@@ -1,4 +1,5 @@
 ﻿Imports System.Configuration
+Imports System.Xml
 Imports TweetSharp
 
 Public Class Form1
@@ -12,8 +13,7 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'pupular listview desde XML
-        servers.Add("Localhost", {"Localhost", "5250", "Servidor Local"})
-        ListBoxServers.SelectedIndex = My.Settings.Server
+        loadServers()
 
 
         TextboxHashtag.Text = My.Settings.hash
@@ -63,6 +63,56 @@ Public Class Form1
             TimerCasparConnect.Start()
         End If
     End Sub
+
+    Private Sub saveServers()
+        Dim xmlsetting As New XmlWriterSettings
+        xmlsetting.Indent = True
+        Using writer As XmlWriter = XmlWriter.Create("servers.xml", xmlsetting)
+            writer.WriteStartDocument()
+            writer.WriteStartElement("Servidores") ' Root.
+            For Each item In servers
+                writer.WriteStartElement("Server")
+
+                writer.WriteStartAttribute("Comentario")
+                writer.WriteValue(item.Value(2))
+                writer.WriteEndAttribute()
+
+                writer.WriteStartAttribute("Puerto")
+                writer.WriteValue(item.Value(1))
+                writer.WriteEndAttribute()
+
+                writer.WriteStartAttribute("IP")
+                writer.WriteValue(item.Value(0))
+                writer.WriteEndAttribute()
+
+                writer.WriteStartAttribute("Nombre")
+                writer.WriteValue(item.Key)
+                writer.WriteEndAttribute()
+
+                writer.WriteEndElement()
+            Next
+            writer.WriteEndElement()
+            writer.WriteEndDocument()
+        End Using
+    End Sub
+
+    Private Sub loadServers()
+        If IO.File.Exists("servers.xml") Then
+            Dim response As New Xml.XmlDocument
+            response.Load("servers.xml")
+            For Each instance As Xml.XmlElement In response.GetElementsByTagName("Server")
+                servers.Add(instance.GetAttribute("Nombre"), {instance.GetAttribute("IP"), instance.GetAttribute("Puerto"), instance.GetAttribute("Comentario")})
+                ListBoxServers.Items.Add(instance.GetAttribute("Nombre"))
+            Next
+        Else
+            servers.Add("Local Server", {"Localhost", "5250", "Servidor Local"})
+            ListBoxServers.Items.Add("Local Server")
+        End If
+
+    End Sub
+
+
+
 #End Region
 
 #Region "Twitter"
@@ -210,6 +260,7 @@ Public Class Form1
             TextBoxPuerto.Enabled = False
             RichTextBoxComent.Enabled = False
             ButtonSaveServer.Visible = False
+            saveServers()
 
         Else
             MsgBox("Nombre de servidor ya existe")
