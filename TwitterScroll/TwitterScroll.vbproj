@@ -47,7 +47,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>favicon_new.ico</ApplicationIcon>
+    <ApplicationIcon>favicon_2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Hammock.ClientProfile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
@@ -150,7 +150,9 @@
     <None Include="Resources\estrending_new.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon_2.ico" />
     <Content Include="favicon_new.ico" />
+    <None Include="Resources\logo.png" />
     <None Include="Resources\red.png" />
     <None Include="Resources\green.png" />
   </ItemGroup>

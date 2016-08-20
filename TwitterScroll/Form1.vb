@@ -1,17 +1,21 @@
 ﻿Imports System.Configuration
+Imports System.Globalization
 Imports System.Xml
 Imports TweetSharp
 
 Public Class Form1
     Dim service As New TwitterService(ConfigurationManager.AppSettings("twitterCK"), ConfigurationManager.AppSettings("twitterCS"))
     Dim oculto As Boolean = False
+    Dim nombreserver = ""
     Public WithEvents CasparDevice As New Svt.Caspar.CasparDevice
-    Dim WithEvents clima As New OWMweatherClass
+    '   Dim WithEvents clima As New OWMweatherClass
     Dim servers As New Dictionary(Of String, String())
 
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ComboBox1.SelectedIndex = 0
+        TimerReloj.Start()
         loadServers()
         Try
             ListBoxServers.SelectedIndex = My.Settings.Server
@@ -23,8 +27,7 @@ Public Class Form1
         TextboxHashtag.Text = My.Settings.hash
         TextBoxUsername.Text = My.Settings.user
         service.AuthenticateWith(ConfigurationManager.AppSettings("twitterOT"), ConfigurationManager.AppSettings("twitterAT"))
-        Timer_Clima.Start()
-        Timer_Clima_Tick(Nothing, Nothing)
+
     End Sub
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         '   Guardar XML
@@ -38,9 +41,10 @@ Public Class Form1
 #Region "CasparCG connect"
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerCasparConnect.Tick
         If CasparDevice.IsConnected = True Then
-            ToolStripLabelNombre.Text = ListBoxServers.SelectedItem
-            ToolStripLabelPuerto.Text = servers.Item(ListBoxServers.SelectedItem)(1)
-            ToolStripLabelIp.Text = servers.Item(ListBoxServers.SelectedItem)(0)
+
+            ToolStripLabelNombre.Text = nombreserver
+            ToolStripLabelPuerto.Text = CasparDevice.Settings.Port 'servers.Item(ListBoxServers.SelectedItem)(1)
+            ToolStripLabelIp.Text = CasparDevice.Settings.Hostname 'servers.Item(ListBoxServers.SelectedItem)(0)
             ToolStripLabelStatus.Image = My.Resources.ResourceManager.GetObject("green")
             '  TimerCasparConnect.Stop()
         Else
@@ -104,6 +108,7 @@ Public Class Form1
 
     Private Sub CasparConfig()
         Try
+            nombreserver = ListBoxServers.SelectedItem
             CasparDevice.Settings.Hostname = servers.Item(ListBoxServers.SelectedItem)(0)
             CasparDevice.Settings.Port = servers.Item(ListBoxServers.SelectedItem)(1)
             TimerCasparConnect.Start()
@@ -115,6 +120,10 @@ Public Class Form1
     Private Sub DisconnetToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DisconnetToolStripMenuItem.Click
         CasparDevice.Disconnect()
         CasparConfig()
+    End Sub
+
+    Private Sub DesconectarToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        CasparDevice.Disconnect()
     End Sub
 
     Private Sub ListBoxServers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxServers.SelectedIndexChanged
@@ -212,9 +221,6 @@ Public Class Form1
 #End Region
 
 
-
-
-
 #Region "CasparCG Commands"
 
     Private Sub Button_Load_Click(sender As Object, e As EventArgs) Handles Button_LoadTW.Click
@@ -278,24 +284,98 @@ Public Class Form1
         End Try
     End Sub
 
+    Private Sub Timer1_Tick_1(sender As Object, e As EventArgs) Handles TimerReloj.Tick
+        Dim thisTime As Date = Date.Now
+        Dim ciudad = TextBoxCity.Text
+        Dim tst As TimeZoneInfo
+        Dim tstTime As Date
+        Select Case True
+            Case RadioButton1.Checked ' Bogota
+                tst = TimeZoneInfo.FindSystemTimeZoneById("SA Pacific Standard Time")
+                tstTime = TimeZoneInfo.ConvertTime(thisTime, TimeZoneInfo.Local, tst)
+            Case RadioButton2.Checked ' Caracas
+                tst = TimeZoneInfo.FindSystemTimeZoneById("SA Western Standard Time")
+                tstTime = TimeZoneInfo.ConvertTime(thisTime, TimeZoneInfo.Local, tst)
+            Case RadioButton3.Checked ' Miami
+                tst = TimeZoneInfo.FindSystemTimeZoneById("US Eastern Standard Time")
+                tstTime = TimeZoneInfo.ConvertTime(thisTime, TimeZoneInfo.Local, tst)
+            Case RadioButton4.Checked
+                tst = TimeZoneInfo.FindSystemTimeZoneById(ComboBox1.SelectedItem)
+                tstTime = TimeZoneInfo.ConvertTime(thisTime, TimeZoneInfo.Local, tst)
+            Case Else
+                tst = TimeZoneInfo.FindSystemTimeZoneById(ComboBox1.SelectedItem)
+                tstTime = TimeZoneInfo.ConvertTime(thisTime, TimeZoneInfo.Local, tst)
+        End Select
+        LabelTimeLocal.Text = IIf(TimeZoneInfo.Local.IsDaylightSavingTime(thisTime), TimeZoneInfo.Local.DaylightName, TimeZoneInfo.Local.StandardName) & ", Hora: " & thisTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)
+        LabelTimeCiudad.Text = tst.DisplayName & ", Hora: " & tstTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)
+        LabelClock.Text = TextBoxCity.Text & "  " & tstTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)
+        updateClock()
+    End Sub
+
+    Private Sub ButtonShowReloj_Click(sender As Object, e As EventArgs) Handles ButtonShowReloj.Click
+        Try
+            If CasparDevice.IsConnected = True Then
+                Dim template As String = "NTN24/Reloj_Azul"
+                If RadioButton5.Checked Then
+                    template = "NTN24/Reloj_Rojo"
+                End If
+                Dim CGData As New Svt.Caspar.CasparCGDataCollection
+                CGData.SetData("f0", LabelClock.Text)
+                CasparDevice.Channels(CInt(ConfigurationManager.AppSettings("cH"))).CG.Add(CInt(ConfigurationManager.AppSettings(NumericUpDownClockVL.Value.ToString)),
+                                                                                           CInt(ConfigurationManager.AppSettings(NumericUpDownFLClock.Value.ToString)),
+                                                                                          template, True, CGData.ToAMCPEscapedXml)
+
+            End If
+        Catch ex As Exception
+            MsgBox("Clock Issue" & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub ButtonStopReloj_Click(sender As Object, e As EventArgs) Handles ButtonStopReloj.Click
+        Try
+            If CasparDevice.IsConnected = True Then
+                CasparDevice.Channels(CInt(ConfigurationManager.AppSettings("cH"))).CG.Stop(CInt(ConfigurationManager.AppSettings(NumericUpDownClockVL.Value.ToString)),
+                                                                                           CInt(ConfigurationManager.AppSettings(NumericUpDownFLClock.Value.ToString)))
+            End If
+        Catch ex As Exception
+            MsgBox("Clock Issue" & ex.Message)
+        End Try
+    End Sub
+
+
+    Private Sub updateClock()
+        Try
+            If CasparDevice.IsConnected = True Then
+                Dim CGData As New Svt.Caspar.CasparCGDataCollection
+                CGData.SetData("f0", LabelClock.Text)
+                CasparDevice.Channels(CInt(ConfigurationManager.AppSettings("cH"))).CG.Update(CInt(ConfigurationManager.AppSettings(NumericUpDownClockVL.Value.ToString)), CInt(ConfigurationManager.AppSettings(NumericUpDownFLClock.Value.ToString)), CGData)
+            End If
+        Catch ex As Exception
+            MsgBox("Clock Issue" & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged, RadioButton2.CheckedChanged,
+                                                                                      RadioButton3.CheckedChanged, RadioButton4.CheckedChanged
+
+        Select Case True
+            Case RadioButton1.Checked ' Bogota               
+                TextBoxCity.Text = "BOG"
+            Case RadioButton2.Checked ' Caracas
+                TextBoxCity.Text = "CCS"
+            Case RadioButton3.Checked ' Miami
+                TextBoxCity.Text = "MIA"
+            Case Else
+                TextBoxCity.Text = ""
+        End Select
+    End Sub
+
 
 #End Region
 
-#Region "Clima"
+#Region "Reloj"
 
-    Private Sub Timer_Clima_Tick(sender As Object, e As EventArgs) Handles Timer_Clima.Tick
-        clima.parseAsyncQueryToday("miami,fl", "ES", OWMweatherClass.units.metric)
-        clima.parseAsyncQueryForcast("miami,fl", "ES", OWMweatherClass.units.metric)
-    End Sub
 
-    Private Sub exitoQtoday(sender As Object, e As EventArgs) Handles clima.exito
-        If clima.tipo = OWMweatherClass.type.today Then
-            LabelCiudad.Text = clima.weather.name
-            LabelTemperatura.Text = clima.weather.main.temp & " C"
-            LabelHumedad.Text = clima.weather.main.humidity & "%"
-        ElseIf clima.tipo = OWMweatherClass.type.forcast Then
-
-        End If
-    End Sub
 #End Region
+
 End Class

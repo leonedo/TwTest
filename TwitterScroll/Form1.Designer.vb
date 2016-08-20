@@ -49,24 +49,33 @@ Partial Class Form1
         Me.TextboxHashtag = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.LabelTimeCiudad = New System.Windows.Forms.Label()
+        Me.LabelTimeLocal = New System.Windows.Forms.Label()
+        Me.NumericUpDownFLClock = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDownClockVL = New System.Windows.Forms.NumericUpDown()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBoxCity = New System.Windows.Forms.TextBox()
+        Me.LabelCiudad = New System.Windows.Forms.Label()
+        Me.LabelClock = New System.Windows.Forms.Label()
+        Me.ButtonShowReloj = New System.Windows.Forms.Button()
+        Me.ButtonStopReloj = New System.Windows.Forms.Button()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.ButtonSaveServer = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -92,35 +101,26 @@ Partial Class Form1
         Me.ToolStripLabelStatus = New System.Windows.Forms.ToolStripSplitButton()
         Me.DisconnetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.LabelHumedad = New System.Windows.Forms.Label()
-        Me.LabelTemperatura = New System.Windows.Forms.Label()
-        Me.LabelCiudad = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.Timer_Clima = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerReloj = New System.Windows.Forms.Timer(Me.components)
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button_LoadTW
         '
         Me.Button_LoadTW.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_LoadTW.Location = New System.Drawing.Point(326, 155)
+        Me.Button_LoadTW.Location = New System.Drawing.Point(326, 130)
         Me.Button_LoadTW.Name = "Button_LoadTW"
         Me.Button_LoadTW.Size = New System.Drawing.Size(95, 23)
         Me.Button_LoadTW.TabIndex = 0
@@ -159,7 +159,7 @@ Partial Class Form1
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvtwitter.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvtwitter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvtwitter.Size = New System.Drawing.Size(604, 112)
+        Me.dgvtwitter.Size = New System.Drawing.Size(604, 87)
         Me.dgvtwitter.TabIndex = 1
         '
         'Column3
@@ -208,7 +208,7 @@ Partial Class Form1
         'ButtonSearch
         '
         Me.ButtonSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ButtonSearch.Location = New System.Drawing.Point(238, 155)
+        Me.ButtonSearch.Location = New System.Drawing.Point(238, 130)
         Me.ButtonSearch.Name = "ButtonSearch"
         Me.ButtonSearch.Size = New System.Drawing.Size(75, 23)
         Me.ButtonSearch.TabIndex = 3
@@ -218,7 +218,7 @@ Partial Class Form1
         'ButtonShowhideTw
         '
         Me.ButtonShowhideTw.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonShowhideTw.Location = New System.Drawing.Point(508, 155)
+        Me.ButtonShowhideTw.Location = New System.Drawing.Point(508, 130)
         Me.ButtonShowhideTw.Name = "ButtonShowhideTw"
         Me.ButtonShowhideTw.Size = New System.Drawing.Size(107, 23)
         Me.ButtonShowhideTw.TabIndex = 4
@@ -228,7 +228,7 @@ Partial Class Form1
         'ButtonStopTw
         '
         Me.ButtonStopTw.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonStopTw.Location = New System.Drawing.Point(427, 155)
+        Me.ButtonStopTw.Location = New System.Drawing.Point(427, 130)
         Me.ButtonStopTw.Name = "ButtonStopTw"
         Me.ButtonStopTw.Size = New System.Drawing.Size(75, 23)
         Me.ButtonStopTw.TabIndex = 5
@@ -244,7 +244,7 @@ Partial Class Form1
         Me.RadioButtonFav.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButtonFav.AutoSize = True
         Me.RadioButtonFav.Checked = True
-        Me.RadioButtonFav.Location = New System.Drawing.Point(11, 155)
+        Me.RadioButtonFav.Location = New System.Drawing.Point(11, 130)
         Me.RadioButtonFav.Name = "RadioButtonFav"
         Me.RadioButtonFav.Size = New System.Drawing.Size(68, 17)
         Me.RadioButtonFav.TabIndex = 6
@@ -256,7 +256,7 @@ Partial Class Form1
         '
         Me.RadioButtonTL.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButtonTL.AutoSize = True
-        Me.RadioButtonTL.Location = New System.Drawing.Point(85, 155)
+        Me.RadioButtonTL.Location = New System.Drawing.Point(85, 130)
         Me.RadioButtonTL.Name = "RadioButtonTL"
         Me.RadioButtonTL.Size = New System.Drawing.Size(63, 17)
         Me.RadioButtonTL.TabIndex = 7
@@ -267,7 +267,7 @@ Partial Class Form1
         '
         Me.RadioButtonQ.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButtonQ.AutoSize = True
-        Me.RadioButtonQ.Location = New System.Drawing.Point(159, 155)
+        Me.RadioButtonQ.Location = New System.Drawing.Point(159, 130)
         Me.RadioButtonQ.Name = "RadioButtonQ"
         Me.RadioButtonQ.Size = New System.Drawing.Size(73, 17)
         Me.RadioButtonQ.TabIndex = 8
@@ -310,7 +310,7 @@ Partial Class Form1
         '
         Me.TextboxHashtag.Name = "TextboxHashtag"
         Me.TextboxHashtag.Size = New System.Drawing.Size(100, 25)
-        Me.TextboxHashtag.Text = "#estrending"
+        Me.TextboxHashtag.Text = "#NTN24"
         '
         'ToolStripSeparator2
         '
@@ -322,16 +322,298 @@ Partial Class Form1
         Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Location = New System.Drawing.Point(0, 90)
         Me.TabControl1.Multiline = True
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(634, 211)
+        Me.TabControl1.Size = New System.Drawing.Size(634, 186)
         Me.TabControl1.TabIndex = 10
+        '
+        'TabPage3
+        '
+        Me.TabPage3.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage3.Controls.Add(Me.Panel2)
+        Me.TabPage3.Controls.Add(Me.Label13)
+        Me.TabPage3.Controls.Add(Me.Label12)
+        Me.TabPage3.Controls.Add(Me.ComboBox1)
+        Me.TabPage3.Controls.Add(Me.RadioButton4)
+        Me.TabPage3.Controls.Add(Me.Label11)
+        Me.TabPage3.Controls.Add(Me.LabelTimeCiudad)
+        Me.TabPage3.Controls.Add(Me.LabelTimeLocal)
+        Me.TabPage3.Controls.Add(Me.NumericUpDownFLClock)
+        Me.TabPage3.Controls.Add(Me.NumericUpDownClockVL)
+        Me.TabPage3.Controls.Add(Me.Label10)
+        Me.TabPage3.Controls.Add(Me.Label7)
+        Me.TabPage3.Controls.Add(Me.RadioButton3)
+        Me.TabPage3.Controls.Add(Me.RadioButton2)
+        Me.TabPage3.Controls.Add(Me.RadioButton1)
+        Me.TabPage3.Controls.Add(Me.Label9)
+        Me.TabPage3.Controls.Add(Me.Label8)
+        Me.TabPage3.Controls.Add(Me.Label6)
+        Me.TabPage3.Controls.Add(Me.TextBoxCity)
+        Me.TabPage3.Controls.Add(Me.LabelCiudad)
+        Me.TabPage3.Controls.Add(Me.LabelClock)
+        Me.TabPage3.Controls.Add(Me.ButtonShowReloj)
+        Me.TabPage3.Controls.Add(Me.ButtonStopReloj)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(626, 160)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Reloj"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.RadioButton6)
+        Me.Panel2.Controls.Add(Me.RadioButton5)
+        Me.Panel2.Location = New System.Drawing.Point(458, 62)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(164, 31)
+        Me.Panel2.TabIndex = 119
+        '
+        'RadioButton6
+        '
+        Me.RadioButton6.AutoSize = True
+        Me.RadioButton6.Location = New System.Drawing.Point(81, 9)
+        Me.RadioButton6.Name = "RadioButton6"
+        Me.RadioButton6.Size = New System.Drawing.Size(45, 17)
+        Me.RadioButton6.TabIndex = 121
+        Me.RadioButton6.Text = "Azul"
+        Me.RadioButton6.UseVisualStyleBackColor = True
+        '
+        'RadioButton5
+        '
+        Me.RadioButton5.AutoSize = True
+        Me.RadioButton5.Checked = True
+        Me.RadioButton5.Location = New System.Drawing.Point(11, 9)
+        Me.RadioButton5.Name = "RadioButton5"
+        Me.RadioButton5.Size = New System.Drawing.Size(47, 17)
+        Me.RadioButton5.TabIndex = 120
+        Me.RadioButton5.TabStop = True
+        Me.RadioButton5.Text = "Rojo"
+        Me.RadioButton5.UseVisualStyleBackColor = True
+        '
+        'Label13
+        '
+        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(11, 123)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(117, 16)
+        Me.Label13.TabIndex = 118
+        Me.Label13.Text = "Timezone Ciudad:"
+        '
+        'Label12
+        '
+        Me.Label12.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(11, 91)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(107, 16)
+        Me.Label12.TabIndex = 117
+        Me.Label12.Text = "Timezone Local:"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Dateline Standard Time", "UTC-11", "Samoa Standard Time", "Hawaiian Standard Time", "Alaskan Standard Time", "Pacific Standard Time (Mexico)", "Pacific Standard Time", "US Mountain Standard Time", "Mountain Standard Time (Mexico)", "Mountain Standard Time", "Central America Standard Time", "Central Standard Time", "Central Standard Time (Mexico)", "Canada Central Standard Time", "SA Pacific Standard Time", "Eastern Standard Time", "US Eastern Standard Time", "Venezuela Standard Time", "Paraguay Standard Time", "Atlantic Standard Time", "Central Brazilian Standard Time", "SA Western Standard Time", "Pacific SA Standard Time", "Newfoundland Standard Time", "E. South America Standard Time", "Argentina Standard Time", "SA Eastern Standard Time", "Greenland Standard Time", "Montevideo Standard Time", "UTC-02", "Mid-Atlantic Standard Time", "Azores Standard Time", "Cape Verde Standard Time", "Morocco Standard Time", "UTC", "GMT Standard Time", "Greenwich Standard Time", "W. Europe Standard Time", "Central Europe Standard Time", "Romance Standard Time", "Central European Standard Time", "W. Central Africa Standard Time", "Namibia Standard Time", "Jordan Standard Time", "GTB Standard Time", "Middle East Standard Time", "Egypt Standard Time", "Syria Standard Time", "South Africa Standard Time", "FLE Standard Time", "Israel Standard Time", "E. Europe Standard Time", "Arabic Standard Time", "Arab Standard Time", "Russian Standard Time", "E. Africa Standard Time", "Iran Standard Time", "Arabian Standard Time", "Azerbaijan Standard Time", "Mauritius Standard Time", "Georgian Standard Time", "Caucasus Standard Time", "Afghanistan Standard Time", "Ekaterinburg Standard Time", "Pakistan Standard Time", "West Asia Standard Time", "India Standard Time", "Sri Lanka Standard Time", "Nepal Standard Time", "Central Asia Standard Time", "Bangladesh Standard Time", "N. Central Asia Standard Time", "Myanmar Standard Time", "SE Asia Standard Time", "North Asia Standard Time", "China Standard Time", "North Asia East Standard Time", "Singapore Standard Time", "W. Australia Standard Time", "Taipei Standard Time", "Ulaanbaatar Standard Time", "Tokyo Standard Time", "Korea Standard Time", "Yakutsk Standard Time", "Cen. Australia Standard Time", "AUS Central Standard Time", "E. Australia Standard Time", "AUS Eastern Standard Time", "West Pacific Standard Time", "Tasmania Standard Time", "Vladivostok Standard Time", "Central Pacific Standard Time", "New Zealand Standard Time", "UTC+12", "Fiji Standard Time", "Kamchatka Standard Time", "Tonga Standard Time"})
+        Me.ComboBox1.Location = New System.Drawing.Point(245, 12)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(185, 21)
+        Me.ComboBox1.TabIndex = 116
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Location = New System.Drawing.Point(416, 39)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(14, 13)
+        Me.RadioButton4.TabIndex = 115
+        Me.RadioButton4.UseVisualStyleBackColor = True
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(241, 13)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(0, 20)
+        Me.Label11.TabIndex = 114
+        '
+        'LabelTimeCiudad
+        '
+        Me.LabelTimeCiudad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.LabelTimeCiudad.AutoSize = True
+        Me.LabelTimeCiudad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTimeCiudad.Location = New System.Drawing.Point(28, 139)
+        Me.LabelTimeCiudad.Name = "LabelTimeCiudad"
+        Me.LabelTimeCiudad.Size = New System.Drawing.Size(60, 15)
+        Me.LabelTimeCiudad.TabIndex = 113
+        Me.LabelTimeCiudad.Text = "12:00 PM"
+        '
+        'LabelTimeLocal
+        '
+        Me.LabelTimeLocal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.LabelTimeLocal.AutoSize = True
+        Me.LabelTimeLocal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTimeLocal.Location = New System.Drawing.Point(28, 107)
+        Me.LabelTimeLocal.Name = "LabelTimeLocal"
+        Me.LabelTimeLocal.Size = New System.Drawing.Size(60, 15)
+        Me.LabelTimeLocal.TabIndex = 112
+        Me.LabelTimeLocal.Text = "12:00 PM"
+        '
+        'NumericUpDownFLClock
+        '
+        Me.NumericUpDownFLClock.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDownFLClock.Location = New System.Drawing.Point(577, 41)
+        Me.NumericUpDownFLClock.Name = "NumericUpDownFLClock"
+        Me.NumericUpDownFLClock.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownFLClock.TabIndex = 111
+        Me.NumericUpDownFLClock.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'NumericUpDownClockVL
+        '
+        Me.NumericUpDownClockVL.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDownClockVL.Location = New System.Drawing.Point(577, 11)
+        Me.NumericUpDownClockVL.Name = "NumericUpDownClockVL"
+        Me.NumericUpDownClockVL.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownClockVL.TabIndex = 110
+        Me.NumericUpDownClockVL.Value = New Decimal(New Integer() {21, 0, 0, 0})
+        '
+        'Label10
+        '
+        Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(493, 42)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(81, 16)
+        Me.Label10.TabIndex = 109
+        Me.Label10.Text = "Flash Layer:"
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(490, 12)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(84, 16)
+        Me.Label7.TabIndex = 107
+        Me.Label7.Text = "Video Layer:"
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Checked = True
+        Me.RadioButton3.Location = New System.Drawing.Point(193, 39)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(14, 13)
+        Me.RadioButton3.TabIndex = 105
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(116, 39)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(14, 13)
+        Me.RadioButton2.TabIndex = 104
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(32, 39)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(14, 13)
+        Me.RadioButton1.TabIndex = 103
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(171, 13)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(55, 20)
+        Me.Label9.TabIndex = 102
+        Me.Label9.Text = "Miami"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(86, 13)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(75, 20)
+        Me.Label8.TabIndex = 101
+        Me.Label8.Text = "Caracas"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(14, 62)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(106, 16)
+        Me.Label6.TabIndex = 100
+        Me.Label6.Text = "Nombre Ciudad:"
+        '
+        'TextBoxCity
+        '
+        Me.TextBoxCity.Location = New System.Drawing.Point(133, 61)
+        Me.TextBoxCity.Name = "TextBoxCity"
+        Me.TextBoxCity.Size = New System.Drawing.Size(57, 20)
+        Me.TextBoxCity.TabIndex = 8
+        '
+        'LabelCiudad
+        '
+        Me.LabelCiudad.AutoSize = True
+        Me.LabelCiudad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCiudad.Location = New System.Drawing.Point(10, 13)
+        Me.LabelCiudad.Name = "LabelCiudad"
+        Me.LabelCiudad.Size = New System.Drawing.Size(67, 20)
+        Me.LabelCiudad.TabIndex = 96
+        Me.LabelCiudad.Text = "Bogota"
+        '
+        'LabelClock
+        '
+        Me.LabelClock.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LabelClock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LabelClock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelClock.Location = New System.Drawing.Point(458, 96)
+        Me.LabelClock.Name = "LabelClock"
+        Me.LabelClock.Size = New System.Drawing.Size(162, 29)
+        Me.LabelClock.TabIndex = 99
+        Me.LabelClock.Text = "12:00 PM"
+        Me.LabelClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'ButtonShowReloj
+        '
+        Me.ButtonShowReloj.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonShowReloj.Location = New System.Drawing.Point(539, 131)
+        Me.ButtonShowReloj.Name = "ButtonShowReloj"
+        Me.ButtonShowReloj.Size = New System.Drawing.Size(81, 23)
+        Me.ButtonShowReloj.TabIndex = 6
+        Me.ButtonShowReloj.Text = "Show"
+        Me.ButtonShowReloj.UseVisualStyleBackColor = True
+        '
+        'ButtonStopReloj
+        '
+        Me.ButtonStopReloj.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonStopReloj.Location = New System.Drawing.Point(458, 131)
+        Me.ButtonStopReloj.Name = "ButtonStopReloj"
+        Me.ButtonStopReloj.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonStopReloj.TabIndex = 7
+        Me.ButtonStopReloj.Text = "Stop"
+        Me.ButtonStopReloj.UseVisualStyleBackColor = True
         '
         'TabPage1
         '
@@ -348,189 +630,9 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(626, 185)
+        Me.TabPage1.Size = New System.Drawing.Size(626, 160)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Twitter Feed"
-        '
-        'TabPage2
-        '
-        Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
-        Me.TabPage2.Controls.Add(Me.Label16)
-        Me.TabPage2.Controls.Add(Me.Label17)
-        Me.TabPage2.Controls.Add(Me.PictureBox7)
-        Me.TabPage2.Controls.Add(Me.Label14)
-        Me.TabPage2.Controls.Add(Me.Label15)
-        Me.TabPage2.Controls.Add(Me.PictureBox6)
-        Me.TabPage2.Controls.Add(Me.Label12)
-        Me.TabPage2.Controls.Add(Me.Label13)
-        Me.TabPage2.Controls.Add(Me.PictureBox5)
-        Me.TabPage2.Controls.Add(Me.Label10)
-        Me.TabPage2.Controls.Add(Me.Label11)
-        Me.TabPage2.Controls.Add(Me.PictureBox3)
-        Me.TabPage2.Controls.Add(Me.Label9)
-        Me.TabPage2.Controls.Add(Me.Label8)
-        Me.TabPage2.Controls.Add(Me.PictureBox2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(626, 185)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "5 Days Forecast"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(508, 15)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(44, 16)
-        Me.Label16.TabIndex = 113
-        Me.Label16.Text = "Lunes"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label17
-        '
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(504, 109)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(74, 37)
-        Me.Label17.TabIndex = 112
-        Me.Label17.Text = "Min: 28 C Max 33 C"
-        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Location = New System.Drawing.Point(504, 34)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(74, 68)
-        Me.PictureBox7.TabIndex = 111
-        Me.PictureBox7.TabStop = False
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(395, 15)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(44, 16)
-        Me.Label14.TabIndex = 110
-        Me.Label14.Text = "Lunes"
-        Me.Label14.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label15
-        '
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(391, 109)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(74, 37)
-        Me.Label15.TabIndex = 109
-        Me.Label15.Text = "Min: 28 C Max 33 C"
-        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Location = New System.Drawing.Point(391, 34)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(74, 68)
-        Me.PictureBox6.TabIndex = 108
-        Me.PictureBox6.TabStop = False
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(285, 15)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(44, 16)
-        Me.Label12.TabIndex = 107
-        Me.Label12.Text = "Lunes"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label13
-        '
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(281, 109)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(74, 37)
-        Me.Label13.TabIndex = 106
-        Me.Label13.Text = "Min: 28 C Max 33 C"
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Location = New System.Drawing.Point(281, 34)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(74, 68)
-        Me.PictureBox5.TabIndex = 105
-        Me.PictureBox5.TabStop = False
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(173, 15)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(49, 16)
-        Me.Label10.TabIndex = 104
-        Me.Label10.Text = "Martes"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label11
-        '
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(169, 109)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(74, 37)
-        Me.Label11.TabIndex = 103
-        Me.Label11.Text = "Min: 28 C Max 33 C"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Location = New System.Drawing.Point(169, 34)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(74, 68)
-        Me.PictureBox3.TabIndex = 102
-        Me.PictureBox3.TabStop = False
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(64, 15)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(44, 16)
-        Me.Label9.TabIndex = 101
-        Me.Label9.Text = "Lunes"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label8
-        '
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(60, 109)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(74, 37)
-        Me.Label8.TabIndex = 101
-        Me.Label8.Text = "Min: 28 C Max 33 C"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Location = New System.Drawing.Point(60, 34)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(74, 68)
-        Me.PictureBox2.TabIndex = 96
-        Me.PictureBox2.TabStop = False
-        '
-        'TabPage3
-        '
-        Me.TabPage3.BackColor = System.Drawing.SystemColors.Control
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(626, 185)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Reloj"
         '
         'TabPage4
         '
@@ -551,7 +653,7 @@ Partial Class Form1
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(626, 185)
+        Me.TabPage4.Size = New System.Drawing.Size(626, 160)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Configuracion"
         '
@@ -681,7 +783,7 @@ Partial Class Form1
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabelServerstatus, Me.ToolStripLabelNombre, Me.ToolStripStatusLabel1, Me.ToolStripLabelIp, Me.ToolStripStatusLabel3, Me.ToolStripLabelPuerto, Me.ToolStripStatusLabel5, Me.ToolStripLabelStatus})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 304)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 279)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(634, 22)
         Me.StatusStrip1.TabIndex = 10
@@ -747,71 +849,15 @@ Partial Class Form1
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.LabelHumedad)
-        Me.Panel1.Controls.Add(Me.LabelTemperatura)
-        Me.Panel1.Controls.Add(Me.LabelCiudad)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.PictureBox4)
         Me.Panel1.Location = New System.Drawing.Point(8, 8)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(618, 76)
         Me.Panel1.TabIndex = 10
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(228, 48)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(71, 16)
-        Me.Label6.TabIndex = 100
-        Me.Label6.Text = "Humedad:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(228, 28)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(92, 16)
-        Me.Label7.TabIndex = 99
-        Me.Label7.Text = "Temperatura: "
-        '
-        'LabelHumedad
-        '
-        Me.LabelHumedad.AutoSize = True
-        Me.LabelHumedad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelHumedad.Location = New System.Drawing.Point(296, 48)
-        Me.LabelHumedad.Name = "LabelHumedad"
-        Me.LabelHumedad.Size = New System.Drawing.Size(102, 16)
-        Me.LabelHumedad.TabIndex = 98
-        Me.LabelHumedad.Text = "Label                    "
-        '
-        'LabelTemperatura
-        '
-        Me.LabelTemperatura.AutoSize = True
-        Me.LabelTemperatura.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTemperatura.Location = New System.Drawing.Point(317, 28)
-        Me.LabelTemperatura.Name = "LabelTemperatura"
-        Me.LabelTemperatura.Size = New System.Drawing.Size(102, 16)
-        Me.LabelTemperatura.TabIndex = 97
-        Me.LabelTemperatura.Text = "Label                    "
-        '
-        'LabelCiudad
-        '
-        Me.LabelCiudad.AutoSize = True
-        Me.LabelCiudad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCiudad.Location = New System.Drawing.Point(227, 8)
-        Me.LabelCiudad.Name = "LabelCiudad"
-        Me.LabelCiudad.Size = New System.Drawing.Size(165, 20)
-        Me.LabelCiudad.TabIndex = 96
-        Me.LabelCiudad.Text = "Caracas                  "
-        '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.TwitterScroll.My.Resources.Resources.estrending_new
+        Me.PictureBox1.Image = Global.TwitterScroll.My.Resources.Resources.logo
         Me.PictureBox1.Location = New System.Drawing.Point(3, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(149, 73)
@@ -819,51 +865,40 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'PictureBox4
+        'TimerReloj
         '
-        Me.PictureBox4.Location = New System.Drawing.Point(164, 8)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(57, 60)
-        Me.PictureBox4.TabIndex = 95
-        Me.PictureBox4.TabStop = False
-        '
-        'Timer_Clima
-        '
-        Me.Timer_Clima.Interval = 100000
+        Me.TimerReloj.Interval = 1000
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(634, 326)
+        Me.ClientSize = New System.Drawing.Size(634, 301)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(650, 340)
         Me.Name = "Form1"
-        Me.Text = "Estrending by Leon Hurtado"
+        Me.Text = "NTN24 By Leon Hurtado"
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -892,17 +927,13 @@ Partial Class Form1
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabelServerstatus As ToolStripStatusLabel
     Friend WithEvents ToolStripLabelNombre As ToolStripStatusLabel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents LabelHumedad As Label
-    Friend WithEvents LabelTemperatura As Label
     Friend WithEvents LabelCiudad As Label
-    Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents ListBoxServers As ListBox
     Friend WithEvents ButtonSaveServer As Button
@@ -924,22 +955,29 @@ Partial Class Form1
     Friend WithEvents ToolStripStatusLabel5 As ToolStripStatusLabel
     Friend WithEvents ToolStripLabelStatus As ToolStripSplitButton
     Friend WithEvents DisconnetToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Timer_Clima As Timer
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents TextBoxCity As TextBox
+    Friend WithEvents LabelClock As Label
+    Friend WithEvents ButtonShowReloj As Button
+    Friend WithEvents ButtonStopReloj As Button
+    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents TimerReloj As Timer
+    Friend WithEvents NumericUpDownFLClock As NumericUpDown
+    Friend WithEvents NumericUpDownClockVL As NumericUpDown
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents LabelTimeCiudad As Label
+    Friend WithEvents LabelTimeLocal As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents RadioButton6 As RadioButton
+    Friend WithEvents RadioButton5 As RadioButton
 End Class
