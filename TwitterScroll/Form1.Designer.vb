@@ -105,7 +105,6 @@ Partial Class Form1
         Me.ToolStripLabelStatus = New System.Windows.Forms.ToolStripSplitButton()
         Me.DisconnetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TimerReloj = New System.Windows.Forms.Timer(Me.components)
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -374,6 +373,7 @@ Partial Class Form1
         '
         'Panel2
         '
+        Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.Controls.Add(Me.RadioButton6)
         Me.Panel2.Controls.Add(Me.RadioButton5)
         Me.Panel2.Location = New System.Drawing.Point(458, 62)
@@ -459,9 +459,9 @@ Partial Class Form1
         Me.LabelTimeCiudad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelTimeCiudad.Location = New System.Drawing.Point(28, 139)
         Me.LabelTimeCiudad.Name = "LabelTimeCiudad"
-        Me.LabelTimeCiudad.Size = New System.Drawing.Size(60, 15)
+        Me.LabelTimeCiudad.Size = New System.Drawing.Size(73, 15)
         Me.LabelTimeCiudad.TabIndex = 113
-        Me.LabelTimeCiudad.Text = "12:00 PM"
+        Me.LabelTimeCiudad.Text = "                      "
         '
         'LabelTimeLocal
         '
@@ -470,9 +470,9 @@ Partial Class Form1
         Me.LabelTimeLocal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelTimeLocal.Location = New System.Drawing.Point(28, 107)
         Me.LabelTimeLocal.Name = "LabelTimeLocal"
-        Me.LabelTimeLocal.Size = New System.Drawing.Size(60, 15)
+        Me.LabelTimeLocal.Size = New System.Drawing.Size(85, 15)
         Me.LabelTimeLocal.TabIndex = 112
-        Me.LabelTimeLocal.Text = "12:00 PM"
+        Me.LabelTimeLocal.Text = "                          "
         '
         'NumericUpDownFLClock
         '
@@ -713,7 +713,7 @@ Partial Class Form1
         'ButtonSaveServer
         '
         Me.ButtonSaveServer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonSaveServer.Location = New System.Drawing.Point(487, 147)
+        Me.ButtonSaveServer.Location = New System.Drawing.Point(487, 122)
         Me.ButtonSaveServer.Name = "ButtonSaveServer"
         Me.ButtonSaveServer.Size = New System.Drawing.Size(94, 23)
         Me.ButtonSaveServer.TabIndex = 111
@@ -765,7 +765,7 @@ Partial Class Form1
         Me.RichTextBoxComent.Enabled = False
         Me.RichTextBoxComent.Location = New System.Drawing.Point(411, 34)
         Me.RichTextBoxComent.Name = "RichTextBoxComent"
-        Me.RichTextBoxComent.Size = New System.Drawing.Size(170, 107)
+        Me.RichTextBoxComent.Size = New System.Drawing.Size(170, 82)
         Me.RichTextBoxComent.TabIndex = 106
         Me.RichTextBoxComent.Text = ""
         '
@@ -796,7 +796,7 @@ Partial Class Form1
         'ButtonRemoveServer
         '
         Me.ButtonRemoveServer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ButtonRemoveServer.Location = New System.Drawing.Point(103, 147)
+        Me.ButtonRemoveServer.Location = New System.Drawing.Point(103, 125)
         Me.ButtonRemoveServer.Name = "ButtonRemoveServer"
         Me.ButtonRemoveServer.Size = New System.Drawing.Size(62, 23)
         Me.ButtonRemoveServer.TabIndex = 102
@@ -806,7 +806,7 @@ Partial Class Form1
         'ButtonNewServer
         '
         Me.ButtonNewServer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ButtonNewServer.Location = New System.Drawing.Point(24, 147)
+        Me.ButtonNewServer.Location = New System.Drawing.Point(24, 125)
         Me.ButtonNewServer.Name = "ButtonNewServer"
         Me.ButtonNewServer.Size = New System.Drawing.Size(62, 23)
         Me.ButtonNewServer.TabIndex = 100
@@ -830,7 +830,7 @@ Partial Class Form1
         Me.ListBoxServers.FormattingEnabled = True
         Me.ListBoxServers.Location = New System.Drawing.Point(24, 34)
         Me.ListBoxServers.Name = "ListBoxServers"
-        Me.ListBoxServers.Size = New System.Drawing.Size(141, 95)
+        Me.ListBoxServers.Size = New System.Drawing.Size(141, 82)
         Me.ListBoxServers.TabIndex = 0
         '
         'StatusStrip1
@@ -902,23 +902,11 @@ Partial Class Form1
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(8, 8)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(618, 76)
         Me.Panel1.TabIndex = 10
-        '
-        'Label16
-        '
-        Me.Label16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(568, 57)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(45, 16)
-        Me.Label16.TabIndex = 120
-        Me.Label16.Text = "1.0.0.1"
         '
         'PictureBox1
         '
@@ -965,7 +953,6 @@ Partial Class Form1
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1052,5 +1039,4 @@ Partial Class Form1
     Friend WithEvents NumericUpDownTwFL As NumericUpDown
     Friend WithEvents NumericUpDownTwVL As NumericUpDown
     Friend WithEvents Label15 As Label
-    Friend WithEvents Label16 As Label
 End Class
