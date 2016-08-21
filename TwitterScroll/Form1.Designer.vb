@@ -76,6 +76,10 @@ Partial Class Form1
         Me.ButtonShowReloj = New System.Windows.Forms.Button()
         Me.ButtonStopReloj = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.NumericUpDownTwFL = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDownTwVL = New System.Windows.Forms.NumericUpDown()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.ButtonSaveServer = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -101,12 +105,9 @@ Partial Class Form1
         Me.ToolStripLabelStatus = New System.Windows.Forms.ToolStripSplitButton()
         Me.DisconnetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TimerReloj = New System.Windows.Forms.Timer(Me.components)
-        Me.NumericUpDownTwFL = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDownTwVL = New System.Windows.Forms.NumericUpDown()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -115,12 +116,12 @@ Partial Class Form1
         CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
+        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button_LoadTW
@@ -644,6 +645,48 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Twitter Feed"
         '
+        'Label15
+        '
+        Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(496, 7)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(73, 15)
+        Me.Label15.TabIndex = 115
+        Me.Label15.Text = "Flash Layer:"
+        '
+        'Label14
+        '
+        Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(371, 7)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(74, 15)
+        Me.Label14.TabIndex = 114
+        Me.Label14.Text = "Video Layer:"
+        '
+        'NumericUpDownTwFL
+        '
+        Me.NumericUpDownTwFL.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDownTwFL.Increment = New Decimal(New Integer() {2, 0, 0, 0})
+        Me.NumericUpDownTwFL.Location = New System.Drawing.Point(571, 6)
+        Me.NumericUpDownTwFL.Name = "NumericUpDownTwFL"
+        Me.NumericUpDownTwFL.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownTwFL.TabIndex = 113
+        Me.NumericUpDownTwFL.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'NumericUpDownTwVL
+        '
+        Me.NumericUpDownTwVL.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDownTwVL.Location = New System.Drawing.Point(447, 6)
+        Me.NumericUpDownTwVL.Name = "NumericUpDownTwVL"
+        Me.NumericUpDownTwVL.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownTwVL.TabIndex = 112
+        Me.NumericUpDownTwVL.Value = New Decimal(New Integer() {21, 0, 0, 0})
+        '
         'TabPage4
         '
         Me.TabPage4.BackColor = System.Drawing.SystemColors.Control
@@ -859,11 +902,23 @@ Partial Class Form1
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(8, 8)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(618, 76)
         Me.Panel1.TabIndex = 10
+        '
+        'Label16
+        '
+        Me.Label16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(568, 57)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(45, 16)
+        Me.Label16.TabIndex = 120
+        Me.Label16.Text = "1.0.0.1"
         '
         'PictureBox1
         '
@@ -878,48 +933,6 @@ Partial Class Form1
         'TimerReloj
         '
         Me.TimerReloj.Interval = 1000
-        '
-        'NumericUpDownTwFL
-        '
-        Me.NumericUpDownTwFL.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDownTwFL.Increment = New Decimal(New Integer() {2, 0, 0, 0})
-        Me.NumericUpDownTwFL.Location = New System.Drawing.Point(571, 6)
-        Me.NumericUpDownTwFL.Name = "NumericUpDownTwFL"
-        Me.NumericUpDownTwFL.Size = New System.Drawing.Size(42, 20)
-        Me.NumericUpDownTwFL.TabIndex = 113
-        Me.NumericUpDownTwFL.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
-        'NumericUpDownTwVL
-        '
-        Me.NumericUpDownTwVL.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDownTwVL.Location = New System.Drawing.Point(447, 6)
-        Me.NumericUpDownTwVL.Name = "NumericUpDownTwVL"
-        Me.NumericUpDownTwVL.Size = New System.Drawing.Size(42, 20)
-        Me.NumericUpDownTwVL.TabIndex = 112
-        Me.NumericUpDownTwVL.Value = New Decimal(New Integer() {21, 0, 0, 0})
-        '
-        'Label14
-        '
-        Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label14.AutoSize = True
-        Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(371, 7)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(74, 15)
-        Me.Label14.TabIndex = 114
-        Me.Label14.Text = "Video Layer:"
-        '
-        'Label15
-        '
-        Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(496, 7)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(73, 15)
-        Me.Label15.TabIndex = 115
-        Me.Label15.Text = "Flash Layer:"
         '
         'Form1
         '
@@ -945,14 +958,15 @@ Partial Class Form1
         CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1038,4 +1052,5 @@ Partial Class Form1
     Friend WithEvents NumericUpDownTwFL As NumericUpDown
     Friend WithEvents NumericUpDownTwVL As NumericUpDown
     Friend WithEvents Label15 As Label
+    Friend WithEvents Label16 As Label
 End Class
