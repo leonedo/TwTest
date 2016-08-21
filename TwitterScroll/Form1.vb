@@ -2,6 +2,7 @@
 Imports System.Globalization
 Imports System.Xml
 Imports TweetSharp
+Imports AutoUpdaterDotNET
 
 Public Class Form1
     Dim service As New TwitterService(ConfigurationManager.AppSettings("twitterCK"), ConfigurationManager.AppSettings("twitterCS"))
@@ -14,6 +15,8 @@ Public Class Form1
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        AutoUpdater.Start("http://leonedo.com/updates/NTN24/NTN24.xml")
+
         ComboBox1.SelectedIndex = 0
         TimerReloj.Start()
         loadServers()
