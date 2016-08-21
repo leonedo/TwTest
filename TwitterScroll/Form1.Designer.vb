@@ -103,6 +103,10 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TimerReloj = New System.Windows.Forms.Timer(Me.components)
+        Me.NumericUpDownTwFL = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDownTwVL = New System.Windows.Forms.NumericUpDown()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -115,6 +119,8 @@ Partial Class Form1
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button_LoadTW
@@ -618,6 +624,10 @@ Partial Class Form1
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage1.Controls.Add(Me.Label15)
+        Me.TabPage1.Controls.Add(Me.Label14)
+        Me.TabPage1.Controls.Add(Me.NumericUpDownTwFL)
+        Me.TabPage1.Controls.Add(Me.NumericUpDownTwVL)
         Me.TabPage1.Controls.Add(Me.ToolStrip1)
         Me.TabPage1.Controls.Add(Me.Button_LoadTW)
         Me.TabPage1.Controls.Add(Me.RadioButtonQ)
@@ -869,6 +879,48 @@ Partial Class Form1
         '
         Me.TimerReloj.Interval = 1000
         '
+        'NumericUpDownTwFL
+        '
+        Me.NumericUpDownTwFL.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDownTwFL.Increment = New Decimal(New Integer() {2, 0, 0, 0})
+        Me.NumericUpDownTwFL.Location = New System.Drawing.Point(571, 6)
+        Me.NumericUpDownTwFL.Name = "NumericUpDownTwFL"
+        Me.NumericUpDownTwFL.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownTwFL.TabIndex = 113
+        Me.NumericUpDownTwFL.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'NumericUpDownTwVL
+        '
+        Me.NumericUpDownTwVL.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDownTwVL.Location = New System.Drawing.Point(447, 6)
+        Me.NumericUpDownTwVL.Name = "NumericUpDownTwVL"
+        Me.NumericUpDownTwVL.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownTwVL.TabIndex = 112
+        Me.NumericUpDownTwVL.Value = New Decimal(New Integer() {21, 0, 0, 0})
+        '
+        'Label14
+        '
+        Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(371, 7)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(74, 15)
+        Me.Label14.TabIndex = 114
+        Me.Label14.Text = "Video Layer:"
+        '
+        'Label15
+        '
+        Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(496, 7)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(73, 15)
+        Me.Label15.TabIndex = 115
+        Me.Label15.Text = "Flash Layer:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -899,6 +951,8 @@ Partial Class Form1
         Me.StatusStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -980,4 +1034,8 @@ Partial Class Form1
     Friend WithEvents Panel2 As Panel
     Friend WithEvents RadioButton6 As RadioButton
     Friend WithEvents RadioButton5 As RadioButton
+    Friend WithEvents Label14 As Label
+    Friend WithEvents NumericUpDownTwFL As NumericUpDown
+    Friend WithEvents NumericUpDownTwVL As NumericUpDown
+    Friend WithEvents Label15 As Label
 End Class
