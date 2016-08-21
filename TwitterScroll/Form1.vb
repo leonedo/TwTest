@@ -15,7 +15,7 @@ Public Class Form1
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AutoUpdater.Start("http://leonedo.com/updates/NTN24/NTN24.xml")
+        AutoUpdater.Start("http://updates.leonedo.com/XMLs/NTN24.xml")
 
         ComboBox1.SelectedIndex = 0
         TimerReloj.Start()
@@ -40,6 +40,8 @@ Public Class Form1
         My.Settings.Save()
         CasparDevice.Disconnect()
     End Sub
+
+
 
 #Region "CasparCG connect"
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerCasparConnect.Tick
