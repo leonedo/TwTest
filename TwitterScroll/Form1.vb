@@ -118,6 +118,9 @@ Public Class Form1
     End Sub
 
     Private Sub ListBoxServers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxServers.SelectedIndexChanged
+        If ListBoxServers.SelectedItem Is Nothing Then
+            ListBoxServers.SelectedIndex = 0
+        End If
         TextBoxTitulo.Text = ListBoxServers.SelectedItem
         TextBoxIP.Text = servers.Item(ListBoxServers.SelectedItem)(0)
         TextBoxPuerto.Text = servers.Item(ListBoxServers.SelectedItem)(1)
@@ -132,7 +135,7 @@ Public Class Form1
     Private Sub ButtonNewServer_Click(sender As Object, e As EventArgs) Handles ButtonNewServer.Click
         TextBoxTitulo.Text = ""
         TextBoxIP.Text = ""
-        TextBoxPuerto.Text = "5052"
+        TextBoxPuerto.Text = "5250"
         RichTextBoxComent.Text = ""
         TextBoxTitulo.Enabled = True
         TextBoxIP.Enabled = True
@@ -159,13 +162,22 @@ Public Class Form1
     End Sub
 
     Private Sub ButtonRemoveServer_Click(sender As Object, e As EventArgs) Handles ButtonRemoveServer.Click
+        Dim old = ListBoxServers.SelectedIndex
         If ListBoxServers.SelectedIndex > 0 Then
             servers.Remove(ListBoxServers.SelectedItem)
             ListBoxServers.Items.Remove(ListBoxServers.SelectedItem)
+            ListBoxServers.SelectedIndex = old - 1
+            saveServers()
         Else
             MsgBox("Debe existir al menos un servidor")
         End If
     End Sub
+
+
+
+
+
+
 
 #End Region
 
