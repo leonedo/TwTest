@@ -89,6 +89,42 @@ Namespace My
                 Me("Server") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("21")>  _
+        Public Property clockVL() As Decimal
+            Get
+                Return CType(Me("clockVL"),Decimal)
+            End Get
+            Set
+                Me("clockVL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property clockFL() As Decimal
+            Get
+                Return CType(Me("clockFL"),Decimal)
+            End Get
+            Set
+                Me("clockFL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property City() As Integer
+            Get
+                Return CType(Me("City"),Integer)
+            End Get
+            Set
+                Me("City") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

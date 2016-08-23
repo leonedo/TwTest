@@ -15,7 +15,16 @@ Public Class Form1
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Select Case My.Settings.City
+            Case 0
+                RadioButton1.Checked = True
+            Case 1
+                RadioButton2.Checked = True
+            Case 2
+                RadioButton3.Checked = True
+            Case Else
+                RadioButton4.Checked = True
+        End Select
 
 
 
@@ -37,6 +46,16 @@ Public Class Form1
     End Sub
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         '   Guardar XML
+        Select Case True
+            Case RadioButton1.Checked ' Bogota               
+                My.Settings.City = 0
+            Case RadioButton2.Checked ' Caracas
+                My.Settings.City = 1
+            Case RadioButton3.Checked ' Miami
+                My.Settings.City = 2
+            Case Else
+                My.Settings.City = 3
+        End Select
         My.Settings.user = TextBoxUsername.Text
         My.Settings.hash = TextboxHashtag.Text
         My.Settings.Server = ListBoxServers.SelectedIndex
@@ -135,21 +154,28 @@ Public Class Form1
     End Sub
 
     Private Sub ListBoxServers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxServers.SelectedIndexChanged
-        TextBoxTitulo.Text = ListBoxServers.SelectedItem
-        TextBoxIP.Text = servers.Item(ListBoxServers.SelectedItem)(0)
-        TextBoxPuerto.Text = servers.Item(ListBoxServers.SelectedItem)(1)
-        RichTextBoxComent.Text = servers.Item(ListBoxServers.SelectedItem)(2)
-        TextBoxTitulo.Enabled = False
-        TextBoxIP.Enabled = False
-        TextBoxPuerto.Enabled = False
-        RichTextBoxComent.Enabled = False
-        ButtonSaveServer.Visible = False
+        ' Try
+        If ListBoxServers.SelectedItem Is Nothing Then
+                ListBoxServers.SelectedIndex = 0
+            End If
+            TextBoxTitulo.Text = ListBoxServers.SelectedItem
+            TextBoxIP.Text = servers.Item(ListBoxServers.SelectedItem)(0)
+            TextBoxPuerto.Text = servers.Item(ListBoxServers.SelectedItem)(1)
+            RichTextBoxComent.Text = servers.Item(ListBoxServers.SelectedItem)(2)
+            TextBoxTitulo.Enabled = False
+            TextBoxIP.Enabled = False
+            TextBoxPuerto.Enabled = False
+            RichTextBoxComent.Enabled = False
+            ButtonSaveServer.Visible = False
+        ' Catch ex As Exception
+
+        '  End Try
     End Sub
 
     Private Sub ButtonNewServer_Click(sender As Object, e As EventArgs) Handles ButtonNewServer.Click
         TextBoxTitulo.Text = ""
         TextBoxIP.Text = ""
-        TextBoxPuerto.Text = "5052"
+        TextBoxPuerto.Text = "5250"
         RichTextBoxComent.Text = ""
         TextBoxTitulo.Enabled = True
         TextBoxIP.Enabled = True
@@ -169,16 +195,18 @@ Public Class Form1
             RichTextBoxComent.Enabled = False
             ButtonSaveServer.Visible = False
             saveServers()
-
         Else
             MsgBox("Nombre de servidor ya existe")
         End If
     End Sub
 
     Private Sub ButtonRemoveServer_Click(sender As Object, e As EventArgs) Handles ButtonRemoveServer.Click
+        Dim old = ListBoxServers.SelectedIndex
         If ListBoxServers.SelectedIndex > 0 Then
             servers.Remove(ListBoxServers.SelectedItem)
             ListBoxServers.Items.Remove(ListBoxServers.SelectedItem)
+            ListBoxServers.SelectedIndex = old - 1
+            saveServers()
         Else
             MsgBox("Debe existir al menos un servidor")
         End If
@@ -365,7 +393,6 @@ Public Class Form1
 
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged, RadioButton2.CheckedChanged,
                                                                                       RadioButton3.CheckedChanged, RadioButton4.CheckedChanged
-
         Select Case True
             Case RadioButton1.Checked ' Bogota               
                 TextBoxCity.Text = "BOG"
