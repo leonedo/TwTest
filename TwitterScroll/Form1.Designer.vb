@@ -48,6 +48,8 @@ Partial Class Form1
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.TextboxHashtag = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -60,6 +62,8 @@ Partial Class Form1
         Me.Label11 = New System.Windows.Forms.Label()
         Me.LabelTimeCiudad = New System.Windows.Forms.Label()
         Me.LabelTimeLocal = New System.Windows.Forms.Label()
+        Me.NumericUpDownFLClock = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDownClockVL = New System.Windows.Forms.NumericUpDown()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
@@ -103,15 +107,13 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TimerReloj = New System.Windows.Forms.Timer(Me.components)
-        Me.NumericUpDownFLClock = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDownClockVL = New System.Windows.Forms.NumericUpDown()
-        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,14 +121,12 @@ Partial Class Form1
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button_LoadTW
         '
         Me.Button_LoadTW.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_LoadTW.Location = New System.Drawing.Point(326, 292)
+        Me.Button_LoadTW.Location = New System.Drawing.Point(326, 127)
         Me.Button_LoadTW.Name = "Button_LoadTW"
         Me.Button_LoadTW.Size = New System.Drawing.Size(95, 23)
         Me.Button_LoadTW.TabIndex = 0
@@ -165,7 +165,7 @@ Partial Class Form1
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvtwitter.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvtwitter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvtwitter.Size = New System.Drawing.Size(604, 203)
+        Me.dgvtwitter.Size = New System.Drawing.Size(604, 69)
         Me.dgvtwitter.TabIndex = 1
         '
         'Column3
@@ -214,7 +214,7 @@ Partial Class Form1
         'ButtonSearch
         '
         Me.ButtonSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ButtonSearch.Location = New System.Drawing.Point(238, 292)
+        Me.ButtonSearch.Location = New System.Drawing.Point(238, 127)
         Me.ButtonSearch.Name = "ButtonSearch"
         Me.ButtonSearch.Size = New System.Drawing.Size(75, 23)
         Me.ButtonSearch.TabIndex = 3
@@ -224,7 +224,7 @@ Partial Class Form1
         'ButtonShowhideTw
         '
         Me.ButtonShowhideTw.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonShowhideTw.Location = New System.Drawing.Point(508, 292)
+        Me.ButtonShowhideTw.Location = New System.Drawing.Point(508, 128)
         Me.ButtonShowhideTw.Name = "ButtonShowhideTw"
         Me.ButtonShowhideTw.Size = New System.Drawing.Size(107, 23)
         Me.ButtonShowhideTw.TabIndex = 4
@@ -234,7 +234,7 @@ Partial Class Form1
         'ButtonStopTw
         '
         Me.ButtonStopTw.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonStopTw.Location = New System.Drawing.Point(427, 292)
+        Me.ButtonStopTw.Location = New System.Drawing.Point(427, 127)
         Me.ButtonStopTw.Name = "ButtonStopTw"
         Me.ButtonStopTw.Size = New System.Drawing.Size(75, 23)
         Me.ButtonStopTw.TabIndex = 5
@@ -323,6 +323,18 @@ Partial Class Form1
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripLabel3
+        '
+        Me.ToolStripLabel3.Name = "ToolStripLabel3"
+        Me.ToolStripLabel3.Size = New System.Drawing.Size(113, 22)
+        Me.ToolStripLabel3.Text = "VideoLayer:               "
+        '
+        'ToolStripLabel4
+        '
+        Me.ToolStripLabel4.Name = "ToolStripLabel4"
+        Me.ToolStripLabel4.Size = New System.Drawing.Size(119, 22)
+        Me.ToolStripLabel4.Text = "Flash Layer:                 "
         '
         'TabControl1
         '
@@ -477,6 +489,26 @@ Partial Class Form1
         Me.LabelTimeLocal.TabIndex = 112
         Me.LabelTimeLocal.Text = "                          "
         '
+        'NumericUpDownFLClock
+        '
+        Me.NumericUpDownFLClock.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDownFLClock.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "clockFL", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.NumericUpDownFLClock.Location = New System.Drawing.Point(577, 38)
+        Me.NumericUpDownFLClock.Name = "NumericUpDownFLClock"
+        Me.NumericUpDownFLClock.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownFLClock.TabIndex = 111
+        Me.NumericUpDownFLClock.Value = Global.TwitterScroll.My.MySettings.Default.clockFL
+        '
+        'NumericUpDownClockVL
+        '
+        Me.NumericUpDownClockVL.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDownClockVL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "clockVL", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.NumericUpDownClockVL.Location = New System.Drawing.Point(577, 11)
+        Me.NumericUpDownClockVL.Name = "NumericUpDownClockVL"
+        Me.NumericUpDownClockVL.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownClockVL.TabIndex = 110
+        Me.NumericUpDownClockVL.Value = Global.TwitterScroll.My.MySettings.Default.clockVL
+        '
         'Label10
         '
         Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -624,7 +656,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(626, 246)
+        Me.TabPage1.Size = New System.Drawing.Size(626, 160)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Twitter Feed"
         '
@@ -881,38 +913,6 @@ Partial Class Form1
         '
         Me.TimerReloj.Interval = 1000
         '
-        'NumericUpDownFLClock
-        '
-        Me.NumericUpDownFLClock.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDownFLClock.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "clockFL", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.NumericUpDownFLClock.Location = New System.Drawing.Point(577, 38)
-        Me.NumericUpDownFLClock.Name = "NumericUpDownFLClock"
-        Me.NumericUpDownFLClock.Size = New System.Drawing.Size(42, 20)
-        Me.NumericUpDownFLClock.TabIndex = 111
-        Me.NumericUpDownFLClock.Value = Global.TwitterScroll.My.MySettings.Default.clockFL
-        '
-        'NumericUpDownClockVL
-        '
-        Me.NumericUpDownClockVL.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDownClockVL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "clockVL", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.NumericUpDownClockVL.Location = New System.Drawing.Point(577, 11)
-        Me.NumericUpDownClockVL.Name = "NumericUpDownClockVL"
-        Me.NumericUpDownClockVL.Size = New System.Drawing.Size(42, 20)
-        Me.NumericUpDownClockVL.TabIndex = 110
-        Me.NumericUpDownClockVL.Value = Global.TwitterScroll.My.MySettings.Default.clockVL
-        '
-        'ToolStripLabel3
-        '
-        Me.ToolStripLabel3.Name = "ToolStripLabel3"
-        Me.ToolStripLabel3.Size = New System.Drawing.Size(113, 22)
-        Me.ToolStripLabel3.Text = "VideoLayer:               "
-        '
-        'ToolStripLabel4
-        '
-        Me.ToolStripLabel4.Name = "ToolStripLabel4"
-        Me.ToolStripLabel4.Size = New System.Drawing.Size(119, 22)
-        Me.ToolStripLabel4.Text = "Flash Layer:                 "
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -933,6 +933,8 @@ Partial Class Form1
         Me.TabPage3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).EndInit()
@@ -943,8 +945,6 @@ Partial Class Form1
         Me.StatusStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
