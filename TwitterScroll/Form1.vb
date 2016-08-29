@@ -11,6 +11,7 @@ Public Class Form1
     Public WithEvents CasparDevice As New Svt.Caspar.CasparDevice
     '   Dim WithEvents clima As New OWMweatherClass
     Dim servers As New Dictionary(Of String, String())
+    Dim activo As Boolean = False
 
 
 
@@ -68,14 +69,18 @@ Public Class Form1
 #Region "CasparCG connect"
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerCasparConnect.Tick
         If CasparDevice.IsConnected = True Then
-
             ToolStripLabelNombre.Text = nombreserver
             ToolStripLabelPuerto.Text = CasparDevice.Settings.Port 'servers.Item(ListBoxServers.SelectedItem)(1)
             ToolStripLabelIp.Text = CasparDevice.Settings.Hostname 'servers.Item(ListBoxServers.SelectedItem)(0)
             ToolStripLabelStatus.Image = My.Resources.ResourceManager.GetObject("green")
+            NumericUpDownClkCh.Maximum = CasparDevice.Channels.Count
+            NumericUpDownTWch.Maximum = CasparDevice.Channels.Count
             '  TimerCasparConnect.Stop()
         Else
             ToolStripLabelStatus.Image = My.Resources.ResourceManager.GetObject("red")
+            ToolStripLabelNombre.Text = nombreserver
+            ToolStripLabelPuerto.Text = servers.Item(ListBoxServers.SelectedItem)(1)
+            ToolStripLabelIp.Text = servers.Item(ListBoxServers.SelectedItem)(0)
             CasparDevice.Connect()
         End If
     End Sub
@@ -83,6 +88,7 @@ Public Class Form1
         '  On Error Resume Next
         If CasparDevice.IsConnected = False Then
             TimerCasparConnect.Start()
+
         End If
     End Sub
 
@@ -284,8 +290,8 @@ Public Class Form1
 
     Private Sub StopTw(sender As Object, e As EventArgs) Handles ButtonStopTw.Click
         If CasparDevice.IsConnected = True Then
-            CasparDevice.SendString("PLAY 1-" & ConfigurationManager.AppSettings("vL") & " EMPTY MIX 10")
-            CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL") & " OPACITY 1 25 easeinsine")
+            CasparDevice.SendString("PLAY " & NumericUpDownTWch.Value - 1.ToString & "-" & NumericUpDownTwVL.Value.ToString & " EMPTY MIX 10")
+            CasparDevice.SendString("MIXER " & NumericUpDownTWch.Value - 1.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 1 25 easeinsine")
         End If
     End Sub
 
@@ -297,9 +303,9 @@ Public Class Form1
     Public Sub Ocultar(Esconder As Boolean)
         If CasparDevice.IsConnected = True Then
             If Esconder Then
-                CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL") & " OPACITY 0 25 easeinsine")
+                CasparDevice.SendString("MIXER " & NumericUpDownTWch.Value - 1.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 0 25 easeinsine")
             Else
-                CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL") & " OPACITY 1 25 easeinsine")
+                CasparDevice.SendString("MIXER " & NumericUpDownTWch.Value - 1.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 1 25 easeinsine")
             End If
         End If
     End Sub
@@ -310,10 +316,10 @@ Public Class Form1
                 Dim CGData As New Svt.Caspar.CasparCGDataCollection
                 CGData.SetData("hash", hashtag)
                 CGData.SetData("scrolldata", text)
-                CasparDevice.Channels(CInt(ConfigurationManager.AppSettings("cH"))).CG.Add(CInt(ConfigurationManager.AppSettings("vL")),
-                                                                                           CInt(ConfigurationManager.AppSettings("fL")),
-                                                                                          "SCROLL", True, CGData.ToAMCPEscapedXml)
-                CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL").ToString & " OPACITY 1 25 easeinsine")
+                CasparDevice.Channels(CInt(NumericUpDownTWch.Value - 1)).CG.Add(CInt(NumericUpDownTwVL.Value),
+                                                                            CInt(NumericUpDownTwFL.Value),
+                                                                            "NTN24/SCROLL", True, CGData.ToAMCPEscapedXml)
+                CasparDevice.SendString("MIXER " & NumericUpDownTWch.Value.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 1 25 easeinsine")
             End If
         Catch ex As Exception
             MsgBox("Scroll Issue" & ex.Message)
@@ -357,10 +363,8 @@ Public Class Form1
                 End If
                 Dim CGData As New Svt.Caspar.CasparCGDataCollection
                 CGData.SetData("f0", LabelClock.Text)
-                CasparDevice.Channels(CInt(ConfigurationManager.AppSettings("cH"))).CG.Add(CInt(ConfigurationManager.AppSettings(NumericUpDownClockVL.Value.ToString)),
-                                                                                           CInt(ConfigurationManager.AppSettings(NumericUpDownFLClock.Value.ToString)),
-                                                                                          template, True, CGData.ToAMCPEscapedXml)
-
+                CasparDevice.Channels(CInt(NumericUpDownClkCh.Value - 1)).CG.Add(CInt(NumericUpDownClockVL.Value), CInt(NumericUpDownFLClock.Value), template, True, CGData.ToAMCPEscapedXml)
+                activo = True
             End If
         Catch ex As Exception
             MsgBox("Clock Issue" & ex.Message)
@@ -370,8 +374,9 @@ Public Class Form1
     Private Sub ButtonStopReloj_Click(sender As Object, e As EventArgs) Handles ButtonStopReloj.Click
         Try
             If CasparDevice.IsConnected = True Then
-                CasparDevice.Channels(CInt(ConfigurationManager.AppSettings("cH"))).CG.Stop(CInt(ConfigurationManager.AppSettings(NumericUpDownClockVL.Value.ToString)),
-                                                                                           CInt(ConfigurationManager.AppSettings(NumericUpDownFLClock.Value.ToString)))
+                CasparDevice.Channels(CInt(NumericUpDownClkCh.Value - 1)).CG.Stop(CInt(NumericUpDownClockVL.Value),
+                                                                              CInt(NumericUpDownFLClock.Value))
+                activo = False
             End If
         Catch ex As Exception
             MsgBox("Clock Issue" & ex.Message)
@@ -381,10 +386,10 @@ Public Class Form1
 
     Private Sub updateClock()
         Try
-            If CasparDevice.IsConnected = True Then
+            If CasparDevice.IsConnected And activo = True Then
                 Dim CGData As New Svt.Caspar.CasparCGDataCollection
                 CGData.SetData("f0", LabelClock.Text)
-                CasparDevice.Channels(CInt(ConfigurationManager.AppSettings("cH"))).CG.Update(CInt(ConfigurationManager.AppSettings(NumericUpDownClockVL.Value.ToString)), CInt(ConfigurationManager.AppSettings(NumericUpDownFLClock.Value.ToString)), CGData)
+                CasparDevice.Channels(CInt(NumericUpDownClkCh.Value - 1)).CG.Update(CInt(NumericUpDownClockVL.Value), CInt(NumericUpDownFLClock.Value), CGData)
             End If
         Catch ex As Exception
             MsgBox("Clock Issue" & ex.Message)
@@ -404,6 +409,10 @@ Public Class Form1
                 TextBoxCity.Text = ""
         End Select
     End Sub
+
+
+
+
 
 
 #End Region

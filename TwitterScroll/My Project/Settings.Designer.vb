@@ -125,6 +125,18 @@ Namespace My
                 Me("City") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property clockCh() As Decimal
+            Get
+                Return CType(Me("clockCh"),Decimal)
+            End Get
+            Set
+                Me("clockCh") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

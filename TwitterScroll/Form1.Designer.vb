@@ -23,9 +23,9 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Button_LoadTW = New System.Windows.Forms.Button()
         Me.dgvtwitter = New System.Windows.Forms.DataGridView()
@@ -48,6 +48,7 @@ Partial Class Form1
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.TextboxHashtag = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel5 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -62,8 +63,6 @@ Partial Class Form1
         Me.Label11 = New System.Windows.Forms.Label()
         Me.LabelTimeCiudad = New System.Windows.Forms.Label()
         Me.LabelTimeLocal = New System.Windows.Forms.Label()
-        Me.NumericUpDownFLClock = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDownClockVL = New System.Windows.Forms.NumericUpDown()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
@@ -107,13 +106,16 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TimerReloj = New System.Windows.Forms.Timer(Me.components)
+        Me.NumericUpDownClkCh = New System.Windows.Forms.NumericUpDown()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.NumericUpDownFLClock = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDownClockVL = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDownTWch = New System.Windows.Forms.NumericUpDown()
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -121,6 +123,10 @@ Partial Class Form1
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownClkCh, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownTWch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button_LoadTW
@@ -141,29 +147,29 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvtwitter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvtwitter.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvtwitter.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvtwitter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvtwitter.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column1, Me.Column4, Me.Column2, Me.Column5})
         Me.dgvtwitter.Location = New System.Drawing.Point(11, 37)
         Me.dgvtwitter.Name = "dgvtwitter"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvtwitter.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvtwitter.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvtwitter.RowHeadersVisible = False
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvtwitter.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvtwitter.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvtwitter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvtwitter.Size = New System.Drawing.Size(604, 86)
         Me.dgvtwitter.TabIndex = 1
@@ -243,7 +249,7 @@ Partial Class Form1
         '
         'TimerCasparConnect
         '
-        Me.TimerCasparConnect.Interval = 5000
+        Me.TimerCasparConnect.Interval = 2000
         '
         'RadioButtonFav
         '
@@ -283,7 +289,7 @@ Partial Class Form1
         'ToolStrip1
         '
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.TextBoxUsername, Me.ToolStripSeparator1, Me.ToolStripLabel2, Me.TextboxHashtag, Me.ToolStripSeparator2, Me.ToolStripLabel3, Me.ToolStripLabel4})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.TextBoxUsername, Me.ToolStripSeparator1, Me.ToolStripLabel2, Me.TextboxHashtag, Me.ToolStripSeparator2, Me.ToolStripLabel5, Me.ToolStripLabel3, Me.ToolStripLabel4})
         Me.ToolStrip1.Location = New System.Drawing.Point(3, 3)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(620, 25)
@@ -293,8 +299,8 @@ Partial Class Form1
         'ToolStripLabel1
         '
         Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(63, 22)
-        Me.ToolStripLabel1.Text = "Username:"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(33, 22)
+        Me.ToolStripLabel1.Text = "User:"
         '
         'TextBoxUsername
         '
@@ -324,6 +330,12 @@ Partial Class Form1
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
         '
+        'ToolStripLabel5
+        '
+        Me.ToolStripLabel5.Name = "ToolStripLabel5"
+        Me.ToolStripLabel5.Size = New System.Drawing.Size(79, 22)
+        Me.ToolStripLabel5.Text = "Canal:             "
+        '
         'ToolStripLabel3
         '
         Me.ToolStripLabel3.Name = "ToolStripLabel3"
@@ -333,8 +345,8 @@ Partial Class Form1
         'ToolStripLabel4
         '
         Me.ToolStripLabel4.Name = "ToolStripLabel4"
-        Me.ToolStripLabel4.Size = New System.Drawing.Size(119, 22)
-        Me.ToolStripLabel4.Text = "Flash Layer:                 "
+        Me.ToolStripLabel4.Size = New System.Drawing.Size(83, 22)
+        Me.ToolStripLabel4.Text = "Flash Layer:     "
         '
         'TabControl1
         '
@@ -354,6 +366,9 @@ Partial Class Form1
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage3.Controls.Add(Me.Label14)
+        Me.TabPage3.Controls.Add(Me.LabelClock)
+        Me.TabPage3.Controls.Add(Me.NumericUpDownClkCh)
         Me.TabPage3.Controls.Add(Me.Panel2)
         Me.TabPage3.Controls.Add(Me.Label13)
         Me.TabPage3.Controls.Add(Me.Label12)
@@ -374,7 +389,6 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.Label6)
         Me.TabPage3.Controls.Add(Me.TextBoxCity)
         Me.TabPage3.Controls.Add(Me.LabelCiudad)
-        Me.TabPage3.Controls.Add(Me.LabelClock)
         Me.TabPage3.Controls.Add(Me.ButtonShowReloj)
         Me.TabPage3.Controls.Add(Me.ButtonStopReloj)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
@@ -389,7 +403,7 @@ Partial Class Form1
         Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.Controls.Add(Me.RadioButton6)
         Me.Panel2.Controls.Add(Me.RadioButton5)
-        Me.Panel2.Location = New System.Drawing.Point(458, 62)
+        Me.Panel2.Location = New System.Drawing.Point(458, 73)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(162, 31)
         Me.Panel2.TabIndex = 119
@@ -398,7 +412,7 @@ Partial Class Form1
         '
         Me.RadioButton6.AutoSize = True
         Me.RadioButton6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton6.Location = New System.Drawing.Point(81, 9)
+        Me.RadioButton6.Location = New System.Drawing.Point(81, 3)
         Me.RadioButton6.Name = "RadioButton6"
         Me.RadioButton6.Size = New System.Drawing.Size(48, 19)
         Me.RadioButton6.TabIndex = 121
@@ -410,7 +424,7 @@ Partial Class Form1
         Me.RadioButton5.AutoSize = True
         Me.RadioButton5.Checked = True
         Me.RadioButton5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton5.Location = New System.Drawing.Point(11, 9)
+        Me.RadioButton5.Location = New System.Drawing.Point(11, 3)
         Me.RadioButton5.Name = "RadioButton5"
         Me.RadioButton5.Size = New System.Drawing.Size(51, 19)
         Me.RadioButton5.TabIndex = 120
@@ -444,15 +458,15 @@ Partial Class Form1
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Dateline Standard Time", "UTC-11", "Samoa Standard Time", "Hawaiian Standard Time", "Alaskan Standard Time", "Pacific Standard Time (Mexico)", "Pacific Standard Time", "US Mountain Standard Time", "Mountain Standard Time (Mexico)", "Mountain Standard Time", "Central America Standard Time", "Central Standard Time", "Central Standard Time (Mexico)", "Canada Central Standard Time", "SA Pacific Standard Time", "Eastern Standard Time", "US Eastern Standard Time", "Venezuela Standard Time", "Paraguay Standard Time", "Atlantic Standard Time", "Central Brazilian Standard Time", "SA Western Standard Time", "Pacific SA Standard Time", "Newfoundland Standard Time", "E. South America Standard Time", "Argentina Standard Time", "SA Eastern Standard Time", "Greenland Standard Time", "Montevideo Standard Time", "UTC-02", "Mid-Atlantic Standard Time", "Azores Standard Time", "Cape Verde Standard Time", "Morocco Standard Time", "UTC", "GMT Standard Time", "Greenwich Standard Time", "W. Europe Standard Time", "Central Europe Standard Time", "Romance Standard Time", "Central European Standard Time", "W. Central Africa Standard Time", "Namibia Standard Time", "Jordan Standard Time", "GTB Standard Time", "Middle East Standard Time", "Egypt Standard Time", "Syria Standard Time", "South Africa Standard Time", "FLE Standard Time", "Israel Standard Time", "E. Europe Standard Time", "Arabic Standard Time", "Arab Standard Time", "Russian Standard Time", "E. Africa Standard Time", "Iran Standard Time", "Arabian Standard Time", "Azerbaijan Standard Time", "Mauritius Standard Time", "Georgian Standard Time", "Caucasus Standard Time", "Afghanistan Standard Time", "Ekaterinburg Standard Time", "Pakistan Standard Time", "West Asia Standard Time", "India Standard Time", "Sri Lanka Standard Time", "Nepal Standard Time", "Central Asia Standard Time", "Bangladesh Standard Time", "N. Central Asia Standard Time", "Myanmar Standard Time", "SE Asia Standard Time", "North Asia Standard Time", "China Standard Time", "North Asia East Standard Time", "Singapore Standard Time", "W. Australia Standard Time", "Taipei Standard Time", "Ulaanbaatar Standard Time", "Tokyo Standard Time", "Korea Standard Time", "Yakutsk Standard Time", "Cen. Australia Standard Time", "AUS Central Standard Time", "E. Australia Standard Time", "AUS Eastern Standard Time", "West Pacific Standard Time", "Tasmania Standard Time", "Vladivostok Standard Time", "Central Pacific Standard Time", "New Zealand Standard Time", "UTC+12", "Fiji Standard Time", "Kamchatka Standard Time", "Tonga Standard Time"})
-        Me.ComboBox1.Location = New System.Drawing.Point(245, 12)
+        Me.ComboBox1.Location = New System.Drawing.Point(221, 12)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(185, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(153, 21)
         Me.ComboBox1.TabIndex = 116
         '
         'RadioButton4
         '
         Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(416, 39)
+        Me.RadioButton4.Location = New System.Drawing.Point(360, 39)
         Me.RadioButton4.Name = "RadioButton4"
         Me.RadioButton4.Size = New System.Drawing.Size(14, 13)
         Me.RadioButton4.TabIndex = 115
@@ -489,32 +503,12 @@ Partial Class Form1
         Me.LabelTimeLocal.TabIndex = 112
         Me.LabelTimeLocal.Text = "                          "
         '
-        'NumericUpDownFLClock
-        '
-        Me.NumericUpDownFLClock.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDownFLClock.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "clockFL", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.NumericUpDownFLClock.Location = New System.Drawing.Point(577, 38)
-        Me.NumericUpDownFLClock.Name = "NumericUpDownFLClock"
-        Me.NumericUpDownFLClock.Size = New System.Drawing.Size(42, 20)
-        Me.NumericUpDownFLClock.TabIndex = 111
-        Me.NumericUpDownFLClock.Value = Global.TwitterScroll.My.MySettings.Default.clockFL
-        '
-        'NumericUpDownClockVL
-        '
-        Me.NumericUpDownClockVL.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDownClockVL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "clockVL", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.NumericUpDownClockVL.Location = New System.Drawing.Point(577, 11)
-        Me.NumericUpDownClockVL.Name = "NumericUpDownClockVL"
-        Me.NumericUpDownClockVL.Size = New System.Drawing.Size(42, 20)
-        Me.NumericUpDownClockVL.TabIndex = 110
-        Me.NumericUpDownClockVL.Value = Global.TwitterScroll.My.MySettings.Default.clockVL
-        '
         'Label10
         '
         Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(493, 39)
+        Me.Label10.Location = New System.Drawing.Point(498, 52)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(73, 15)
         Me.Label10.TabIndex = 109
@@ -525,7 +519,7 @@ Partial Class Form1
         Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(490, 12)
+        Me.Label7.Location = New System.Drawing.Point(497, 28)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(74, 15)
         Me.Label7.TabIndex = 107
@@ -535,7 +529,7 @@ Partial Class Form1
         '
         Me.RadioButton3.AutoSize = True
         Me.RadioButton3.Checked = True
-        Me.RadioButton3.Location = New System.Drawing.Point(193, 39)
+        Me.RadioButton3.Location = New System.Drawing.Point(178, 39)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(14, 13)
         Me.RadioButton3.TabIndex = 105
@@ -545,7 +539,7 @@ Partial Class Form1
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(115, 39)
+        Me.RadioButton2.Location = New System.Drawing.Point(106, 39)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(14, 13)
         Me.RadioButton2.TabIndex = 104
@@ -564,7 +558,7 @@ Partial Class Form1
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(172, 13)
+        Me.Label9.Location = New System.Drawing.Point(157, 13)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(53, 18)
         Me.Label9.TabIndex = 102
@@ -574,7 +568,7 @@ Partial Class Form1
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(86, 13)
+        Me.Label8.Location = New System.Drawing.Point(77, 13)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(71, 18)
         Me.Label8.TabIndex = 101
@@ -612,7 +606,7 @@ Partial Class Form1
         Me.LabelClock.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelClock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LabelClock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelClock.Location = New System.Drawing.Point(458, 97)
+        Me.LabelClock.Location = New System.Drawing.Point(458, 100)
         Me.LabelClock.Name = "LabelClock"
         Me.LabelClock.Size = New System.Drawing.Size(162, 29)
         Me.LabelClock.TabIndex = 99
@@ -622,7 +616,7 @@ Partial Class Form1
         'ButtonShowReloj
         '
         Me.ButtonShowReloj.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonShowReloj.Location = New System.Drawing.Point(539, 131)
+        Me.ButtonShowReloj.Location = New System.Drawing.Point(539, 134)
         Me.ButtonShowReloj.Name = "ButtonShowReloj"
         Me.ButtonShowReloj.Size = New System.Drawing.Size(81, 23)
         Me.ButtonShowReloj.TabIndex = 6
@@ -632,7 +626,7 @@ Partial Class Form1
         'ButtonStopReloj
         '
         Me.ButtonStopReloj.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonStopReloj.Location = New System.Drawing.Point(458, 131)
+        Me.ButtonStopReloj.Location = New System.Drawing.Point(458, 134)
         Me.ButtonStopReloj.Name = "ButtonStopReloj"
         Me.ButtonStopReloj.Size = New System.Drawing.Size(75, 23)
         Me.ButtonStopReloj.TabIndex = 7
@@ -642,6 +636,7 @@ Partial Class Form1
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage1.Controls.Add(Me.NumericUpDownTWch)
         Me.TabPage1.Controls.Add(Me.NumericUpDownTwFL)
         Me.TabPage1.Controls.Add(Me.NumericUpDownTwVL)
         Me.TabPage1.Controls.Add(Me.ToolStrip1)
@@ -662,18 +657,19 @@ Partial Class Form1
         '
         'NumericUpDownTwFL
         '
-        Me.NumericUpDownTwFL.Increment = New Decimal(New Integer() {2, 0, 0, 0})
-        Me.NumericUpDownTwFL.Location = New System.Drawing.Point(525, 5)
+        Me.NumericUpDownTwFL.Location = New System.Drawing.Point(575, 5)
+        Me.NumericUpDownTwFL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDownTwFL.Name = "NumericUpDownTwFL"
-        Me.NumericUpDownTwFL.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownTwFL.Size = New System.Drawing.Size(35, 20)
         Me.NumericUpDownTwFL.TabIndex = 113
         Me.NumericUpDownTwFL.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'NumericUpDownTwVL
         '
-        Me.NumericUpDownTwVL.Location = New System.Drawing.Point(413, 5)
+        Me.NumericUpDownTwVL.Location = New System.Drawing.Point(459, 5)
+        Me.NumericUpDownTwVL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDownTwVL.Name = "NumericUpDownTwVL"
-        Me.NumericUpDownTwVL.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownTwVL.Size = New System.Drawing.Size(36, 20)
         Me.NumericUpDownTwVL.TabIndex = 112
         Me.NumericUpDownTwVL.Value = New Decimal(New Integer() {21, 0, 0, 0})
         '
@@ -909,7 +905,59 @@ Partial Class Form1
         '
         'TimerReloj
         '
-        Me.TimerReloj.Interval = 1000
+        Me.TimerReloj.Interval = 5000
+        '
+        'NumericUpDownClkCh
+        '
+        Me.NumericUpDownClkCh.Location = New System.Drawing.Point(577, 5)
+        Me.NumericUpDownClkCh.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownClkCh.Name = "NumericUpDownClkCh"
+        Me.NumericUpDownClkCh.Size = New System.Drawing.Size(43, 20)
+        Me.NumericUpDownClkCh.TabIndex = 120
+        Me.NumericUpDownClkCh.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'Label14
+        '
+        Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(529, 6)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(42, 15)
+        Me.Label14.TabIndex = 121
+        Me.Label14.Text = "Canal:"
+        '
+        'NumericUpDownFLClock
+        '
+        Me.NumericUpDownFLClock.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDownFLClock.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "clockFL", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.NumericUpDownFLClock.Location = New System.Drawing.Point(577, 51)
+        Me.NumericUpDownFLClock.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownFLClock.Name = "NumericUpDownFLClock"
+        Me.NumericUpDownFLClock.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownFLClock.TabIndex = 111
+        Me.NumericUpDownFLClock.Value = Global.TwitterScroll.My.MySettings.Default.clockFL
+        '
+        'NumericUpDownClockVL
+        '
+        Me.NumericUpDownClockVL.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDownClockVL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "clockVL", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.NumericUpDownClockVL.Location = New System.Drawing.Point(577, 28)
+        Me.NumericUpDownClockVL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownClockVL.Name = "NumericUpDownClockVL"
+        Me.NumericUpDownClockVL.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownClockVL.TabIndex = 110
+        Me.NumericUpDownClockVL.Value = Global.TwitterScroll.My.MySettings.Default.clockVL
+        '
+        'NumericUpDownTWch
+        '
+        Me.NumericUpDownTWch.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "clockCh", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.NumericUpDownTWch.Location = New System.Drawing.Point(356, 5)
+        Me.NumericUpDownTWch.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownTWch.Name = "NumericUpDownTWch"
+        Me.NumericUpDownTWch.Size = New System.Drawing.Size(31, 20)
+        Me.NumericUpDownTWch.TabIndex = 114
+        Me.NumericUpDownTWch.Value = Global.TwitterScroll.My.MySettings.Default.clockCh
         '
         'Form1
         '
@@ -931,8 +979,6 @@ Partial Class Form1
         Me.TabPage3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).EndInit()
@@ -943,6 +989,10 @@ Partial Class Form1
         Me.StatusStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownClkCh, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownTWch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1028,4 +1078,8 @@ Partial Class Form1
     Friend WithEvents NumericUpDownTwVL As NumericUpDown
     Friend WithEvents ToolStripLabel3 As ToolStripLabel
     Friend WithEvents ToolStripLabel4 As ToolStripLabel
+    Friend WithEvents ToolStripLabel5 As ToolStripLabel
+    Friend WithEvents NumericUpDownTWch As NumericUpDown
+    Friend WithEvents Label14 As Label
+    Friend WithEvents NumericUpDownClkCh As NumericUpDown
 End Class
