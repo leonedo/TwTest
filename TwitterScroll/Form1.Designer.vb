@@ -126,7 +126,7 @@ Partial Class Form1
         'Button_LoadTW
         '
         Me.Button_LoadTW.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_LoadTW.Location = New System.Drawing.Point(326, 127)
+        Me.Button_LoadTW.Location = New System.Drawing.Point(326, 129)
         Me.Button_LoadTW.Name = "Button_LoadTW"
         Me.Button_LoadTW.Size = New System.Drawing.Size(95, 23)
         Me.Button_LoadTW.TabIndex = 0
@@ -165,7 +165,7 @@ Partial Class Form1
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvtwitter.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvtwitter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvtwitter.Size = New System.Drawing.Size(604, 69)
+        Me.dgvtwitter.Size = New System.Drawing.Size(604, 86)
         Me.dgvtwitter.TabIndex = 1
         '
         'Column3
@@ -214,7 +214,7 @@ Partial Class Form1
         'ButtonSearch
         '
         Me.ButtonSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ButtonSearch.Location = New System.Drawing.Point(238, 127)
+        Me.ButtonSearch.Location = New System.Drawing.Point(238, 129)
         Me.ButtonSearch.Name = "ButtonSearch"
         Me.ButtonSearch.Size = New System.Drawing.Size(75, 23)
         Me.ButtonSearch.TabIndex = 3
@@ -224,7 +224,7 @@ Partial Class Form1
         'ButtonShowhideTw
         '
         Me.ButtonShowhideTw.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonShowhideTw.Location = New System.Drawing.Point(508, 128)
+        Me.ButtonShowhideTw.Location = New System.Drawing.Point(508, 129)
         Me.ButtonShowhideTw.Name = "ButtonShowhideTw"
         Me.ButtonShowhideTw.Size = New System.Drawing.Size(107, 23)
         Me.ButtonShowhideTw.TabIndex = 4
@@ -234,7 +234,7 @@ Partial Class Form1
         'ButtonStopTw
         '
         Me.ButtonStopTw.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonStopTw.Location = New System.Drawing.Point(427, 127)
+        Me.ButtonStopTw.Location = New System.Drawing.Point(427, 129)
         Me.ButtonStopTw.Name = "ButtonStopTw"
         Me.ButtonStopTw.Size = New System.Drawing.Size(75, 23)
         Me.ButtonStopTw.TabIndex = 5
@@ -250,7 +250,7 @@ Partial Class Form1
         Me.RadioButtonFav.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButtonFav.AutoSize = True
         Me.RadioButtonFav.Checked = True
-        Me.RadioButtonFav.Location = New System.Drawing.Point(11, 292)
+        Me.RadioButtonFav.Location = New System.Drawing.Point(11, 135)
         Me.RadioButtonFav.Name = "RadioButtonFav"
         Me.RadioButtonFav.Size = New System.Drawing.Size(68, 17)
         Me.RadioButtonFav.TabIndex = 6
@@ -262,7 +262,7 @@ Partial Class Form1
         '
         Me.RadioButtonTL.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButtonTL.AutoSize = True
-        Me.RadioButtonTL.Location = New System.Drawing.Point(85, 292)
+        Me.RadioButtonTL.Location = New System.Drawing.Point(85, 135)
         Me.RadioButtonTL.Name = "RadioButtonTL"
         Me.RadioButtonTL.Size = New System.Drawing.Size(63, 17)
         Me.RadioButtonTL.TabIndex = 7
@@ -273,7 +273,7 @@ Partial Class Form1
         '
         Me.RadioButtonQ.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButtonQ.AutoSize = True
-        Me.RadioButtonQ.Location = New System.Drawing.Point(159, 292)
+        Me.RadioButtonQ.Location = New System.Drawing.Point(159, 135)
         Me.RadioButtonQ.Name = "RadioButtonQ"
         Me.RadioButtonQ.Size = New System.Drawing.Size(73, 17)
         Me.RadioButtonQ.TabIndex = 8
@@ -890,8 +890,6 @@ Partial Class Form1
         '
         'Panel1
         '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(8, 8)

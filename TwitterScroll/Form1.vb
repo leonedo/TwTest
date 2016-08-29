@@ -208,7 +208,7 @@ Public Class Form1
             ListBoxServers.SelectedIndex = old - 1
             saveServers()
         Else
-            MsgBox("Debe existir al menos un servidor")
+            MsgBox("No puedes eliminar el servidor local")
         End If
     End Sub
 
