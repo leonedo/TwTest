@@ -100,6 +100,10 @@ Partial Class Form1
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Timer_Clima = New System.Windows.Forms.Timer(Me.components)
+        Me.ToolStripLabel5 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
+        Me.NumericUpDownTwFL = New System.Windows.Forms.NumericUpDown()
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -115,6 +119,7 @@ Partial Class Form1
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button_LoadTW
@@ -276,7 +281,7 @@ Partial Class Form1
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.TextBoxUsername, Me.ToolStripSeparator1, Me.ToolStripLabel2, Me.TextboxHashtag, Me.ToolStripSeparator2})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.TextBoxUsername, Me.ToolStripSeparator1, Me.ToolStripLabel2, Me.TextboxHashtag, Me.ToolStripSeparator2, Me.ToolStripLabel5, Me.ToolStripLabel3, Me.ToolStripLabel4})
         Me.ToolStrip1.Location = New System.Drawing.Point(3, 3)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(620, 25)
@@ -286,8 +291,8 @@ Partial Class Form1
         'ToolStripLabel1
         '
         Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(63, 22)
-        Me.ToolStripLabel1.Text = "Username:"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(33, 22)
+        Me.ToolStripLabel1.Text = "User:"
         '
         'TextBoxUsername
         '
@@ -336,6 +341,7 @@ Partial Class Form1
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage1.Controls.Add(Me.NumericUpDownTwFL)
         Me.TabPage1.Controls.Add(Me.ToolStrip1)
         Me.TabPage1.Controls.Add(Me.Button_LoadTW)
         Me.TabPage1.Controls.Add(Me.RadioButtonQ)
@@ -831,6 +837,33 @@ Partial Class Form1
         '
         Me.Timer_Clima.Interval = 100000
         '
+        'ToolStripLabel5
+        '
+        Me.ToolStripLabel5.Name = "ToolStripLabel5"
+        Me.ToolStripLabel5.Size = New System.Drawing.Size(79, 22)
+        Me.ToolStripLabel5.Text = "Canal:             "
+        '
+        'ToolStripLabel3
+        '
+        Me.ToolStripLabel3.Name = "ToolStripLabel3"
+        Me.ToolStripLabel3.Size = New System.Drawing.Size(113, 22)
+        Me.ToolStripLabel3.Text = "VideoLayer:               "
+        '
+        'ToolStripLabel4
+        '
+        Me.ToolStripLabel4.Name = "ToolStripLabel4"
+        Me.ToolStripLabel4.Size = New System.Drawing.Size(83, 22)
+        Me.ToolStripLabel4.Text = "Flash Layer:     "
+        '
+        'NumericUpDownTwFL
+        '
+        Me.NumericUpDownTwFL.Location = New System.Drawing.Point(363, 5)
+        Me.NumericUpDownTwFL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownTwFL.Name = "NumericUpDownTwFL"
+        Me.NumericUpDownTwFL.Size = New System.Drawing.Size(35, 20)
+        Me.NumericUpDownTwFL.TabIndex = 114
+        Me.NumericUpDownTwFL.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -864,6 +897,7 @@ Partial Class Form1
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -942,4 +976,8 @@ Partial Class Form1
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents ToolStripLabel5 As ToolStripLabel
+    Friend WithEvents ToolStripLabel3 As ToolStripLabel
+    Friend WithEvents ToolStripLabel4 As ToolStripLabel
+    Friend WithEvents NumericUpDownTwFL As NumericUpDown
 End Class
