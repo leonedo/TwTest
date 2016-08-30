@@ -8,6 +8,7 @@ Public Class Form1
     Public WithEvents CasparDevice As New Svt.Caspar.CasparDevice
     Dim WithEvents clima As New OWMweatherClass
     Dim servers As New Dictionary(Of String, String())
+    Dim nombreserver = ""
 
 
 
