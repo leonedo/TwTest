@@ -275,9 +275,9 @@ Public Class Form1
     Public Sub Ocultar(Esconder As Boolean)
         If CasparDevice.IsConnected = True Then
             If Esconder Then
-                CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL") & " OPACITY 0 25 easeinsine")
+                CasparDevice.SendString("MIXER " & NumericUpDownTwCh.Value - 1.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 0 25 easeinsine")
             Else
-                CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL") & " OPACITY 1 25 easeinsine")
+                CasparDevice.SendString("MIXER " & NumericUpDownTwCh.Value - 1.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 1 25 easeinsine")
             End If
         End If
     End Sub
