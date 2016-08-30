@@ -326,6 +326,9 @@ Public Class Form1
         End Try
     End Sub
 
+#End Region
+
+#Region "Reloj"
     Private Sub Timer1_Tick_1(sender As Object, e As EventArgs) Handles TimerReloj.Tick
         Dim thisTime As Date = Date.Now
         Dim ciudad = TextBoxCity.Text
@@ -353,6 +356,7 @@ Public Class Form1
         LabelClock.Text = TextBoxCity.Text & "  " & tstTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)
         updateClock()
     End Sub
+
 
     Private Sub ButtonShowReloj_Click(sender As Object, e As EventArgs) Handles ButtonShowReloj.Click
         Try
@@ -409,17 +413,6 @@ Public Class Form1
                 TextBoxCity.Text = ""
         End Select
     End Sub
-
-
-
-
-
-
-#End Region
-
-#Region "Reloj"
-
-
 #End Region
 
 
