@@ -53,6 +53,9 @@ Partial Class Form1
         Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.NumericUpDownTwFL = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDownTwVL = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDownTwCh = New System.Windows.Forms.NumericUpDown()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -70,6 +73,7 @@ Partial Class Form1
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.NumericUpDownClockVL = New System.Windows.Forms.NumericUpDown()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.LabelClock = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -94,6 +98,8 @@ Partial Class Form1
         Me.Label27 = New System.Windows.Forms.Label()
         Me.ButtonShowReloj = New System.Windows.Forms.Button()
         Me.ButtonStopReloj = New System.Windows.Forms.Button()
+        Me.NumericUpDownClkCh = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDownFLClock = New System.Windows.Forms.NumericUpDown()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.ButtonSaveServer = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -128,16 +134,13 @@ Partial Class Form1
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Timer_Clima = New System.Windows.Forms.Timer(Me.components)
         Me.TimerReloj = New System.Windows.Forms.Timer(Me.components)
-        Me.NumericUpDownTwFL = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDownTwVL = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDownTwCh = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDownClockVL = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDownClkCh = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDownFLClock = New System.Windows.Forms.NumericUpDown()
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownTwCh, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,18 +148,15 @@ Partial Class Form1
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
+        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        CType(Me.NumericUpDownClkCh, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDownTwCh, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDownClkCh, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button_LoadTW
@@ -415,6 +415,36 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Twitter Feed"
         '
+        'NumericUpDownTwFL
+        '
+        Me.NumericUpDownTwFL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "FLtw", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.NumericUpDownTwFL.Location = New System.Drawing.Point(582, 5)
+        Me.NumericUpDownTwFL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownTwFL.Name = "NumericUpDownTwFL"
+        Me.NumericUpDownTwFL.Size = New System.Drawing.Size(35, 20)
+        Me.NumericUpDownTwFL.TabIndex = 116
+        Me.NumericUpDownTwFL.Value = Global.TwitterScroll.My.MySettings.Default.FLtw
+        '
+        'NumericUpDownTwVL
+        '
+        Me.NumericUpDownTwVL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "VLtw", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.NumericUpDownTwVL.Location = New System.Drawing.Point(470, 5)
+        Me.NumericUpDownTwVL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownTwVL.Name = "NumericUpDownTwVL"
+        Me.NumericUpDownTwVL.Size = New System.Drawing.Size(36, 20)
+        Me.NumericUpDownTwVL.TabIndex = 115
+        Me.NumericUpDownTwVL.Value = Global.TwitterScroll.My.MySettings.Default.VLtw
+        '
+        'NumericUpDownTwCh
+        '
+        Me.NumericUpDownTwCh.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "ChTw", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.NumericUpDownTwCh.Location = New System.Drawing.Point(363, 5)
+        Me.NumericUpDownTwCh.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownTwCh.Name = "NumericUpDownTwCh"
+        Me.NumericUpDownTwCh.Size = New System.Drawing.Size(35, 20)
+        Me.NumericUpDownTwCh.TabIndex = 114
+        Me.NumericUpDownTwCh.Value = Global.TwitterScroll.My.MySettings.Default.ChTw
+        '
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
@@ -619,6 +649,17 @@ Partial Class Form1
         Me.TabPage3.Size = New System.Drawing.Size(626, 160)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Reloj"
+        '
+        'NumericUpDownClockVL
+        '
+        Me.NumericUpDownClockVL.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDownClockVL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "VLClock", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.NumericUpDownClockVL.Location = New System.Drawing.Point(575, 28)
+        Me.NumericUpDownClockVL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownClockVL.Name = "NumericUpDownClockVL"
+        Me.NumericUpDownClockVL.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownClockVL.TabIndex = 147
+        Me.NumericUpDownClockVL.Value = Global.TwitterScroll.My.MySettings.Default.VLClock
         '
         'Label18
         '
@@ -867,6 +908,28 @@ Partial Class Form1
         Me.ButtonStopReloj.TabIndex = 123
         Me.ButtonStopReloj.Text = "Stop"
         Me.ButtonStopReloj.UseVisualStyleBackColor = True
+        '
+        'NumericUpDownClkCh
+        '
+        Me.NumericUpDownClkCh.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDownClkCh.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "ChClock", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.NumericUpDownClkCh.Location = New System.Drawing.Point(575, 5)
+        Me.NumericUpDownClkCh.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownClkCh.Name = "NumericUpDownClkCh"
+        Me.NumericUpDownClkCh.Size = New System.Drawing.Size(43, 20)
+        Me.NumericUpDownClkCh.TabIndex = 145
+        Me.NumericUpDownClkCh.Value = Global.TwitterScroll.My.MySettings.Default.ChClock
+        '
+        'NumericUpDownFLClock
+        '
+        Me.NumericUpDownFLClock.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDownFLClock.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "FLClock", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.NumericUpDownFLClock.Location = New System.Drawing.Point(575, 51)
+        Me.NumericUpDownFLClock.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownFLClock.Name = "NumericUpDownFLClock"
+        Me.NumericUpDownFLClock.Size = New System.Drawing.Size(42, 20)
+        Me.NumericUpDownFLClock.TabIndex = 136
+        Me.NumericUpDownFLClock.Value = Global.TwitterScroll.My.MySettings.Default.FLClock
         '
         'TabPage4
         '
@@ -1169,70 +1232,7 @@ Partial Class Form1
         '
         'TimerReloj
         '
-        Me.TimerReloj.Interval = 5000
-        '
-        'NumericUpDownTwFL
-        '
-        Me.NumericUpDownTwFL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "FLtw", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.NumericUpDownTwFL.Location = New System.Drawing.Point(582, 5)
-        Me.NumericUpDownTwFL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDownTwFL.Name = "NumericUpDownTwFL"
-        Me.NumericUpDownTwFL.Size = New System.Drawing.Size(35, 20)
-        Me.NumericUpDownTwFL.TabIndex = 116
-        Me.NumericUpDownTwFL.Value = Global.TwitterScroll.My.MySettings.Default.FLtw
-        '
-        'NumericUpDownTwVL
-        '
-        Me.NumericUpDownTwVL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "VLtw", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.NumericUpDownTwVL.Location = New System.Drawing.Point(470, 5)
-        Me.NumericUpDownTwVL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDownTwVL.Name = "NumericUpDownTwVL"
-        Me.NumericUpDownTwVL.Size = New System.Drawing.Size(36, 20)
-        Me.NumericUpDownTwVL.TabIndex = 115
-        Me.NumericUpDownTwVL.Value = Global.TwitterScroll.My.MySettings.Default.VLtw
-        '
-        'NumericUpDownTwCh
-        '
-        Me.NumericUpDownTwCh.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "ChTw", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.NumericUpDownTwCh.Location = New System.Drawing.Point(363, 5)
-        Me.NumericUpDownTwCh.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDownTwCh.Name = "NumericUpDownTwCh"
-        Me.NumericUpDownTwCh.Size = New System.Drawing.Size(35, 20)
-        Me.NumericUpDownTwCh.TabIndex = 114
-        Me.NumericUpDownTwCh.Value = Global.TwitterScroll.My.MySettings.Default.ChTw
-        '
-        'NumericUpDownClockVL
-        '
-        Me.NumericUpDownClockVL.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDownClockVL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "VLClock", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.NumericUpDownClockVL.Location = New System.Drawing.Point(575, 28)
-        Me.NumericUpDownClockVL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDownClockVL.Name = "NumericUpDownClockVL"
-        Me.NumericUpDownClockVL.Size = New System.Drawing.Size(42, 20)
-        Me.NumericUpDownClockVL.TabIndex = 147
-        Me.NumericUpDownClockVL.Value = Global.TwitterScroll.My.MySettings.Default.VLClock
-        '
-        'NumericUpDownClkCh
-        '
-        Me.NumericUpDownClkCh.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDownClkCh.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "ChClock", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.NumericUpDownClkCh.Location = New System.Drawing.Point(575, 5)
-        Me.NumericUpDownClkCh.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDownClkCh.Name = "NumericUpDownClkCh"
-        Me.NumericUpDownClkCh.Size = New System.Drawing.Size(43, 20)
-        Me.NumericUpDownClkCh.TabIndex = 145
-        Me.NumericUpDownClkCh.Value = Global.TwitterScroll.My.MySettings.Default.ChClock
-        '
-        'NumericUpDownFLClock
-        '
-        Me.NumericUpDownFLClock.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDownFLClock.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "FLClock", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.NumericUpDownFLClock.Location = New System.Drawing.Point(575, 51)
-        Me.NumericUpDownFLClock.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDownFLClock.Name = "NumericUpDownFLClock"
-        Me.NumericUpDownFLClock.Size = New System.Drawing.Size(42, 20)
-        Me.NumericUpDownFLClock.TabIndex = 136
-        Me.NumericUpDownFLClock.Value = Global.TwitterScroll.My.MySettings.Default.FLClock
+        Me.TimerReloj.Interval = 2000
         '
         'Form1
         '
@@ -1252,6 +1252,9 @@ Partial Class Form1
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownTwCh, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1261,8 +1264,11 @@ Partial Class Form1
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
+        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.NumericUpDownClkCh, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
@@ -1271,12 +1277,6 @@ Partial Class Form1
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDownTwCh, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDownClkCh, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDownFLClock, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

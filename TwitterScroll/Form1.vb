@@ -15,6 +15,18 @@ Public Class Form1
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Select Case My.Settings.City
+            Case 0
+                RadioButton1.Checked = True
+            Case 1
+                RadioButton2.Checked = True
+            Case 2
+                RadioButton3.Checked = True
+            Case Else
+                RadioButton4.Checked = True
+        End Select
+        ComboBox1.SelectedIndex = 0
+        TimerReloj.Start()
         loadServers()
         Try
             ListBoxServers.SelectedIndex = My.Settings.Server
