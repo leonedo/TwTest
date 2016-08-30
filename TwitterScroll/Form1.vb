@@ -38,13 +38,18 @@ Public Class Form1
 #Region "CasparCG connect"
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerCasparConnect.Tick
         If CasparDevice.IsConnected = True Then
-            ToolStripLabelNombre.Text = ListBoxServers.SelectedItem
-            ToolStripLabelPuerto.Text = servers.Item(ListBoxServers.SelectedItem)(1)
-            ToolStripLabelIp.Text = servers.Item(ListBoxServers.SelectedItem)(0)
+            ToolStripLabelNombre.Text = nombreserver
+            ToolStripLabelPuerto.Text = CasparDevice.Settings.Port 'servers.Item(ListBoxServers.SelectedItem)(1)
+            ToolStripLabelIp.Text = CasparDevice.Settings.Hostname 'servers.Item(ListBoxServers.SelectedItem)(0)
             ToolStripLabelStatus.Image = My.Resources.ResourceManager.GetObject("green")
+            NumericUpDownClkCh.Maximum = CasparDevice.Channels.Count
+            NumericUpDownTWch.Maximum = CasparDevice.Channels.Count
             '  TimerCasparConnect.Stop()
         Else
             ToolStripLabelStatus.Image = My.Resources.ResourceManager.GetObject("red")
+            ToolStripLabelNombre.Text = nombreserver
+            ToolStripLabelPuerto.Text = servers.Item(ListBoxServers.SelectedItem)(1)
+            ToolStripLabelIp.Text = servers.Item(ListBoxServers.SelectedItem)(0)
             CasparDevice.Connect()
         End If
     End Sub
