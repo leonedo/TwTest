@@ -48,8 +48,12 @@ Partial Class Form1
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.TextboxHashtag = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel5 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.NumericUpDownTwCh = New System.Windows.Forms.NumericUpDown()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -100,14 +104,13 @@ Partial Class Form1
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Timer_Clima = New System.Windows.Forms.Timer(Me.components)
-        Me.ToolStripLabel5 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
         Me.NumericUpDownTwFL = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDownTwVL = New System.Windows.Forms.NumericUpDown()
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.NumericUpDownTwCh, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -120,6 +123,7 @@ Partial Class Form1
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button_LoadTW
@@ -322,6 +326,24 @@ Partial Class Form1
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
         '
+        'ToolStripLabel5
+        '
+        Me.ToolStripLabel5.Name = "ToolStripLabel5"
+        Me.ToolStripLabel5.Size = New System.Drawing.Size(79, 22)
+        Me.ToolStripLabel5.Text = "Canal:             "
+        '
+        'ToolStripLabel3
+        '
+        Me.ToolStripLabel3.Name = "ToolStripLabel3"
+        Me.ToolStripLabel3.Size = New System.Drawing.Size(113, 22)
+        Me.ToolStripLabel3.Text = "VideoLayer:               "
+        '
+        'ToolStripLabel4
+        '
+        Me.ToolStripLabel4.Name = "ToolStripLabel4"
+        Me.ToolStripLabel4.Size = New System.Drawing.Size(83, 22)
+        Me.ToolStripLabel4.Text = "Flash Layer:     "
+        '
         'TabControl1
         '
         Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -342,6 +364,8 @@ Partial Class Form1
         '
         Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage1.Controls.Add(Me.NumericUpDownTwFL)
+        Me.TabPage1.Controls.Add(Me.NumericUpDownTwVL)
+        Me.TabPage1.Controls.Add(Me.NumericUpDownTwCh)
         Me.TabPage1.Controls.Add(Me.ToolStrip1)
         Me.TabPage1.Controls.Add(Me.Button_LoadTW)
         Me.TabPage1.Controls.Add(Me.RadioButtonQ)
@@ -357,6 +381,15 @@ Partial Class Form1
         Me.TabPage1.Size = New System.Drawing.Size(626, 185)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Twitter Feed"
+        '
+        'NumericUpDownTwCh
+        '
+        Me.NumericUpDownTwCh.Location = New System.Drawing.Point(363, 5)
+        Me.NumericUpDownTwCh.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownTwCh.Name = "NumericUpDownTwCh"
+        Me.NumericUpDownTwCh.Size = New System.Drawing.Size(35, 20)
+        Me.NumericUpDownTwCh.TabIndex = 114
+        Me.NumericUpDownTwCh.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'TabPage2
         '
@@ -837,32 +870,23 @@ Partial Class Form1
         '
         Me.Timer_Clima.Interval = 100000
         '
-        'ToolStripLabel5
-        '
-        Me.ToolStripLabel5.Name = "ToolStripLabel5"
-        Me.ToolStripLabel5.Size = New System.Drawing.Size(79, 22)
-        Me.ToolStripLabel5.Text = "Canal:             "
-        '
-        'ToolStripLabel3
-        '
-        Me.ToolStripLabel3.Name = "ToolStripLabel3"
-        Me.ToolStripLabel3.Size = New System.Drawing.Size(113, 22)
-        Me.ToolStripLabel3.Text = "VideoLayer:               "
-        '
-        'ToolStripLabel4
-        '
-        Me.ToolStripLabel4.Name = "ToolStripLabel4"
-        Me.ToolStripLabel4.Size = New System.Drawing.Size(83, 22)
-        Me.ToolStripLabel4.Text = "Flash Layer:     "
-        '
         'NumericUpDownTwFL
         '
-        Me.NumericUpDownTwFL.Location = New System.Drawing.Point(363, 5)
+        Me.NumericUpDownTwFL.Location = New System.Drawing.Point(582, 5)
         Me.NumericUpDownTwFL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDownTwFL.Name = "NumericUpDownTwFL"
         Me.NumericUpDownTwFL.Size = New System.Drawing.Size(35, 20)
-        Me.NumericUpDownTwFL.TabIndex = 114
+        Me.NumericUpDownTwFL.TabIndex = 116
         Me.NumericUpDownTwFL.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'NumericUpDownTwVL
+        '
+        Me.NumericUpDownTwVL.Location = New System.Drawing.Point(470, 5)
+        Me.NumericUpDownTwVL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownTwVL.Name = "NumericUpDownTwVL"
+        Me.NumericUpDownTwVL.Size = New System.Drawing.Size(36, 20)
+        Me.NumericUpDownTwVL.TabIndex = 115
+        Me.NumericUpDownTwVL.Value = New Decimal(New Integer() {21, 0, 0, 0})
         '
         'Form1
         '
@@ -882,6 +906,7 @@ Partial Class Form1
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.NumericUpDownTwCh, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -898,6 +923,7 @@ Partial Class Form1
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -979,5 +1005,7 @@ Partial Class Form1
     Friend WithEvents ToolStripLabel5 As ToolStripLabel
     Friend WithEvents ToolStripLabel3 As ToolStripLabel
     Friend WithEvents ToolStripLabel4 As ToolStripLabel
+    Friend WithEvents NumericUpDownTwCh As NumericUpDown
     Friend WithEvents NumericUpDownTwFL As NumericUpDown
+    Friend WithEvents NumericUpDownTwVL As NumericUpDown
 End Class
