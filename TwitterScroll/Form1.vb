@@ -10,6 +10,7 @@ Public Class Form1
     Dim WithEvents clima As New OWMweatherClass
     Dim servers As New Dictionary(Of String, String())
     Dim nombreserver = ""
+    Dim activo = False
 
 
 
@@ -356,9 +357,9 @@ Public Class Form1
     Private Sub ButtonShowReloj_Click(sender As Object, e As EventArgs) Handles ButtonShowReloj.Click
         Try
             If CasparDevice.IsConnected = True Then
-                Dim template As String = "NTN24/Reloj_Azul"
+                Dim template As String = "Estrending/Reloj1"
                 If RadioButton5.Checked Then
-                    template = "NTN24/Reloj_Rojo"
+                    template = "Estrending/Reloj2"
                 End If
                 Dim CGData As New Svt.Caspar.CasparCGDataCollection
                 CGData.SetData("f0", LabelClock.Text)

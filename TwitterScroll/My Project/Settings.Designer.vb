@@ -89,6 +89,78 @@ Namespace My
                 Me("Server") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property ChTw() As Decimal
+            Get
+                Return CType(Me("ChTw"),Decimal)
+            End Get
+            Set
+                Me("ChTw") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property ChClock() As Decimal
+            Get
+                Return CType(Me("ChClock"),Decimal)
+            End Get
+            Set
+                Me("ChClock") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("21")>  _
+        Public Property VLClock() As Decimal
+            Get
+                Return CType(Me("VLClock"),Decimal)
+            End Get
+            Set
+                Me("VLClock") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property FLClock() As Decimal
+            Get
+                Return CType(Me("FLClock"),Decimal)
+            End Get
+            Set
+                Me("FLClock") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property VLtw() As Decimal
+            Get
+                Return CType(Me("VLtw"),Decimal)
+            End Get
+            Set
+                Me("VLtw") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property FLtw() As Decimal
+            Get
+                Return CType(Me("FLtw"),Decimal)
+            End Get
+            Set
+                Me("FLtw") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
