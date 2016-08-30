@@ -43,8 +43,8 @@ Public Class Form1
             ToolStripLabelPuerto.Text = CasparDevice.Settings.Port 'servers.Item(ListBoxServers.SelectedItem)(1)
             ToolStripLabelIp.Text = CasparDevice.Settings.Hostname 'servers.Item(ListBoxServers.SelectedItem)(0)
             ToolStripLabelStatus.Image = My.Resources.ResourceManager.GetObject("green")
-            NumericUpDownClkCh.Maximum = CasparDevice.Channels.Count
-            NumericUpDownTWch.Maximum = CasparDevice.Channels.Count
+            '   NumericUpDownClkCh.Maximum = CasparDevice.Channels.Count
+            NumericUpDownTwCh.Maximum = CasparDevice.Channels.Count
             '  TimerCasparConnect.Stop()
         Else
             ToolStripLabelStatus.Image = My.Resources.ResourceManager.GetObject("red")
