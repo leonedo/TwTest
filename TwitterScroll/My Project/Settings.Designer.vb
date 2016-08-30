@@ -161,6 +161,18 @@ Namespace My
                 Me("FLtw") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property City() As Integer
+            Get
+                Return CType(Me("City"),Integer)
+            End Get
+            Set
+                Me("City") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

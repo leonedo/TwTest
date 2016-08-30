@@ -31,6 +31,17 @@ Public Class Form1
     End Sub
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         '   Guardar XML
+        Select Case True
+            Case RadioButton1.Checked ' Bogota               
+                My.Settings.City = 0
+            Case RadioButton2.Checked ' Caracas
+                My.Settings.City = 1
+            Case RadioButton3.Checked ' Miami
+                My.Settings.City = 2
+            Case Else
+                My.Settings.City = 3
+        End Select
+
         My.Settings.user = TextBoxUsername.Text
         My.Settings.hash = TextboxHashtag.Text
         My.Settings.Server = ListBoxServers.SelectedIndex
