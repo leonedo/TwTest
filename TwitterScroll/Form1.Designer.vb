@@ -53,7 +53,6 @@ Partial Class Form1
         Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.NumericUpDownTwFL = New System.Windows.Forms.NumericUpDown()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -129,6 +128,7 @@ Partial Class Form1
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Timer_Clima = New System.Windows.Forms.Timer(Me.components)
         Me.TimerReloj = New System.Windows.Forms.Timer(Me.components)
+        Me.NumericUpDownTwFL = New System.Windows.Forms.NumericUpDown()
         Me.NumericUpDownTwVL = New System.Windows.Forms.NumericUpDown()
         Me.NumericUpDownTwCh = New System.Windows.Forms.NumericUpDown()
         Me.NumericUpDownClockVL = New System.Windows.Forms.NumericUpDown()
@@ -138,7 +138,6 @@ Partial Class Form1
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -152,6 +151,7 @@ Partial Class Form1
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownTwCh, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -414,16 +414,6 @@ Partial Class Form1
         Me.TabPage1.Size = New System.Drawing.Size(626, 160)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Twitter Feed"
-        '
-        'NumericUpDownTwFL
-        '
-        Me.NumericUpDownTwFL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "FLtw", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.NumericUpDownTwFL.Location = New System.Drawing.Point(582, 5)
-        Me.NumericUpDownTwFL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDownTwFL.Name = "NumericUpDownTwFL"
-        Me.NumericUpDownTwFL.Size = New System.Drawing.Size(35, 20)
-        Me.NumericUpDownTwFL.TabIndex = 116
-        Me.NumericUpDownTwFL.Value = Global.TwitterScroll.My.MySettings.Default.FLtw
         '
         'TabPage2
         '
@@ -1181,6 +1171,16 @@ Partial Class Form1
         '
         Me.TimerReloj.Interval = 5000
         '
+        'NumericUpDownTwFL
+        '
+        Me.NumericUpDownTwFL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "FLtw", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.NumericUpDownTwFL.Location = New System.Drawing.Point(582, 5)
+        Me.NumericUpDownTwFL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownTwFL.Name = "NumericUpDownTwFL"
+        Me.NumericUpDownTwFL.Size = New System.Drawing.Size(35, 20)
+        Me.NumericUpDownTwFL.TabIndex = 116
+        Me.NumericUpDownTwFL.Value = Global.TwitterScroll.My.MySettings.Default.FLtw
+        '
         'NumericUpDownTwVL
         '
         Me.NumericUpDownTwVL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "VLtw", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
@@ -1252,7 +1252,6 @@ Partial Class Form1
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1272,6 +1271,7 @@ Partial Class Form1
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownTwFL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDownTwVL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDownTwCh, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDownClockVL, System.ComponentModel.ISupportInitialize).EndInit()
