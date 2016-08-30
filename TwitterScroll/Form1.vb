@@ -288,10 +288,10 @@ Public Class Form1
                 Dim CGData As New Svt.Caspar.CasparCGDataCollection
                 CGData.SetData("hash", hashtag)
                 CGData.SetData("scrolldata", text)
-                CasparDevice.Channels(CInt(ConfigurationManager.AppSettings("cH"))).CG.Add(CInt(ConfigurationManager.AppSettings("vL")),
-                                                                                           CInt(ConfigurationManager.AppSettings("fL")),
-                                                                                          "SCROLL", True, CGData.ToAMCPEscapedXml)
-                CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL").ToString & " OPACITY 1 25 easeinsine")
+                CasparDevice.Channels(CInt(NumericUpDownTwCh.Value - 1)).CG.Add(CInt(NumericUpDownTwVL.Value),
+                                                                            CInt(NumericUpDownTwFL.Value),
+                                                                            "Estrending/SCROLL", True, CGData.ToAMCPEscapedXml)
+                CasparDevice.SendString("MIXER " & NumericUpDownTwCh.Value.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 1 25 easeinsine")
             End If
         Catch ex As Exception
             MsgBox("Scroll Issue" & ex.Message)
