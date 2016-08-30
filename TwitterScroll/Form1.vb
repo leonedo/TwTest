@@ -110,6 +110,7 @@ Public Class Form1
 
     Private Sub CasparConfig()
         Try
+            nombreserver = ListBoxServers.SelectedItem
             CasparDevice.Settings.Hostname = servers.Item(ListBoxServers.SelectedItem)(0)
             CasparDevice.Settings.Port = servers.Item(ListBoxServers.SelectedItem)(1)
             TimerCasparConnect.Start()
