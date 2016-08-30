@@ -261,8 +261,9 @@ Public Class Form1
 
     Private Sub StopTw(sender As Object, e As EventArgs) Handles ButtonStopTw.Click
         If CasparDevice.IsConnected = True Then
-            CasparDevice.SendString("PLAY 1-" & ConfigurationManager.AppSettings("vL") & " EMPTY MIX 10")
-            CasparDevice.SendString("MIXER 1-" & ConfigurationManager.AppSettings("vL") & " OPACITY 1 25 easeinsine")
+            CasparDevice.SendString("PLAY " & NumericUpDownTwCh.Value - 1.ToString & "-" & NumericUpDownTwVL.Value.ToString & " EMPTY MIX 10")
+            CasparDevice.SendString("MIXER " & NumericUpDownTwCh.Value - 1.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 1 25 easeinsine")
+
         End If
     End Sub
 
