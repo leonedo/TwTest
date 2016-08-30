@@ -1,4 +1,5 @@
 ﻿Imports System.Configuration
+Imports System.Globalization
 Imports System.Xml
 Imports TweetSharp
 
@@ -316,6 +317,96 @@ Public Class Form1
         ElseIf clima.tipo = OWMweatherClass.type.forcast Then
 
         End If
+    End Sub
+#End Region
+
+#Region "Reloj"
+
+
+
+    Private Sub Timer1_Tick_1(sender As Object, e As EventArgs) Handles TimerReloj.Tick
+        Dim thisTime As Date = Date.Now
+        Dim ciudad = TextBoxCity.Text
+        Dim tst As TimeZoneInfo
+        Dim tstTime As Date
+        Select Case True
+            Case RadioButton1.Checked ' Bogota
+                tst = TimeZoneInfo.FindSystemTimeZoneById("SA Pacific Standard Time")
+                tstTime = TimeZoneInfo.ConvertTime(thisTime, TimeZoneInfo.Local, tst)
+            Case RadioButton2.Checked ' Caracas
+                tst = TimeZoneInfo.FindSystemTimeZoneById("SA Western Standard Time")
+                tstTime = TimeZoneInfo.ConvertTime(thisTime, TimeZoneInfo.Local, tst)
+            Case RadioButton3.Checked ' Miami
+                tst = TimeZoneInfo.FindSystemTimeZoneById("US Eastern Standard Time")
+                tstTime = TimeZoneInfo.ConvertTime(thisTime, TimeZoneInfo.Local, tst)
+            Case RadioButton4.Checked
+                tst = TimeZoneInfo.FindSystemTimeZoneById(ComboBox1.SelectedItem)
+                tstTime = TimeZoneInfo.ConvertTime(thisTime, TimeZoneInfo.Local, tst)
+            Case Else
+                tst = TimeZoneInfo.FindSystemTimeZoneById(ComboBox1.SelectedItem)
+                tstTime = TimeZoneInfo.ConvertTime(thisTime, TimeZoneInfo.Local, tst)
+        End Select
+        LabelTimeLocal.Text = IIf(TimeZoneInfo.Local.IsDaylightSavingTime(thisTime), TimeZoneInfo.Local.DaylightName, TimeZoneInfo.Local.StandardName) & ", Hora: " & thisTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)
+        LabelTimeCiudad.Text = tst.DisplayName & ", Hora: " & tstTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)
+        LabelClock.Text = TextBoxCity.Text & "  " & tstTime.ToString("hh:mm tt", CultureInfo.InvariantCulture)
+        updateClock()
+    End Sub
+
+
+    Private Sub ButtonShowReloj_Click(sender As Object, e As EventArgs) Handles ButtonShowReloj.Click
+        Try
+            If CasparDevice.IsConnected = True Then
+                Dim template As String = "NTN24/Reloj_Azul"
+                If RadioButton5.Checked Then
+                    template = "NTN24/Reloj_Rojo"
+                End If
+                Dim CGData As New Svt.Caspar.CasparCGDataCollection
+                CGData.SetData("f0", LabelClock.Text)
+                CasparDevice.Channels(CInt(NumericUpDownClkCh.Value - 1)).CG.Add(CInt(NumericUpDownClockVL.Value), CInt(NumericUpDownFLClock.Value), template, True, CGData.ToAMCPEscapedXml)
+                activo = True
+            End If
+        Catch ex As Exception
+            MsgBox("Clock Issue" & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub ButtonStopReloj_Click(sender As Object, e As EventArgs) Handles ButtonStopReloj.Click
+        Try
+            If CasparDevice.IsConnected = True Then
+                CasparDevice.Channels(CInt(NumericUpDownClkCh.Value - 1)).CG.Stop(CInt(NumericUpDownClockVL.Value),
+                                                                              CInt(NumericUpDownFLClock.Value))
+                activo = False
+            End If
+        Catch ex As Exception
+            MsgBox("Clock Issue" & ex.Message)
+        End Try
+    End Sub
+
+
+    Private Sub updateClock()
+        Try
+            If CasparDevice.IsConnected And activo = True Then
+                Dim CGData As New Svt.Caspar.CasparCGDataCollection
+                CGData.SetData("f0", LabelClock.Text)
+                CasparDevice.Channels(CInt(NumericUpDownClkCh.Value - 1)).CG.Update(CInt(NumericUpDownClockVL.Value), CInt(NumericUpDownFLClock.Value), CGData)
+            End If
+        Catch ex As Exception
+            MsgBox("Clock Issue" & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged, RadioButton2.CheckedChanged,
+                                                                                      RadioButton3.CheckedChanged, RadioButton4.CheckedChanged
+        Select Case True
+            Case RadioButton1.Checked ' Bogota               
+                TextBoxCity.Text = "BOG"
+            Case RadioButton2.Checked ' Caracas
+                TextBoxCity.Text = "CCS"
+            Case RadioButton3.Checked ' Miami
+                TextBoxCity.Text = "MIA"
+            Case Else
+                TextBoxCity.Text = ""
+        End Select
     End Sub
 #End Region
 End Class
