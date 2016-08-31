@@ -269,6 +269,7 @@ Public Class Form1
         On Error Resume Next
         oculto = False
         Dim texto As String = ""
+        Dim tipo = 1
         For Each row As DataGridViewRow In dgvtwitter.Rows
             Select Case True
                 Case RadioButtonFav.Checked
@@ -279,19 +280,21 @@ Public Class Form1
                     If row.Cells(0).Value = True Then
                         texto = texto & row.Cells(3).Value & "  ●  "
                     End If
+                    tipo = 2
                 Case RadioButtonQ.Checked
                     If row.Cells(0).Value = True Then
                         texto = texto & " @" & row.Cells(1).Value & " - " & row.Cells(2).Value & ": " & row.Cells(3).Value & "  ● "
                     End If
+                    tipo = 3
             End Select
         Next
-        ticker(TextboxHashtag.Text, texto)
+        ticker(TextboxHashtag.Text, texto, tipo)
     End Sub
 
     Private Sub StopTw(sender As Object, e As EventArgs) Handles ButtonStopTw.Click
         If CasparDevice.IsConnected = True Then
-            CasparDevice.SendString("PLAY " & NumericUpDownTWch.Value - 1.ToString & "-" & NumericUpDownTwVL.Value.ToString & " EMPTY MIX 10")
-            CasparDevice.SendString("MIXER " & NumericUpDownTWch.Value - 1.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 1 25 easeinsine")
+            CasparDevice.SendString("PLAY " & NumericUpDownTWch.Value.ToString & "-" & NumericUpDownTwVL.Value.ToString & " EMPTY MIX 10")
+            CasparDevice.SendString("MIXER " & NumericUpDownTWch.Value.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 1 25 easeinsine")
         End If
     End Sub
 
@@ -303,22 +306,28 @@ Public Class Form1
     Public Sub Ocultar(Esconder As Boolean)
         If CasparDevice.IsConnected = True Then
             If Esconder Then
-                CasparDevice.SendString("MIXER " & NumericUpDownTWch.Value - 1.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 0 25 easeinsine")
+                CasparDevice.SendString("MIXER " & NumericUpDownTWch.Value.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 0 25 easeinsine")
             Else
-                CasparDevice.SendString("MIXER " & NumericUpDownTWch.Value - 1.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 1 25 easeinsine")
+                CasparDevice.SendString("MIXER " & NumericUpDownTWch.Value.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 1 25 easeinsine")
             End If
         End If
     End Sub
 
-    Public Sub ticker(hashtag As String, text As String)
+    Public Sub ticker(hashtag As String, text As String, tipo As Integer)
         Try
             If CasparDevice.IsConnected = True Then
-                Dim CGData As New Svt.Caspar.CasparCGDataCollection
-                CGData.SetData("hash", hashtag)
-                CGData.SetData("scrolldata", text)
-                CasparDevice.Channels(CInt(NumericUpDownTWch.Value - 1)).CG.Add(CInt(NumericUpDownTwVL.Value),
-                                                                            CInt(NumericUpDownTwFL.Value),
-                                                                            "NTN24/SCROLL", True, CGData.ToAMCPEscapedXml)
+                Select Case tipo
+                    Case 2
+                        Dim CGData As New Svt.Caspar.CasparCGDataCollection
+
+                        CGData.SetData("scrolldata", text)
+                        CasparDevice.Channels(CInt(NumericUpDownTWch.Value - 1)).CG.Add(CInt(NumericUpDownTwVL.Value),
+                                                                                    CInt(NumericUpDownTwFL.Value),
+                                                                                    "NTN24/SCROLL", True, CGData.ToAMCPEscapedXml)
+                    Case Else
+                End Select
+
+
                 CasparDevice.SendString("MIXER " & NumericUpDownTWch.Value.ToString & "-" & NumericUpDownTwVL.Value.ToString & " OPACITY 1 25 easeinsine")
             End If
         Catch ex As Exception
