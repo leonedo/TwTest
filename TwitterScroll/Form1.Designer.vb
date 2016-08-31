@@ -700,31 +700,33 @@ Partial Class Form1
         '
         'NumericUpDownTWch
         '
-        Me.NumericUpDownTWch.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "clockCh", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.NumericUpDownTWch.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "TwCh", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.NumericUpDownTWch.Location = New System.Drawing.Point(356, 5)
         Me.NumericUpDownTWch.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDownTWch.Name = "NumericUpDownTWch"
         Me.NumericUpDownTWch.Size = New System.Drawing.Size(31, 20)
         Me.NumericUpDownTWch.TabIndex = 114
-        Me.NumericUpDownTWch.Value = Global.TwitterScroll.My.MySettings.Default.clockCh
+        Me.NumericUpDownTWch.Value = Global.TwitterScroll.My.MySettings.Default.TwCh
         '
         'NumericUpDownTwFL
         '
+        Me.NumericUpDownTwFL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "TwFl", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.NumericUpDownTwFL.Location = New System.Drawing.Point(575, 5)
         Me.NumericUpDownTwFL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDownTwFL.Name = "NumericUpDownTwFL"
         Me.NumericUpDownTwFL.Size = New System.Drawing.Size(35, 20)
         Me.NumericUpDownTwFL.TabIndex = 113
-        Me.NumericUpDownTwFL.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDownTwFL.Value = Global.TwitterScroll.My.MySettings.Default.TwFl
         '
         'NumericUpDownTwVL
         '
+        Me.NumericUpDownTwVL.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.TwitterScroll.My.MySettings.Default, "TwVL", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.NumericUpDownTwVL.Location = New System.Drawing.Point(459, 5)
         Me.NumericUpDownTwVL.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDownTwVL.Name = "NumericUpDownTwVL"
         Me.NumericUpDownTwVL.Size = New System.Drawing.Size(36, 20)
         Me.NumericUpDownTwVL.TabIndex = 112
-        Me.NumericUpDownTwVL.Value = New Decimal(New Integer() {21, 0, 0, 0})
+        Me.NumericUpDownTwVL.Value = Global.TwitterScroll.My.MySettings.Default.TwVL
         '
         'TabPage4
         '

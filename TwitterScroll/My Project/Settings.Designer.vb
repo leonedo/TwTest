@@ -137,6 +137,42 @@ Namespace My
                 Me("clockCh") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property TwCh() As Decimal
+            Get
+                Return CType(Me("TwCh"),Decimal)
+            End Get
+            Set
+                Me("TwCh") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("18")>  _
+        Public Property TwVL() As Decimal
+            Get
+                Return CType(Me("TwVL"),Decimal)
+            End Get
+            Set
+                Me("TwVL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property TwFl() As Decimal
+            Get
+                Return CType(Me("TwFl"),Decimal)
+            End Get
+            Set
+                Me("TwFl") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
