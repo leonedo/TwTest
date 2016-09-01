@@ -95,7 +95,7 @@ Public Class Form1
     Private Sub saveServers()
         Dim xmlsetting As New XmlWriterSettings
         xmlsetting.Indent = True
-        Using writer As XmlWriter = XmlWriter.Create("servers.xml", xmlsetting)
+        Using writer As XmlWriter = XmlWriter.Create(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\servers.xml", xmlsetting)
             writer.WriteStartDocument()
             writer.WriteStartElement("Servidores") ' Root.
             For Each item In servers
@@ -125,9 +125,9 @@ Public Class Form1
     End Sub
 
     Private Sub loadServers()
-        If IO.File.Exists("servers.xml") Then
+        If IO.File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\servers.xml") Then
             Dim response As New Xml.XmlDocument
-            response.Load("servers.xml")
+            response.Load(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\servers.xml")
             For Each instance As Xml.XmlElement In response.GetElementsByTagName("Server")
                 servers.Add(instance.GetAttribute("Nombre"), {instance.GetAttribute("IP"), instance.GetAttribute("Puerto"), instance.GetAttribute("Comentario")})
                 ListBoxServers.Items.Add(instance.GetAttribute("Nombre"))
@@ -319,7 +319,7 @@ Public Class Form1
                 Select Case tipo
                     Case 2
                         Dim CGData As New Svt.Caspar.CasparCGDataCollection
-
+                        CGData.SetData("f0", hashtag)
                         CGData.SetData("scrolldata", text)
                         CasparDevice.Channels(CInt(NumericUpDownTWch.Value - 1)).CG.Add(CInt(NumericUpDownTwVL.Value),
                                                                                     CInt(NumericUpDownTwFL.Value),
