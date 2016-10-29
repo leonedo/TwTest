@@ -278,7 +278,7 @@ Public Class Form1
                     End If
                 Case RadioButtonTL.Checked
                     If row.Cells(0).Value = True Then
-                        texto = texto & row.Cells(3).Value & "  ●  "
+                        texto = texto & row.Cells(3).Value & "  |  "
                     End If
                     tipo = 2
                 Case RadioButtonQ.Checked
