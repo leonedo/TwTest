@@ -3,7 +3,7 @@
     Dim WithEvents getRows As New RCGetRowsClass
 
     Private Sub Button_LoadRD_Click(sender As Object, e As EventArgs) Handles Button_LoadRD.Click
-        getRundowns.getRundowns("cimacast", "anahernandez", "CuoeB6rgk2GiUb1XKcA6nHvhWslyan")
+        getRundowns.getRundowns(My.Settings.URL, My.Settings.APIKey, My.Settings.APIToken)
     End Sub
 
 
@@ -17,7 +17,7 @@
 
     Private Sub ComboBoxRundown_SelectedIndexChanged(sender As ComboBox, e As EventArgs) Handles ComboBoxRundown.SelectedIndexChanged
         Button1.Enabled = False
-        getRows.getRows("cimacast", "anahernandez", "CuoeB6rgk2GiUb1XKcA6nHvhWslyan", getRundowns.rundowns(sender.SelectedIndex).RundownID)
+        getRows.getRows(My.Settings.URL, My.Settings.APIKey, My.Settings.APIToken, getRundowns.rundowns(sender.SelectedIndex).RundownID)
     End Sub
 
     Private Sub RowsExito(sender As Object, e As EventArgs) Handles getRows.exito

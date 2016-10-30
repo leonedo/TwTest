@@ -29,6 +29,7 @@ Partial Class FormPrincipal
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CasparCGSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RundowncreatorSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -84,7 +85,7 @@ Partial Class FormPrincipal
         '
         'SettingsToolStripMenuItem
         '
-        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CasparCGSettingsToolStripMenuItem})
+        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CasparCGSettingsToolStripMenuItem, Me.RundowncreatorSettingsToolStripMenuItem})
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
         Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.SettingsToolStripMenuItem.Text = "Settings"
@@ -94,6 +95,12 @@ Partial Class FormPrincipal
         Me.CasparCGSettingsToolStripMenuItem.Name = "CasparCGSettingsToolStripMenuItem"
         Me.CasparCGSettingsToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.CasparCGSettingsToolStripMenuItem.Text = "CasparCG Settings"
+        '
+        'RundowncreatorSettingsToolStripMenuItem
+        '
+        Me.RundowncreatorSettingsToolStripMenuItem.Name = "RundowncreatorSettingsToolStripMenuItem"
+        Me.RundowncreatorSettingsToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.RundowncreatorSettingsToolStripMenuItem.Text = "Rundowncreator Settings"
         '
         'FormPrincipal
         '
@@ -121,4 +128,5 @@ Partial Class FormPrincipal
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CasparCGSettingsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RundowncreatorSettingsToolStripMenuItem As ToolStripMenuItem
 End Class

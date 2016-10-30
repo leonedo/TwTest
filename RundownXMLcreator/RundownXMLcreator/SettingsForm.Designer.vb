@@ -129,7 +129,7 @@ Partial Class SettingsForm
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "SettingsForm"
-        Me.Text = "Settings"
+        Me.Text = "CasparCG Settings"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
