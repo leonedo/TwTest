@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("cimacast")>  _
         Public Property URL() As String
             Get
                 Return CType(Me("URL"),String)
@@ -93,9 +93,9 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("2")>  _
-        Public Property Templ_Canal() As Integer
+        Public Property Templ_Canal() As Decimal
             Get
-                Return CType(Me("Templ_Canal"),Integer)
+                Return CType(Me("Templ_Canal"),Decimal)
             End Get
             Set
                 Me("Templ_Canal") = value
@@ -105,9 +105,9 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("20")>  _
-        Public Property Templ_Capa() As Integer
+        Public Property Templ_Capa() As Decimal
             Get
-                Return CType(Me("Templ_Capa"),Integer)
+                Return CType(Me("Templ_Capa"),Decimal)
             End Get
             Set
                 Me("Templ_Capa") = value
@@ -117,9 +117,9 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
-        Public Property Media_Canal() As Integer
+        Public Property Media_Canal() As Decimal
             Get
-                Return CType(Me("Media_Canal"),Integer)
+                Return CType(Me("Media_Canal"),Decimal)
             End Get
             Set
                 Me("Media_Canal") = value
@@ -129,12 +129,24 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("10")>  _
-        Public Property Media_Capa() As Integer
+        Public Property Media_Capa() As Decimal
             Get
-                Return CType(Me("Media_Capa"),Integer)
+                Return CType(Me("Media_Capa"),Decimal)
             End Get
             Set
                 Me("Media_Capa") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property CasparDevice() As String
+            Get
+                Return CType(Me("CasparDevice"),String)
+            End Get
+            Set
+                Me("CasparDevice") = value
             End Set
         End Property
     End Class

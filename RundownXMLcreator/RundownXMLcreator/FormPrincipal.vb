@@ -25,4 +25,15 @@
         Button1.Enabled = True
     End Sub
 
+    Private Sub CasparCGSettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CasparCGSettingsToolStripMenuItem.Click
+        Dim VentanaSettings As SettingsForm = My.Forms.SettingsForm
+        VentanaSettings.Show()
+        VentanaSettings.Activate()
+    End Sub
+
+    Private Sub RundowncreatorSettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RundowncreatorSettingsToolStripMenuItem.Click
+        Dim VentanaSettings As RDsettingsForm = My.Forms.RDsettingsForm
+        VentanaSettings.Show()
+        VentanaSettings.Activate()
+    End Sub
 End Class

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="URL" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">cimacast</Value>
     </Setting>
     <Setting Name="APIKey" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -11,17 +11,20 @@
     <Setting Name="APIToken" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Templ_Canal" Type="System.Int32" Scope="User">
+    <Setting Name="Templ_Canal" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">2</Value>
     </Setting>
-    <Setting Name="Templ_Capa" Type="System.Int32" Scope="User">
+    <Setting Name="Templ_Capa" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">20</Value>
     </Setting>
-    <Setting Name="Media_Canal" Type="System.Int32" Scope="User">
+    <Setting Name="Media_Canal" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="Media_Capa" Type="System.Int32" Scope="User">
+    <Setting Name="Media_Capa" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="CasparDevice" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

@@ -93,7 +93,7 @@ Partial Class FormPrincipal
         'CasparCGSettingsToolStripMenuItem
         '
         Me.CasparCGSettingsToolStripMenuItem.Name = "CasparCGSettingsToolStripMenuItem"
-        Me.CasparCGSettingsToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.CasparCGSettingsToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.CasparCGSettingsToolStripMenuItem.Text = "CasparCG Settings"
         '
         'RundowncreatorSettingsToolStripMenuItem
