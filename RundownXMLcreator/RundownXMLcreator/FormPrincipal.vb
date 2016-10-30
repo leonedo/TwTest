@@ -65,6 +65,8 @@ Public Class FormPrincipal
                             If String.Equals(objeto.Type, "gfx") Then
 
                                 Dim filename As String = ""
+                                Dim primer_campo As String = ""
+                                Dim primer = True
                                 For Each item As JProperty In objeto.Payload
                                     item.CreateReader()
                                     Select Case item.Name
@@ -72,6 +74,10 @@ Public Class FormPrincipal
                                             filename = item.Value.ToString
                                         Case "id"
                                         Case Else
+                                            If primer Then
+                                                primer = False
+                                                primer_campo = item.Value.ToString
+                                            End If
                                     End Select
                                 Next
 
@@ -83,7 +89,7 @@ Public Class FormPrincipal
                                 writer.WriteValue(My.Settings.CasparDevice)
                                 writer.WriteEndElement()
                                 writer.WriteStartElement("label")
-                                writer.WriteValue(row.PageNumber & " - " & filename)
+                                writer.WriteValue(row.PageNumber & " - " & filename & " - " & primer_campo)
                                 writer.WriteEndElement()
                                 writer.WriteStartElement("name")
                                 writer.WriteValue(filename)
@@ -154,38 +160,99 @@ Public Class FormPrincipal
                                 writer.WriteEndElement()
 
                                 writer.WriteEndElement()
-                                '-<item>
-                                '<type>TEMPLATE</type>
-                                '<devicename>Local CasparCG</devicename>
-                                '<label>Test/ESTRENDING LOWER3RD_1_PURPLE</label>
-                                '<name>Test/ESTRENDING LOWER3RD_1_PURPLE</name>
-                                '<channel>1</channel>
-                                '<videolayer>20</videolayer>
-                                '<delay>0</delay>
-                                '<duration>0</duration>
-                                '<allowgpi>false</allowgpi>
-                                '<allowremotetriggering>false</allowremotetriggering>
-                                '<remotetriggerid/>
-                                '<storyid/>
-                                '<flashlayer>1</flashlayer>
-                                '<invoke/>
-                                '<usestoreddata>false</usestoreddata>
-                                '<useuppercasedata>false</useuppercasedata>
-                                '<triggeronnext>false</triggeronnext>
-                                '<sendasjson>false</sendasjson>
-                                '-<templatedata>
-                                '-<componentdata>
-                                '<id>f0</id>
-                                '<value>ASDF</value>
-                                '</componentdata>
-                                '-<componentdata>
-                                '<id>f1</id>
-                                '<value>XXXX</value>
-                                '</componentdata>
-                                '</templatedata>
-                                '<color>Transparent</color>
-                                '</item>
+
                             ElseIf String.Equals(objeto.Type, "video") Then
+                                Dim filename As String = ""
+                                Dim primer_campo As String = ""
+                                Dim primer = True
+                                For Each item As JProperty In objeto.Payload
+                                    item.CreateReader()
+                                    Select Case item.Name
+                                        Case "filename"
+                                            filename = item.Value.ToString
+                                        Case "id"
+                                        Case Else
+                                            If primer Then
+                                                primer = False
+                                                primer_campo = item.Value.ToString
+                                            End If
+                                    End Select
+                                Next
+
+                                writer.WriteStartElement("item")
+                                writer.WriteStartElement("type")
+                                writer.WriteValue("MOVIE")
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("devicename")
+                                writer.WriteValue(My.Settings.CasparDevice)
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("label")
+                                writer.WriteValue(row.PageNumber & " - " & filename & " - " & primer_campo)
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("name")
+                                writer.WriteValue(filename)
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("channel")
+                                writer.WriteValue(My.Settings.Templ_Canal.ToString)
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("videolayer")
+                                writer.WriteValue(My.Settings.Templ_Capa.ToString)
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("delay")
+                                writer.WriteValue("0")
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("duration")
+                                writer.WriteValue("0")
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("allowgpi")
+                                writer.WriteValue(False)
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("allowremotetriggering")
+                                writer.WriteValue(False)
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("remotetriggerid")
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("storyid")
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("transition")
+                                writer.WriteValue("CUT")
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("transitionDuration")
+                                writer.WriteValue("1")
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("tween")
+                                writer.WriteValue("Linear")
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("direction")
+                                writer.WriteValue("RIGHT")
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("seek")
+                                writer.WriteValue("0")
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("length")
+                                writer.WriteValue("0")
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("loop")
+                                writer.WriteValue(False)
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("freezeonload")
+                                writer.WriteValue(False)
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("triggeronnext")
+                                writer.WriteValue(False)
+                                writer.WriteEndElement()
+                                writer.WriteStartElement("autoplay")
+                                writer.WriteValue(False)
+                                writer.WriteEndElement()
+
+
+
+                                writer.WriteStartElement("color")
+                                writer.WriteValue("Transparent")
+                                writer.WriteEndElement()
+
+                                writer.WriteEndElement()
+
 
                             End If
                         Next
