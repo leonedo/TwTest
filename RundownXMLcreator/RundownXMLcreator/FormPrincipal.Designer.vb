@@ -30,6 +30,7 @@ Partial Class FormPrincipal
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CasparCGSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RundowncreatorSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -129,4 +130,5 @@ Partial Class FormPrincipal
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CasparCGSettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RundowncreatorSettingsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
 End Class

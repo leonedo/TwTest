@@ -88,7 +88,7 @@ End Class
 Public Class Objetos
     Public Property ObjectID As Integer
     Public Property Type As String
-    Public Property Payload As Payload
+    Public Property Payload As Object
     Public Property RawData As String
     Public Property Status As String
 End Class
