@@ -259,7 +259,7 @@ Public Class FormPrincipal
                 End Using
 
             End If
-
+            MsgBox("Exito!, XML Generado Correctamente!")
         Catch ex As Exception
 
             MsgBox("Error Guardando el archivo")
