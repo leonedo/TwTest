@@ -2,7 +2,7 @@
 Imports TweetSharp
 
 Public Class Form1
-    Dim service As New TwitterService(ConfigurationManager.AppSettings("twitterConsumerKey"), ConfigurationManager.AppSettings("twitterConsumerSecret"))
+    Dim service As New TwitterService(ConfigurationManager.AppSettings("TCK"), ConfigurationManager.AppSettings("TCS"))
     Dim oculto As Boolean = False
     Public WithEvents CasparDevice As New Svt.Caspar.CasparDevice
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -89,7 +89,7 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextboxHashtag.Text = My.Settings.hash
         TextBoxUsername.Text = My.Settings.user
-        service.AuthenticateWith(ConfigurationManager.AppSettings("twitterOAuthToken"), ConfigurationManager.AppSettings("twitterAccessToken"))
+        service.AuthenticateWith(ConfigurationManager.AppSettings("TOT"), ConfigurationManager.AppSettings("TAT"))
         CasparDevice.Settings.Hostname = ConfigurationManager.AppSettings("IP")
         CasparDevice.Settings.Port = CInt(ConfigurationManager.AppSettings("Port"))
         Timer1.Start()

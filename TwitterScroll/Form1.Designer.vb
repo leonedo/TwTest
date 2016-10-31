@@ -28,6 +28,11 @@ Partial Class Form1
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button_Load = New System.Windows.Forms.Button()
         Me.dgvtwitter = New System.Windows.Forms.DataGridView()
+        Me.Column3 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -42,11 +47,6 @@ Partial Class Form1
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.TextboxHashtag = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.Column3 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvtwitter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -95,6 +95,49 @@ Partial Class Form1
         Me.dgvtwitter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvtwitter.Size = New System.Drawing.Size(763, 342)
         Me.dgvtwitter.TabIndex = 1
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.Column3.FillWeight = 50.0!
+        Me.Column3.HeaderText = "Show"
+        Me.Column3.Name = "Column3"
+        Me.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column3.Width = 66
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column1.FillWeight = 80.0!
+        Me.Column1.HeaderText = "User"
+        Me.Column1.MinimumWidth = 100
+        Me.Column1.Name = "Column1"
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column4.FillWeight = 80.0!
+        Me.Column4.HeaderText = "User Name"
+        Me.Column4.MinimumWidth = 100
+        Me.Column4.Name = "Column4"
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.FillWeight = 1000.0!
+        Me.Column2.HeaderText = "Text"
+        Me.Column2.MinimumWidth = 10
+        Me.Column2.Name = "Column2"
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column5.FillWeight = 150.0!
+        Me.Column5.HeaderText = "Date"
+        Me.Column5.Name = "Column5"
+        Me.Column5.Visible = False
+        Me.Column5.Width = 150
         '
         'Button2
         '
@@ -204,49 +247,6 @@ Partial Class Form1
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.Column3.FillWeight = 50.0!
-        Me.Column3.HeaderText = "Show"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Column3.Width = 66
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column1.FillWeight = 80.0!
-        Me.Column1.HeaderText = "User"
-        Me.Column1.MinimumWidth = 100
-        Me.Column1.Name = "Column1"
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column4.FillWeight = 80.0!
-        Me.Column4.HeaderText = "User Name"
-        Me.Column4.MinimumWidth = 100
-        Me.Column4.Name = "Column4"
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.FillWeight = 1000.0!
-        Me.Column2.HeaderText = "Text"
-        Me.Column2.MinimumWidth = 10
-        Me.Column2.Name = "Column2"
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column5.FillWeight = 150.0!
-        Me.Column5.HeaderText = "Date"
-        Me.Column5.Name = "Column5"
-        Me.Column5.Visible = False
-        Me.Column5.Width = 150
         '
         'Form1
         '
