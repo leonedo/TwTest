@@ -244,9 +244,6 @@ Public Class FormPrincipal
                                 writer.WriteStartElement("autoplay")
                                 writer.WriteValue(False)
                                 writer.WriteEndElement()
-
-
-
                                 writer.WriteStartElement("color")
                                 writer.WriteValue("Transparent")
                                 writer.WriteEndElement()
